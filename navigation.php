@@ -7,5 +7,5 @@
         <li><a href="">Infos</a></li>
         <li><a href="">Compte</a></li>
     </ul>
-
+	
 </nav>
