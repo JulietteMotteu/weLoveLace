@@ -1,3 +1,3 @@
 # weLoveLace
-Badass women project!
+Badass women !
 First web group project :-)
