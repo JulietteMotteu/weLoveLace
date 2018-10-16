@@ -1,0 +1,31 @@
+#ressource-section {
+            width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+}
+        
+.ressource-btn {
+    border: 1px solid #ea5920;
+    border-radius: 3px;
+    padding: 5px 10px 5px 10px;
+    background-color: #ffffff;
+}
+
+#ressource-select {
+    margin: 10px;
+}
+
+#ressource-parent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.ressource-child {
+    margin-top: 60px;
+    width: 300px;
+}
+
+.ressource-child img:hover {
+    background-color: #ea5920;
+}
