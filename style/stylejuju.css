@@ -1,16 +1,36 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900");
+* {
+  box-sizing: border-box; }
+
 #ressource-section {
   width: 1100px;
   margin-left: auto;
   margin-right: auto; }
 
-.ressource-btn {
-  border: 1px solid #ea5920;
-  border-radius: 3px;
-  padding: 5px 10px 5px 10px;
-  background-color: #ffffff; }
-
 #ressource-select {
-  margin: 10px; }
+  margin: 10px 10px 10px 0;
+  display: flex;
+  justify-content: flex-start; }
+
+.ressource-btn {
+  border: 2px solid #ea5920;
+  border-radius: 4px;
+  padding: 10px 15px 10px 15px;
+  margin: 15px;
+  background-color: #ffffff;
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 15px;
+  color: #6a397c;
+  transition-duration: 0.4s;
+  cursor: pointer; }
+
+.ressource-btn:hover {
+  background-color: #ea5920;
+  color: #fff; }
+
+#left-btn {
+  margin-left: 0; }
 
 #ressource-parent {
   display: flex;
@@ -18,8 +38,35 @@
   justify-content: space-between; }
 
 .ressource-child {
+  position: relative;
   margin-top: 60px;
   width: 300px; }
+  .ressource-child img {
+    display: block;
+    width: 100%;
+    height: auto; }
+  .ressource-child .overlay {
+    padding: 20px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(234, 89, 32, 0.8);
+    opacity: 0;
+    transition: .5s ease; }
+    .ressource-child .overlay h2, .ressource-child .overlay p {
+      color: #ffffff;
+      font-family: "Roboto"; }
+    .ressource-child .overlay h2 {
+      font-size: 15px; }
+    .ressource-child .overlay p {
+      font-size: 13px; }
+    .ressource-child .overlay .btn-info {
+      color: #fff;
+      background-color: none; }
 
-.ressource-child img:hover {
-  background-color: #ea5920; }
+.ressource-child:hover .overlay {
+  opacity: 1; }

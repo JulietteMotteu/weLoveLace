@@ -28,7 +28,7 @@ $ressources = $statement->fetchAll(PDO::FETCH_ASSOC);
 
     <div id="ressource-section">
         <div id="ressource-select">
-            <button class="ressource-btn">Sites</button>
+            <button class="ressource-btn" id="left-btn">Sites</button>
             <button class="ressource-btn">Presse</button>
             <button class="ressource-btn">Livres</button>
             <button class="ressource-btn">Medias</button>
@@ -39,10 +39,9 @@ $ressources = $statement->fetchAll(PDO::FETCH_ASSOC);
            <?php
 
             for ($i=0; $i<count($ressources); $i++) {
-                echo '<div class="ressource-child"><img src="./img/ressources/' . $ressources[$i]['image'] . '">';
-                echo '<h2>' . $ressources[$i]['titre'] . '</h2>';
-                echo '<p>' . $ressources[$i]['description'] . '</p>';
-                echo '</div>';
+                echo '<div class="ressource-child"><img src="./img/ressources/' . $ressources[$i]['image'] . '" alt="' . $ressources[$i]['titre'] . '">';
+                echo '<div class="overlay"><h2>' . $ressources[$i]['titre'] . '</h2>';
+                echo '<p>' . substr($ressources[$i]['description'], 0, 400) . '</p><button class="btn-info">En savoir +</button></div></div>';
             }
 
             ?>
