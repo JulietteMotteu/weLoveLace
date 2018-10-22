@@ -8,19 +8,19 @@ $textFont: 'Roboto';
     box-sizing: border-box;
 }
 
-#ressource-section {
+#ressourceSection {
             width: 1100px;
             margin-left: auto;
             margin-right: auto;
 }
 
-#ressource-select {
+#ressourceSelect {
     margin: 10px 10px 10px 0;
     display: flex;
     justify-content: flex-start;    
 }
 
-.ressource-btn {
+.ressourceBtn {
     border: 2px solid #ea5920;
     border-radius: 4px;
     padding: 10px 15px 10px 15px;
@@ -34,22 +34,22 @@ $textFont: 'Roboto';
     cursor: pointer;
 }
 
-.ressource-btn:hover {
+.ressourceBtn:hover {
     background-color: $orangeColor;
     color: #fff;
 }
 
-#left-btn {
+#leftBtn {
     margin-left: 0;
 }
 
-#ressource-parent {
+#ressourceParent {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
-.ressource-child {
+.ressourceChild {
     position: relative;
     margin-top: 60px;
     width: 300px;
@@ -88,6 +88,10 @@ $textFont: 'Roboto';
         }
     }
 }
-.ressource-child:hover .overlay {
+.ressourceChild:hover .overlay {
     opacity : 1;
+}
+
+.hideRessource {
+    display: none;
 }

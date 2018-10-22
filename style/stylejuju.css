@@ -2,17 +2,17 @@
 * {
   box-sizing: border-box; }
 
-#ressource-section {
+#ressourceSection {
   width: 1100px;
   margin-left: auto;
   margin-right: auto; }
 
-#ressource-select {
+#ressourceSelect {
   margin: 10px 10px 10px 0;
   display: flex;
   justify-content: flex-start; }
 
-.ressource-btn {
+.ressourceBtn {
   border: 2px solid #ea5920;
   border-radius: 4px;
   padding: 10px 15px 10px 15px;
@@ -25,27 +25,27 @@
   transition-duration: 0.4s;
   cursor: pointer; }
 
-.ressource-btn:hover {
+.ressourceBtn:hover {
   background-color: #ea5920;
   color: #fff; }
 
-#left-btn {
+#leftBtn {
   margin-left: 0; }
 
-#ressource-parent {
+#ressourceParent {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between; }
 
-.ressource-child {
+.ressourceChild {
   position: relative;
   margin-top: 60px;
   width: 300px; }
-  .ressource-child img {
+  .ressourceChild img {
     display: block;
     width: 100%;
     height: auto; }
-  .ressource-child .overlay {
+  .ressourceChild .overlay {
     padding: 20px;
     position: absolute;
     top: 0;
@@ -57,16 +57,19 @@
     background-color: rgba(234, 89, 32, 0.8);
     opacity: 0;
     transition: .5s ease; }
-    .ressource-child .overlay h2, .ressource-child .overlay p {
+    .ressourceChild .overlay h2, .ressourceChild .overlay p {
       color: #ffffff;
       font-family: "Roboto"; }
-    .ressource-child .overlay h2 {
+    .ressourceChild .overlay h2 {
       font-size: 15px; }
-    .ressource-child .overlay p {
+    .ressourceChild .overlay p {
       font-size: 13px; }
-    .ressource-child .overlay .btn-info {
+    .ressourceChild .overlay .btn-info {
       color: #fff;
       background-color: none; }
 
-.ressource-child:hover .overlay {
+.ressourceChild:hover .overlay {
   opacity: 1; }
+
+.hideRessource {
+  display: none; }
