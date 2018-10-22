@@ -23,6 +23,7 @@ $ressources = $statement->fetchAll(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <title>Ressources</title>
     <link rel="stylesheet" href="./style/stylejuju.css">
+    <script src="./js/jquery/jquery-3.3.1.min.js"></script>
 </head>
 <body>
 
@@ -67,6 +68,9 @@ $ressources = $statement->fetchAll(PDO::FETCH_ASSOC);
             }
         })
         
+        $(document).ready(function(){
+            
+        })
         
     </script>
     
