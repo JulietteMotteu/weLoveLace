@@ -22,8 +22,11 @@ $ressources = $statement->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <title>Ressources</title>
+    <link rel="stylesheet" href="./style/normalize.css">
     <link rel="stylesheet" href="./style/stylejuju.css">
+    <link rel="stylesheet" href="./style/jquery/magnific-popup.css">
     <script src="./js/jquery/jquery-3.3.1.min.js"></script>
+    <script src="./js/jquery/jquery.magnific-popup.min.js"></script>
 </head>
 <body>
 
@@ -43,6 +46,7 @@ $ressources = $statement->fetchAll(PDO::FETCH_ASSOC);
                 echo '<div class="ressourceChild" data-category="' . $ressources[$i]['type'] . '"><img src="./img/ressources/' . $ressources[$i]['image'] . '" alt="' . $ressources[$i]['titre'] . '">';
                 echo '<div class="overlay"><h2>' . $ressources[$i]['titre'] . '</h2>';
                 echo '<p>' . substr($ressources[$i]['description'], 0, 400) . '</p><button class="btnInfo">En savoir +</button></div></div>';
+                echo '<div class="ressourceDetail"><h2>' . $ressources[$i]['titre'] . '</h2><h3>' . $ressources[$i]['auteur'] . '</h3><a href="' . $ressources[$i]['lien'] . '">Lien</a><p>' . $ressources[$i]['description'] . '</p></div>';
             }
 
             ?>
@@ -68,9 +72,13 @@ $ressources = $statement->fetchAll(PDO::FETCH_ASSOC);
             }
         })
         
-        $(document).ready(function(){
-            
-        })
+        // Popup pour detail ressource --- à vérifier avec david
+//        $(document).ready(function(){ 
+//            $('#ressourceParent').magnificPopup({
+//              delegate: 'img', 
+//              type: 'image'
+//            });
+//        })
         
     </script>
     
