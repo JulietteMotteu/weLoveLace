@@ -1,7 +1,6 @@
 <?php
 
 require_once('./config.php');
-/*include('form.php');*/
 
 try {
     $pdo = new PDO(MYSQL_DSN, DB_USER, DB_PWD);
@@ -25,9 +24,17 @@ $ressources = $statement->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="./style/normalize.css">
     <link rel="stylesheet" href="./style/stylejuju.css">
     <link rel="stylesheet" href="./style/jquery/magnific-popup.css">
+    <link rel="stylesheet" href="./style/fontAwesome/css/all.css">
     <script src="./js/jquery/jquery-3.3.1.min.js"></script>
-    <script src="./js/jquery/jquery.magnific-popup.min.js"></script>
+    <script src="./js/jquery/jquery.magnific-popup.js"></script>
 </head>
+
+<?php
+    
+    include('./navigation.php');
+    
+?>
+
 <body>
 
     <div id="ressourceSection">
@@ -43,10 +50,15 @@ $ressources = $statement->fetchAll(PDO::FETCH_ASSOC);
            <?php
 
             for ($i=0; $i<count($ressources); $i++) {
+                
                 echo '<div class="ressourceChild" data-category="' . $ressources[$i]['type'] . '"><img src="./img/ressources/' . $ressources[$i]['image'] . '" alt="' . $ressources[$i]['titre'] . '">';
+                
                 echo '<div class="overlay"><h2>' . $ressources[$i]['titre'] . '</h2>';
-                echo '<p>' . substr($ressources[$i]['description'], 0, 400) . '</p><button class="btnInfo">En savoir +</button></div></div>';
-                echo '<div class="ressourceDetail"><h2>' . $ressources[$i]['titre'] . '</h2><h3>' . $ressources[$i]['auteur'] . '</h3><a href="' . $ressources[$i]['lien'] . '">Lien</a><p>' . $ressources[$i]['description'] . '</p></div>';
+                
+                echo '<p>' . substr($ressources[$i]['description'], 0, 400) . '</p><a href="#id' . $ressources[$i]['id'] .  '" class="infoLink">En savoir +</a></div></div>';
+                
+                // Gallery slide
+                echo '<div id="id' . $ressources[$i]['id'] . '" class="white-popup-block mfp-hide"><h2>' . $ressources[$i]['titre'] . '</h2><h3>' . $ressources[$i]['auteur'] . '</h3><img src="./img/ressources/' . $ressources[$i]['image'] . '" alt="' . $ressources[$i]['titre'] . '"><br><a href="' . $ressources[$i]['lien'] . '">Lien</a><p>' . $ressources[$i]['description'] . '</p></div>';
             }
 
             ?>
@@ -72,14 +84,16 @@ $ressources = $statement->fetchAll(PDO::FETCH_ASSOC);
             }
         })
         
-        // Popup pour detail ressource --- à vérifier avec david
-//        $(document).ready(function(){ 
-//            $('#ressourceParent').magnificPopup({
-//              delegate: 'img', 
-//              type: 'image'
-//            });
-//        })
-        
+        // Slide gallery
+        $(document).ready(function() {
+            $('.infoLink').magnificPopup({
+                type: 'inline',
+                preloader: false,
+                gallery: {
+                    enabled: true
+                },
+            });
+        });
     </script>
     
 </body>

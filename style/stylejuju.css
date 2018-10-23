@@ -2,6 +2,16 @@
 * {
   box-sizing: border-box; }
 
+#headerSection {
+  width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid; }
+
+#navigationMenu {
+  /*   display: flex;
+     justify-content: flex-end;*/ }
+
 #ressourceSection {
   width: 1100px;
   margin-left: auto;
@@ -57,19 +67,30 @@
     background-color: rgba(234, 89, 32, 0.8);
     opacity: 0;
     transition: .5s ease; }
-    .ressourceChild .overlay h2, .ressourceChild .overlay p {
+    .ressourceChild .overlay h2, .ressourceChild .overlay p, .ressourceChild .overlay a {
       color: #ffffff;
       font-family: "Roboto"; }
     .ressourceChild .overlay h2 {
       font-size: 15px; }
     .ressourceChild .overlay p {
       font-size: 13px; }
-    .ressourceChild .overlay .btn-info {
-      color: #fff;
-      background-color: none; }
+    .ressourceChild .overlay .infoLink {
+      color: #fff; }
 
 .ressourceChild:hover .overlay {
   opacity: 1; }
 
 .hideRessource {
   display: none; }
+
+.mfp-bg {
+  width: 1105px;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto; }
+
+.white-popup-block h2, .white-popup-block h3, .white-popup-block a, .white-popup-block p {
+  color: #fff;
+  font-family: "Roboto"; }
