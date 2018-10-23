@@ -1,11 +1,14 @@
 <div id="headerSection">
    
-   <h1>We Love Lace</h1>
-   
-   <div id="leftLinks">
-       <a href="">EN</a>
-       <a href="">FR</a>
-       <a href="">Log in</a>
+   <div id="headerTop">
+  <!--    <img src="" alt="">-->
+       <h1>We Love Lace</h1>
+       
+       <div id="leftLinks">
+           <a href="">EN</a>
+           <a href="">FR</a>
+           <a href="">Log in<i class="fas fa-user"></i></a>
+       </div>
    </div>
    
     <nav>

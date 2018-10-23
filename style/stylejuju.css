@@ -1,16 +1,33 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900");
+#headerSection {
+  font-family: "Roboto"; }
+
+#headerSection #headerTop #leftLinks a:nth-of-type(3), .ressourceBtn {
+  border-radius: 4px;
+  padding: 10px 15px 10px 15px; }
+
 * {
   box-sizing: border-box; }
 
 #headerSection {
   width: 1100px;
+  margin-top: 100px;
   margin-left: auto;
-  margin-right: auto;
-  display: grid; }
-
-#navigationMenu {
-  /*   display: flex;
-     justify-content: flex-end;*/ }
+  margin-right: auto; }
+  #headerSection #headerTop {
+    display: flex;
+    justify-content: space-between; }
+    #headerSection #headerTop #leftLinks a:nth-of-type(3) {
+      background-color: #ea5920;
+      color: #fff; }
+      #headerSection #headerTop #leftLinks a:nth-of-type(3) i {
+        color: #fff; }
+  #headerSection #navigationMenu {
+    display: flex;
+    justify-content: flex-end; }
+    #headerSection #navigationMenu li {
+      list-style-type: none;
+      padding: 10px; }
 
 #ressourceSection {
   width: 1100px;
@@ -24,8 +41,6 @@
 
 .ressourceBtn {
   border: 2px solid #ea5920;
-  border-radius: 4px;
-  padding: 10px 15px 10px 15px;
   margin: 15px;
   background-color: #ffffff;
   font-family: "Roboto";
