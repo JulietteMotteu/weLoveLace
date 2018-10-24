@@ -2,54 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="design/style.css">
     <title>Document</title>
 </head>
-<style>
-    #1events{
-        width:60%;
-        height:70%;
+<?php
+    //on charge le contenu du fichier config.php
+    require_once('./config.php');
+    //on se connecter a la db
+    try { 
+        $pdo = new PDO(MYSQL_DSN, DB_USER, DB_PWD); 
+    } catch (PDOExeption $e){
+        echo $e->getMessage();         
+        $pdo = null ;
+        die();
     }
-    h1{
-        color: white;
-        background-color:#F15A22;
-        text-align:center;
-        width: 340px;
-        height: 90px;
-    }
-    img{
-/*        la taille de img */
-        width: 400px;
-        height:90px;
-/*        por positione img droit avec h1*/
-         position: relative;
-        top: 21px;
-    }
-/*    cette  div class pour atelieh1 et img*/
-    .atelimg{
-        display: flex;
-         flex-direction: row;
-    }
-/*    cette h3 est pour sinscrire */
-    h3{
-        height: 80px;
-        width: 150px;
-        color: white;
-        text-align: center;
-        background-color:#F15A22;
-        position: relative;
-        left: 911px;
-        bottom: 41px;
-    }
-/*    cette clas est pour le paratexte*/
-    #divPara1{
-        position: relative;
-        bottom: 130px;
-    }
-   #divPara1 > a{
-        position: relative;
-        left: 750px;
-    }
-</style>
+    $statement = $pdo->query('SELECT * FROM t_evenement');  
+    $t_evenement = $statement->fetchall(PDO::FETCH_ASSOC);
+?>
+<?php
+    
+  for($i = 0; $i < count($t_evenement); $i++){
+      echo   "<div class='atelimg'>" . "<h1>" . $t_evenement[$i]['nom'] . "</h1>" . "</div>" .
+             "<div>" . "<p>" .  "le lieu  :" . $t_evenement[$i]['lieu'] .  
+             "<div>" . "<p>" .  "le heure  :" . $t_evenement[$i]['heure'] . 
+             "date de sorti  est :" . $t_evenement[$i]['date'] .
+             "<div id='divPara1'> . 'description est :'" . $t_evenement[$i]['description'] . "</p>" . "</div>".
+             "type est :" . $t_evenement[$i]['type'];
+       
+  }  
+?> 
+
+
+
+
+
+
 <body>
 <!-- mon premier events -->
  <div id="1events">
