@@ -23,10 +23,10 @@
     
   for($i = 0; $i < count($t_evenement); $i++){
       echo   "<div class='atelimg'>" . "<h1>" . $t_evenement[$i]['nom'] . "</h1>" . "</div>" .
-             "<div>" . "<p>" .  "le lieu  :" . $t_evenement[$i]['lieu'] .  
-             "<div>" . "<p>" .  "le heure  :" . $t_evenement[$i]['heure'] . 
-             "date de sorti  est :" . $t_evenement[$i]['date'] .
-             "<div id='divPara1'> . 'description est :'" . $t_evenement[$i]['description'] . "</p>" . "</div>".
+             "<div>" . "<p>" .  "le lieu  :" . $t_evenement[$i]['lieu'] .  "<br>".
+             "<h2>" .$t_evenement[$i]['heure'] . "</h2>" .
+             "<h2>"  . $t_evenement[$i]['date'] . "</h2" . "<br>".
+             "<div id='divPara1'>" . "<p>" . $t_evenement[$i]['description'] . "</p>" . "</div>".
              "type est :" . $t_evenement[$i]['type'];
        
   }  
@@ -39,6 +39,7 @@
 
 <body>
 <!-- mon premier events -->
+<!--
  <div id="1events">
    <div class="atelimg">
         <h1>Atelier Java Script</h1>
@@ -54,5 +55,6 @@
     <h2>03 <br> 08 <br> VEN <br> 18h </h2>
      
  </div>   
+-->
 </body>
 </html>
