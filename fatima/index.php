@@ -10,7 +10,7 @@
     require_once('./config.php');
     //on se connecter a la db
     try { 
-        $pdo = new PDO(MYSQL_DSN, DB_USER, DB_PWD); 
+        $pdo = new PDO(MYSQL_DSN, DB_USER, DB_PWD);
     } catch (PDOExeption $e){
         echo $e->getMessage();         
         $pdo = null ;
@@ -23,7 +23,7 @@
     
   for($i = 0; $i < count($t_evenement); $i++){
       echo   "<div class='atelimg'>" . "<h1>" . $t_evenement[$i]['nom'] . "</h1>" . "</div>" .
-             "<div>" . "<p>" .  "le lieu  :" . $t_evenement[$i]['lieu'] .  "<br>".
+             "<div>" . "<p>" .  "le lieu  :" . $t_evenement[$i]['lieu'] .  "<br>". "</p>" ."</div>" .
              "<h2>" .$t_evenement[$i]['heure'] . "</h2>" .
              "<h2>"  . $t_evenement[$i]['date'] . "</h2" . "<br>".
              "<div id='divPara1'>" . "<p>" . $t_evenement[$i]['description'] . "</p>" . "</div>".
