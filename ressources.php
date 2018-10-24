@@ -31,6 +31,7 @@ $ressources = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 <?php
     
+    include('./header.php');
     include('./navigation.php');
     
 ?>

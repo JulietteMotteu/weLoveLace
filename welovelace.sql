@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.1
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  mar. 09 oct. 2018 à 16:37
--- Version du serveur :  10.1.33-MariaDB
--- Version de PHP :  7.2.6
+-- Généré le :  mer. 24 oct. 2018 à 11:53
+-- Version du serveur :  10.1.36-MariaDB
+-- Version de PHP :  7.2.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -52,31 +52,50 @@ INSERT INTO `t_evenement` (`id`, `nom`, `lieu`, `date`, `heure`, `description`, 
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `t_like`
+--
+
+CREATE TABLE `t_like` (
+  `id` smallint(6) NOT NULL,
+  `idPersonne` smallint(6) NOT NULL,
+  `idEvenement` smallint(6) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `t_participation`
+--
+
+CREATE TABLE `t_participation` (
+  `id` smallint(6) NOT NULL,
+  `idPersonne` smallint(6) NOT NULL,
+  `idEvenement` smallint(6) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `t_personne`
 --
 
 CREATE TABLE `t_personne` (
   `id` smallint(6) NOT NULL,
-  `login` varchar(100) COLLATE utf8_bin NOT NULL,
+  `pseudo` varchar(100) COLLATE utf8_bin NOT NULL,
   `email` varchar(100) COLLATE utf8_bin NOT NULL,
   `password` varchar(200) COLLATE utf8_bin NOT NULL,
   `description` text COLLATE utf8_bin,
   `photo` varchar(50) COLLATE utf8_bin DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- --------------------------------------------------------
-
 --
--- Structure de la table `t_personne_evenement`
+-- Déchargement des données de la table `t_personne`
 --
 
-CREATE TABLE `t_personne_evenement` (
-  `id` smallint(6) NOT NULL,
-  `idPersonne` smallint(6) NOT NULL,
-  `idEvenement` smallint(6) NOT NULL,
-  `isInscrit` tinyint(1) NOT NULL,
-  `isLike` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+INSERT INTO `t_personne` (`id`, `pseudo`, `email`, `password`, `description`, `photo`) VALUES
+(2, 'ada', '', '$2y$10$8LrRuEuchaUwkhsboV6sY.llDA22JMIDy1Z4csKIL7bpHgTiCuSga', NULL, NULL),
+(3, 'sabrina', '', '$2y$10$BuE7dZ80.SPS/k4HyyvrOuuRE1SCqA3iTC0XoTF549NUFY.GpO.rK', NULL, NULL),
+(4, 'sabrina', '', '$2y$10$LRTNv3Qw02lYftPyjMqeoeXIhxR/3sy7MNTDBBzu4fTnyFCklyKk6', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -99,16 +118,16 @@ CREATE TABLE `t_ressources` (
 --
 
 INSERT INTO `t_ressources` (`id`, `titre`, `auteur`, `type`, `lien`, `description`, `image`) VALUES
-(1, 'CODE: Debugging the Gender Gap', 'Robin Hauser Reynolds', 'media', 'https://www.youtube.com/watch?v=8VVb6M8pTvE', 'CODE: Debugging the Gender Gap is a 2015 documentary by Robin Hauser Reynolds. It focuses on the lack of women and minorities in the field of software engineering.', ''),
-(2, 'CyberFeminism', 'Susan Hawthorne', 'livre', 'https://www.amazon.com/CyberFeminism-Susan-Hawthorne-PhD/dp/187555968X', 'An international anthology by feminists working in the fields of electronic publishing, activism, data delivery, multimedia games production, educational multimedia, the virtual campus and virtual reality creation, program development and electronic product, as well as those developing critiques of electronic culture, this collection explores what the possibilities are for feminists and for feminism in cyberspace.', ''),
-(3, 'Hidden Figures', 'Theodore Melfi', 'media', 'https://www.youtube.com/watch?v=5wfrDhgUMGI', 'Le destin extraordinaire des trois scientifiques afro-américaines qui ont permis aux États-Unis de prendre la tête de la conquête spatiale, grâce à la mise en orbite de l’astronaute John Glenn.\r\n\r\nMaintenues dans l’ombre de leurs collègues masculins et dans celle d’un pays en proie à de profondes inégalités, leur histoire longtemps restée méconnue est enfin portée à l’écran. ', ''),
-(4, 'Broad Band : The untold story of the women who made the internet', 'Claire l.Evans', 'livre', 'https://www.amazon.com/Broad-Band-Untold-Story-Internet/dp/0735211752', '\"This is a radically important, timely work,\" says Miranda July, filmmaker and author of The First Bad Man. The history of technology you probably know is one of men and machines, garages and riches, alpha nerds and brogrammers--but from Ada Lovelace, who wrote the first computer program in the Victorian Age, to the cyberpunk Web designers of the 1990s, female visionaries have always been at the vanguard of technology and innovation.\r\n\r\nIn fact, women turn up at the very beginning of every important wave in technology. They may have been hidden in plain sight, their inventions and contributions touching our lives in ways we don\'t even realize, but they have always been part of the story.\r\n\r\nVICE reporter and YACHT lead singer Claire L. Evans finally gives these unsung female heroes their due with her insightful social history of the Broad Band, the women who made the internet what it is today.\r\n\r\nSeek inspiration from Grace Hopper, the tenacious mathematician who democratized computing by leading the charge for machine-independent programming languages after World War II. Meet Elizabeth \"Jake\" Feinler, the one-woman Google who kept the earliest version of the Internet online, and Stacy Horn, who ran one of the first-ever social networks on a shoestring out of her New York City apartment in the 1980s.\r\n\r\nJoin the ranks of the pioneers who defied social convention to become database poets, information-wranglers, hypertext dreamers, and glass ceiling-shattering dot com-era entrepreneurs. This inspiring call to action shines a light on the bright minds whom history forgot, and shows us how they will continue to shape our world in ways we can no longer ignore.\r\n\r\nWelcome to the Broad Band. You\'re next.', ''),
-(5, 'L\'informatique a-t-elle un sexe?', 'Isabelle Collet ', 'livre', 'https://www.amazon.fr/Linformatique-t-elle-sexe-Isabelle-Collet/dp/2296014801', 'D\'où vient cet engouement des garçons pour l\'informatique et ce manque d\'intérêt de la part des filles ? Pour répondre à cette question, l\'auteur retrace une \"psycho-histoire de l\'informatique\", à travers les travaux des pères et mères de l\'ordinateur, mais aussi en parcourant des récits de science-fiction. Elle a suivi les traces des programmateurs passionnés qu\'on appelle les hackers pour comprendre leur imaginaire. Elle constate que la représentation de l\'informaticien s\'est incarnée dans ces hackers.', ''),
-(6, 'Geek Girls', 'Gina Hara', 'media', 'https://www.youtube.com/watch?v=LPEPgLgcVtE', 'Women inhabit the hidden half of nerd culture; a world of cute dresses, professional gamers, fake names and death threats. In the first feature-length documentary about geeky women, Gina Hara struggles through unexpected resistance to discover and show their experiences. ', ''),
-(7, 'Beyondcurie', 'Amanda Phingbodhipakkiya', 'site', 'https://www.beyondcurie.com/', 'Beyond Curie is a design project that highlights badass women in science, technology, engineering + mathematics. ', ''),
-(8, 'Le Reset', NULL, 'site', 'https://lereset.org/', 'Le Reset est un hackerspace : un espace de bidouille et d\'apprentissage des technologies numériques.\r\n\r\nIl acueille de nombreux espaces, ateliers et conférences afin de partager la connaissance et le savoir numérique.', ''),
-(9, 'Comment l’informatique s’est masculinisée le jour où elle devenue prestigieuse', 'Annabelle Laurent', 'presse', 'https://www.20minutes.fr/high-tech/1940683-20161011-comment-informatique-masculinisee-jour-o-devenue-prestigieuse', 'TECH Ce mardi 11 octobre, on fête Ada Lovelace, la première programmeuse de l’histoire. L’occasion de se rappeler que les femmes ont longtemps eu un rôle très important en informatique...  ', ''),
-(10, 'Interface3', NULL, 'site', 'http://www.interface3.be/', 'Centre de formation continue et Organisme d’Insertion Socioprofessionnelle, Interface3 est la référence belge en matière de formations qualifiantes favorisant l’accès des femmes aux professions de l’informatique ! Active depuis  1988 en faveur de l’égalité des chances dans le monde professionnel, l’ASBL est reconnue et soutenue par de nombreux partenaires privés et institutionnels pour la qualité et le caractère innovant de ses formations. Chaque année près de 400 femmes demandeuses d’emploi y suivent une formation, courte ou longue, d’initiation ou de spécialisation. Le taux d’insertion à la sortie des formations qualifiantes ?  70%  !\r\nCes formations sont gratuites grâce au soutien de nos nombreux partenaires.', '');
+(1, 'CODE: Debugging the Gender Gap', 'Robin Hauser Reynolds', 'media', 'https://www.youtube.com/watch?v=8VVb6M8pTvE', 'CODE: Debugging the Gender Gap is a 2015 documentary by Robin Hauser Reynolds. It focuses on the lack of women and minorities in the field of software engineering.', 'ressource1.jpg'),
+(2, 'CyberFeminism', 'Susan Hawthorne', 'livre', 'https://www.amazon.com/CyberFeminism-Susan-Hawthorne-PhD/dp/187555968X', 'An international anthology by feminists working in the fields of electronic publishing, activism, data delivery, multimedia games production, educational multimedia, the virtual campus and virtual reality creation, program development and electronic product, as well as those developing critiques of electronic culture, this collection explores what the possibilities are for feminists and for feminism in cyberspace.', 'ressource2.jpg'),
+(3, 'Hidden Figures', 'Theodore Melfi', 'media', 'https://www.youtube.com/watch?v=5wfrDhgUMGI', 'Le destin extraordinaire des trois scientifiques afro-américaines qui ont permis aux États-Unis de prendre la tête de la conquête spatiale, grâce à la mise en orbite de l’astronaute John Glenn.\r\n\r\nMaintenues dans l’ombre de leurs collègues masculins et dans celle d’un pays en proie à de profondes inégalités, leur histoire longtemps restée méconnue est enfin portée à l’écran. ', 'ressource3.jpg'),
+(4, 'Broad Band : The untold story of the women who made the internet', 'Claire l.Evans', 'livre', 'https://www.amazon.com/Broad-Band-Untold-Story-Internet/dp/0735211752', '\"This is a radically important, timely work,\" says Miranda July, filmmaker and author of The First Bad Man. The history of technology you probably know is one of men and machines, garages and riches, alpha nerds and brogrammers--but from Ada Lovelace, who wrote the first computer program in the Victorian Age, to the cyberpunk Web designers of the 1990s, female visionaries have always been at the vanguard of technology and innovation.\r\n\r\nIn fact, women turn up at the very beginning of every important wave in technology. They may have been hidden in plain sight, their inventions and contributions touching our lives in ways we don\'t even realize, but they have always been part of the story.\r\n\r\nVICE reporter and YACHT lead singer Claire L. Evans finally gives these unsung female heroes their due with her insightful social history of the Broad Band, the women who made the internet what it is today.\r\n\r\nSeek inspiration from Grace Hopper, the tenacious mathematician who democratized computing by leading the charge for machine-independent programming languages after World War II. Meet Elizabeth \"Jake\" Feinler, the one-woman Google who kept the earliest version of the Internet online, and Stacy Horn, who ran one of the first-ever social networks on a shoestring out of her New York City apartment in the 1980s.\r\n\r\nJoin the ranks of the pioneers who defied social convention to become database poets, information-wranglers, hypertext dreamers, and glass ceiling-shattering dot com-era entrepreneurs. This inspiring call to action shines a light on the bright minds whom history forgot, and shows us how they will continue to shape our world in ways we can no longer ignore.\r\n\r\nWelcome to the Broad Band. You\'re next.', 'ressource4.jpg'),
+(5, 'L\'informatique a-t-elle un sexe?', 'Isabelle Collet ', 'livre', 'https://www.amazon.fr/Linformatique-t-elle-sexe-Isabelle-Collet/dp/2296014801', 'D\'où vient cet engouement des garçons pour l\'informatique et ce manque d\'intérêt de la part des filles ? Pour répondre à cette question, l\'auteur retrace une \"psycho-histoire de l\'informatique\", à travers les travaux des pères et mères de l\'ordinateur, mais aussi en parcourant des récits de science-fiction. Elle a suivi les traces des programmateurs passionnés qu\'on appelle les hackers pour comprendre leur imaginaire. Elle constate que la représentation de l\'informaticien s\'est incarnée dans ces hackers.', 'ressource5.jpg'),
+(6, 'Geek Girls', 'Gina Hara', 'media', 'https://www.youtube.com/watch?v=LPEPgLgcVtE', 'Women inhabit the hidden half of nerd culture; a world of cute dresses, professional gamers, fake names and death threats. In the first feature-length documentary about geeky women, Gina Hara struggles through unexpected resistance to discover and show their experiences. ', 'ressource6.jpg'),
+(7, 'Beyondcurie', 'Amanda Phingbodhipakkiya', 'site', 'https://www.beyondcurie.com/', 'Beyond Curie is a design project that highlights badass women in science, technology, engineering + mathematics. ', 'ressource7.jpg'),
+(8, 'Le Reset', NULL, 'site', 'https://lereset.org/', 'Le Reset est un hackerspace : un espace de bidouille et d\'apprentissage des technologies numériques.\r\n\r\nIl acueille de nombreux espaces, ateliers et conférences afin de partager la connaissance et le savoir numérique.', 'ressource8.jpg'),
+(9, 'Comment l’informatique s’est masculinisée le jour où elle devenue prestigieuse', 'Annabelle Laurent', 'presse', 'https://www.20minutes.fr/high-tech/1940683-20161011-comment-informatique-masculinisee-jour-o-devenue-prestigieuse', 'TECH Ce mardi 11 octobre, on fête Ada Lovelace, la première programmeuse de l’histoire. L’occasion de se rappeler que les femmes ont longtemps eu un rôle très important en informatique...  ', 'ressource9.jpg'),
+(10, 'Interface3', NULL, 'site', 'http://www.interface3.be/', 'Centre de formation continue et Organisme d’Insertion Socioprofessionnelle, Interface3 est la référence belge en matière de formations qualifiantes favorisant l’accès des femmes aux professions de l’informatique ! Active depuis  1988 en faveur de l’égalité des chances dans le monde professionnel, l’ASBL est reconnue et soutenue par de nombreux partenaires privés et institutionnels pour la qualité et le caractère innovant de ses formations. Chaque année près de 400 femmes demandeuses d’emploi y suivent une formation, courte ou longue, d’initiation ou de spécialisation. Le taux d’insertion à la sortie des formations qualifiantes ?  70%  !\r\nCes formations sont gratuites grâce au soutien de nos nombreux partenaires.', 'ressource10.jpg');
 
 -- --------------------------------------------------------
 
@@ -158,18 +177,26 @@ ALTER TABLE `t_evenement`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Index pour la table `t_like`
+--
+ALTER TABLE `t_like`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `idPersonne` (`idPersonne`),
+  ADD KEY `idEvenement` (`idEvenement`);
+
+--
+-- Index pour la table `t_participation`
+--
+ALTER TABLE `t_participation`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `FK1` (`idEvenement`),
+  ADD KEY `FK2` (`idPersonne`);
+
+--
 -- Index pour la table `t_personne`
 --
 ALTER TABLE `t_personne`
   ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `t_personne_evenement`
---
-ALTER TABLE `t_personne_evenement`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `FK1` (`idEvenement`),
-  ADD KEY `FK2` (`idPersonne`);
 
 --
 -- Index pour la table `t_ressources`
@@ -194,16 +221,22 @@ ALTER TABLE `t_evenement`
   MODIFY `id` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT pour la table `t_personne`
+-- AUTO_INCREMENT pour la table `t_like`
 --
-ALTER TABLE `t_personne`
+ALTER TABLE `t_like`
   MODIFY `id` smallint(6) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `t_personne_evenement`
+-- AUTO_INCREMENT pour la table `t_participation`
 --
-ALTER TABLE `t_personne_evenement`
+ALTER TABLE `t_participation`
   MODIFY `id` smallint(6) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `t_personne`
+--
+ALTER TABLE `t_personne`
+  MODIFY `id` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT pour la table `t_ressources`
@@ -222,9 +255,16 @@ ALTER TABLE `t_women`
 --
 
 --
--- Contraintes pour la table `t_personne_evenement`
+-- Contraintes pour la table `t_like`
 --
-ALTER TABLE `t_personne_evenement`
+ALTER TABLE `t_like`
+  ADD CONSTRAINT `t_like_ibfk_1` FOREIGN KEY (`idPersonne`) REFERENCES `t_personne` (`id`),
+  ADD CONSTRAINT `t_like_ibfk_2` FOREIGN KEY (`idEvenement`) REFERENCES `t_evenement` (`id`);
+
+--
+-- Contraintes pour la table `t_participation`
+--
+ALTER TABLE `t_participation`
   ADD CONSTRAINT `FK1` FOREIGN KEY (`idEvenement`) REFERENCES `t_evenement` (`id`),
   ADD CONSTRAINT `FK2` FOREIGN KEY (`idPersonne`) REFERENCES `t_personne` (`id`);
 COMMIT;
