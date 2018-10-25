@@ -18,13 +18,13 @@ try {
     die('aaaaaarg ça ne fonctionne pas!!!!!!'); // on arrête le script car rien ne marche
 }
 
-if (isset($_POST['buttonlog'],$_POST['userlog'], $_POST['pwd'])) {
+if (isset($_POST['buttonLog'],$_POST['userLog'], $_POST['pwd'])) {
     // Ici, on devrait rechercher dans la DB le HASH de l'utilisateur approprié
     // Le nom des utilisateurs doit donc être un champ avec une contrainte UNIQUE 
-    $user = $_POST['userlog'];
+    $userLog = $_POST['userLog'];
     $pwd = $_POST['pwd'];
     $statement = $pdo->prepare('SELECT password FROM t_personne WHERE pseudo = :pseudo');
-    $statement->bindValue(':pseudo', $user, PDO::PARAM_STR);
+    $statement->bindValue(':pseudo', $userLog, PDO::PARAM_STR);
     $statement->execute();
     $motDePasse = $statement->fetchAll(PDO::FETCH_ASSOC);
 /*    var_dump($motDePasse);*/
@@ -79,12 +79,12 @@ if (isset($_POST['buttonlog'],$_POST['userlog'], $_POST['pwd'])) {
         
         
       
-        <form method="post" action="">
-            <input type="text" name="userlog" placeholder="LOGIN">
+        <form id="formLog" method="post" action="">
+            <input type="text" name="userLog" placeholder="LOGIN">
             <br>
             <input type="password" name="pwd" placeholder="PWD">
             <br>
-            <button name="buttonlog">Log In</button>
+            <button name="buttonLog">Log In</button>
         </form>
         
         <p> <?php
