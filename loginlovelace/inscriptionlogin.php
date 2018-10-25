@@ -109,13 +109,13 @@ if (isset($_POST['userIns'], $_POST['pwd1'],$_POST['pwd2']) && $_POST['userIns']
     <body>
        <div>
        <!--LOGIN-->
-        <h2>Connexion</h2> 
-        
+    
+        <div>
         <form id="formLog" method="post" action="">
             <input type="text" name="userLog" placeholder="LOGIN">
-            <br>
+           
             <input type="password" name="pwd" placeholder="PWD">
-            <br>
+           
             <button name="buttonLog">Connexion</button>
         </form>
         
@@ -123,20 +123,23 @@ if (isset($_POST['userIns'], $_POST['pwd1'],$_POST['pwd2']) && $_POST['userIns']
                 echo $msg;
         ?> </p>
         
+        </div>
+        
         
         <!--INSCRIPTION-->
         
-        <h2>Inscription</h2>
+       <div>
          <form id='formIns' method="POST" action="">
              <input placeholder="user" type="text" name="userIns" id="user">
-             <br>
+             
              <input placeholder="password" type="password" name="pwd1" id="pwd1">
-             <br>
+        
              <input placeholder="confirmez votre password" type="password" name="pwd2" id="pwd2">
-             <br>
+           
              <button id="buttonIns">Inscription</button>
 
         </form> 
+        </div>
         </div> 
    <!--LOGIN-->  
     <script>

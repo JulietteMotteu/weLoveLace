@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css?family=Ralewayo:300,400,500,700,900');
+
+$orangeColor: #ea5920;
+$mauveColor: #6a397c;
+$textFont: 'Roboto';
+%font { font-family : $textFont; }
+%bouton { border-radius: 4px; padding: 10px 15px 10px 15px;}
+
+* {
+    box-sizing: border-box;
+}
+
+// NAVIGATION
+#headerSection {
+    width: 1100px;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    @extend %font;
+    #headerTop {
+        display: flex;
+        justify-content: space-between;
+        #leftLinks {
+            a:nth-of-type(3) {
+                background-color: $orangeColor;
+                @extend %bouton;
+                color: #fff;
+                i {
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+
+    #navigationMenu {
+        display: flex;
+        justify-content: flex-end;
+        li {
+            list-style-type: none;
+            padding: 10px;
+        }
+    }
+}
+
+
+// Section RESSOURCES
+#ressourceSection {
+            width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+}
+
+#ressourceSelect {
+    margin: 10px 10px 10px 0;
+    display: flex;
+    justify-content: flex-start;    
+}
+
+.ressourceBtn {
+    border: 2px solid #ea5920;
+    @extend %bouton;
+    margin: 15px;
+    background-color: #ffffff;
+    font-family: $textFont;
+    font-weight: 500;
+    font-size: 15px;
+    color: $mauveColor;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.ressourceBtn:hover {
+    background-color: $orangeColor;
+    color: #fff;
+}
+
+#leftBtn {
+    margin-left: 0;
+}
+
+#ressourceParent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.ressourceChild {
+    position: relative;
+    margin-top: 60px;
+    width: 300px;
+    
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+    
+    .overlay {
+        padding: 20px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba($orangeColor, 0.8);
+        opacity: 0;
+        transition: .5s ease;
+        h2, p, a {
+            color: #ffffff;
+            font-family: $textFont;
+        }
+        h2 {
+            font-size: 15px;
+        }
+        p {
+            font-size: 13px;
+        }
+        .infoLink {
+            color: #fff;
+        }
+    }
+}
+.ressourceChild:hover .overlay {
+    opacity : 1;
+}
+
+.hideRessource {
+    display: none;
+}
+
+.mfp-bg {
+    width: 1105px;
+    top: 0;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.white-popup-block {
+    h2, h3, a, p {
+        color: #fff;
+        font-family: $textFont;
+    }
+}

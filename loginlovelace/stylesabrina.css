@@ -3,29 +3,20 @@ button {
   border-radius: 4px;
   padding: 10px 15px 10px 15px;
   color: #fff;
-  background-color: #6a397c; }
+  background-color: #6a397c;
+  border: 1px solid; }
 
 input {
   border-radius: 4px;
   padding: 10px 15px 10px 15px;
-  border-color: #6a397c; }
+  border: 1px solid #6a397c; }
 
 * {
   box-sizing: border-box; }
 
-/* input, button {
-     margin: 10px;
-     padding: 10px;
- }
- 
- p {
-     margin: 10px;
-     padding: 10px;
-     background-color: #e5e5e5;
-     border: 1px solid #c3c3c3;
-     border-radius: 3px;
- }
- 
- p:empty {
-     display: none;
- }*/
+div div {
+  display: flex;
+  flex-direction: column; }
+
+p:empty {
+  display: none; }

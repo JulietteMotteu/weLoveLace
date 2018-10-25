@@ -5,14 +5,14 @@ $orangeColor: #ea5920;
 $mauveColor: #6a397c;
 $textFont: 'Raleway';
 %font { font-family : $textFont; }
-%bouton { border-radius: 4px; padding: 10px 15px 10px 15px; color: #fff; background-color: $mauveColor; }
-%input { border-radius: 4px; padding: 10px 15px 10px 15px; border-color: $mauveColor;}
+%bouton { border-radius: 4px; padding: 10px 15px 10px 15px; color: #fff; background-color: $mauveColor; border: 1px solid; }
+%input { border-radius: 4px; padding: 10px 15px 10px 15px; border: 1px solid $mauveColor;}
 
 * {
     box-sizing: border-box;
 }   
 
-button{
+button {
     
     @extend %bouton;
     
@@ -22,20 +22,14 @@ input {
     @extend %input;
 }
 
-           /* input, button {
-                margin: 10px;
-                padding: 10px;
-            }
+div  {
+} 
+div div {
+    display : flex;
+    flex-direction: column;
+}
             
-            p {
-                margin: 10px;
-                padding: 10px;
-                background-color: #e5e5e5;
-                border: 1px solid #c3c3c3;
-                border-radius: 3px;
-            }
-            
-            p:empty {
-                display: none;
-            }*/
+p:empty {
+    display: none;
+}
 
