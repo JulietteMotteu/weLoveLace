@@ -9,6 +9,8 @@
     </ul>
     
     <div id="ligneNav"></div>
+    
+    <div id="monDiv"></div>
 
 
     <script>
@@ -18,20 +20,21 @@
         
         navigationMenu.addEventListener('mouseover', function(e){
             if (e.target.tagName == 'A') {
-                //console.log(window.innerWidth - e.target.offsetLeft);
-                let tailleLigne = (window.innerWidth - e.target.offsetLeft + "px");
-                console.log(tailleLigne);
+                let tailleLigne = (window.innerWidth - e.target.offsetLeft - 25 + "px");
+                ligneNav.style.display = 'inline-block';
                 ligneNav.style.width = tailleLigne;
-                
+                ligneNav.style.transition = "0.3s";
                 elemChoisiEnCours = e.target;
-                
             }
+            
         });
+        ligneNav.style.width = 0;
+        
         
         
         window.addEventListener ("resize",function(e){
             console.log('Resize');
-             let tailleLigne = (window.innerWidth - elemChoisiEnCours.offsetLeft + "px");
+                let tailleLigne = (window.innerWidth - elemChoisiEnCours.offsetLeft - 25 + "px");
                 console.log(tailleLigne);
                 ligneNav.style.width = tailleLigne;
                                                     

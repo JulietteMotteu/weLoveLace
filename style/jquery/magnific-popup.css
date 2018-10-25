@@ -8,7 +8,7 @@
   overflow: hidden;
   position: fixed;
   background: rgb(106, 57, 124);
-  opacity: 0.8; }
+  opacity: 0.95; }
 
 .mfp-wrap {
   top: 0;
@@ -200,21 +200,27 @@ button::-moz-focus-inner {
     opacity: 0.7; }
 
 .mfp-arrow-left {
-  left: 0; }
+  left: 200px; }
   .mfp-arrow-left:after {
-    border-right: 17px solid #FFF;
-    margin-left: 31px; }
+      content: '\f053';
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      color: white;
+/*    border-right: 17px solid #FFF;
+    margin-left: 31px;*/ }
   .mfp-arrow-left:before {
-    margin-left: 25px;
-    border-right: 27px solid #3F3F3F; }
+/*    margin-left: 25px;
+    border-right: 27px solid #3F3F3F;*/ }
 
 .mfp-arrow-right {
   right: 0; }
   .mfp-arrow-right:after {
-    border-left: 17px solid #FFF;
-    margin-left: 39px; }
+    content: '\f054';
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      color: white; }
   .mfp-arrow-right:before {
-    border-left: 27px solid #3F3F3F; }
+    /*border-left: 27px solid #3F3F3F;*/ }
 
 .mfp-iframe-holder {
   padding-top: 40px;

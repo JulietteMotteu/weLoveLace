@@ -23,8 +23,8 @@ $ressources = $statement->fetchAll(PDO::FETCH_ASSOC);
     <title>Ressources</title>
     <link rel="stylesheet" href="./style/normalize.css">
     <link rel="stylesheet" href="./style/stylejuju.css">
-    <link rel="stylesheet" href="./style/jquery/magnific-popup.css">
     <link rel="stylesheet" href="./style/fontAwesome/css/all.css">
+    <link rel="stylesheet" href="./style/jquery/magnific-popup.css">
     <script src="./js/jquery/jquery-3.3.1.min.js"></script>
     <script src="./js/jquery/jquery.magnific-popup.js"></script>
 </head>
@@ -95,6 +95,13 @@ $ressources = $statement->fetchAll(PDO::FETCH_ASSOC);
                 },
             });
         });
+        
+  
+  window.FontAwesomeConfig = {
+    searchPseudoElements: true
+  }
+        console.log(window);
+
     </script>
     
 </body>
