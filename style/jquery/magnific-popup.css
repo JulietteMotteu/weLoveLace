@@ -200,11 +200,12 @@ button::-moz-focus-inner {
     opacity: 0.7; }
 
 .mfp-arrow-left {
-  left: 200px; }
+  left: 170px; }
   .mfp-arrow-left:after {
       content: '\f053';
       font-family: 'Font Awesome 5 Free';
       font-weight: 900;
+      font-size: 50px;
       color: white;
 /*    border-right: 17px solid #FFF;
     margin-left: 31px;*/ }
@@ -213,11 +214,12 @@ button::-moz-focus-inner {
     border-right: 27px solid #3F3F3F;*/ }
 
 .mfp-arrow-right {
-  right: 0; }
+  right: 170px; }
   .mfp-arrow-right:after {
-    content: '\f054';
+      content: '\f054';
       font-family: 'Font Awesome 5 Free';
       font-weight: 900;
+      font-size: 50px;
       color: white; }
   .mfp-arrow-right:before {
     /*border-left: 27px solid #3F3F3F;*/ }

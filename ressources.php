@@ -93,14 +93,9 @@ $ressources = $statement->fetchAll(PDO::FETCH_ASSOC);
                 gallery: {
                     enabled: true
                 },
+                // Comment faire un bouton close custom? 
             });
         });
-        
-  
-  window.FontAwesomeConfig = {
-    searchPseudoElements: true
-  }
-        console.log(window);
 
     </script>
     
