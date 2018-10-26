@@ -57,9 +57,10 @@ nav #navigationMenu {
 nav #ligneNav {
   position: absolute;
   right: 0;
+  width: 0;
   height: 2px;
   background-color: #6a397c;
-  display: none; }
+  opacity: 0; }
 nav #ligneNav::before {
   content: '';
   display: inline-block;

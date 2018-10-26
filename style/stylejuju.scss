@@ -79,9 +79,10 @@ nav {
     #ligneNav {
         position: absolute;
         right: 0;
+        width: 0;
         height: 2px;
         background-color: $mauveColor;
-        display: none;
+        opacity: 0;
     }
     #ligneNav::before {
         content: '';

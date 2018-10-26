@@ -23,12 +23,11 @@
         navigationMenu.addEventListener('mouseover', function(e){
             if (e.target.tagName == 'A') {
                 let tailleLigne = (window.innerWidth - e.target.offsetLeft - 25 + "px");
-                ligneNav.style.display = 'inline-block';
                 ligneNav.style.width = tailleLigne;
-                ligneNav.style.transition = "0.3s";
                 elemChoisiEnCours = e.target;
             }
-            
+            ligneNav.style.opacity = 1;
+            ligneNav.style.transition = "0.3s";
         });
         
         window.addEventListener ("resize",function(e){
