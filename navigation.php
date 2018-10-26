@@ -18,8 +18,6 @@
         
         var elemChoisiEnCours = null;
         
-        // Comment faire l'anim quand la ligne n'est pas encore là?
-        
         navigationMenu.addEventListener('mouseover', function(e){
             if (e.target.tagName == 'A') {
                 let tailleLigne = (window.innerWidth - e.target.offsetLeft - 25 + "px");
@@ -28,6 +26,12 @@
             }
             ligneNav.style.opacity = 1;
             ligneNav.style.transition = "0.3s";
+        });
+        
+        navigationMenu.addEventListener('mouseleave', function(e){
+            ligneNav.style.width = "0px";
+            ligneNav.style.transition = "0.7s";
+            ligneNav.style.opacity = 0;
         });
         
         window.addEventListener ("resize",function(e){
