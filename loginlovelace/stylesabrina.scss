@@ -1,12 +1,18 @@
 
 @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,500,700,900');
-
+$greyColor: #4d4d4d;
 $orangeColor: #ea5920;
 $mauveColor: #6a397c;
 $textFont: 'Raleway';
 %font { font-family : $textFont; }
 %bouton { border-radius: 4px; padding: 10px 15px 10px 15px; color: #fff; background-color: $mauveColor; border: 1px solid; }
 %input { border-radius: 4px; padding: 10px 15px 10px 15px; border: 1px solid $mauveColor;}
+%section { 
+    width: 1100px;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto; }
+
 
 * {
     box-sizing: border-box;
@@ -14,51 +20,70 @@ $textFont: 'Raleway';
     
 }   
 
-button {
+#sign button {
     
     @extend %bouton;
     
 }
 
-input {
+#sign input {
     @extend %input;
 }
 
 
 
             
-p:empty {
+#sign p:empty {
     display: none;
 }
 
-div {
-    width: 80%;
+#sign>div {
+    border-left: 2px solid $orangeColor;
+    position: relative;
+    height: 500px;
+  
+}
+#sign>div::before {
+  content: '';
+  display: inline-block;
+  position: relative;
+  top:100%;
+  left: -13px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  color: white;
+  border: 2px solid $orangeColor; }
+
+#sign div {
+    @extend %section;
     display : flex;
-    justify-content: space-around;
+    
+    
     
     div {
         display: flex;
-        width: 30%;
+        width: 40%;
         flex-direction:column;
+        
     
     
 
         h2{
-            align-self: center;
-            color : $mauveColor;
+            align-self: flex-start;
+            color : $greyColor;
         }
         form  {
             display: flex;
             flex-direction: column;
 
-            /*height: 300px;*/
-            justify-content: space-around;
-
-            /*padding: 0 200px;*/
+        
+            input, button {
+                margin-bottom: 40px;
+            }
 
         }  
     }
 
 }
  
-

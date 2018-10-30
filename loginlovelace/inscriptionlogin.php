@@ -106,7 +106,8 @@ if (isset($_POST['userIns'], $_POST['pwd1'],$_POST['pwd2']) && $_POST['userIns']
         
     </head>
     
-    <body>
+    <body id="sign">
+    
      <div>
        <!--LOGIN-->
     <div>
@@ -114,9 +115,9 @@ if (isset($_POST['userIns'], $_POST['pwd1'],$_POST['pwd2']) && $_POST['userIns']
        <h2>Connexion</h2>
         
         <form id="formLog" method="post" action="">
-            <input type="text" name="userLog" placeholder="LOGIN">
+            <input type="text" name="userLog" placeholder="pseudo">
            
-            <input type="password" name="pwd" placeholder="PWD">
+            <input type="password" name="pwd" placeholder="password">
            
             <button name="buttonLog">Connexion</button>
         </form>
@@ -133,7 +134,7 @@ if (isset($_POST['userIns'], $_POST['pwd1'],$_POST['pwd2']) && $_POST['userIns']
     <div>  
         <h2>Inscription</h2>
         <form id='formIns' method="POST" action="">
-             <input placeholder="user" type="text" name="userIns" id="user">
+             <input placeholder="pseudo" type="text" name="userIns" id="user">
              
              <input placeholder="password" type="password" name="pwd1" id="pwd1">
         

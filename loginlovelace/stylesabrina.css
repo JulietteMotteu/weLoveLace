@@ -2,38 +2,58 @@
 * {
   font-family: "Raleway"; }
 
-button {
+#sign button {
   border-radius: 4px;
   padding: 10px 15px 10px 15px;
   color: #fff;
   background-color: #6a397c;
   border: 1px solid; }
 
-input {
+#sign input {
   border-radius: 4px;
   padding: 10px 15px 10px 15px;
   border: 1px solid #6a397c; }
 
+#sign div {
+  width: 1100px;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto; }
+
 * {
   box-sizing: border-box; }
 
-p:empty {
+#sign p:empty {
   display: none; }
 
-div {
-  width: 80%;
-  display: flex;
-  justify-content: space-around; }
-  div div {
+#sign > div {
+  border-left: 2px solid #ea5920;
+  position: relative;
+  height: 500px; }
+
+#sign > div::before {
+  content: '';
+  display: inline-block;
+  position: relative;
+  top: 100%;
+  left: -13px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  color: white;
+  border: 2px solid #ea5920; }
+
+#sign div {
+  display: flex; }
+  #sign div div {
     display: flex;
-    width: 30%;
+    width: 40%;
     flex-direction: column; }
-    div div h2 {
-      align-self: center;
-      color: #6a397c; }
-    div div form {
+    #sign div div h2 {
+      align-self: flex-start;
+      color: #4d4d4d; }
+    #sign div div form {
       display: flex;
-      flex-direction: column;
-      /*height: 300px;*/
-      justify-content: space-around;
-      /*padding: 0 200px;*/ }
+      flex-direction: column; }
+      #sign div div form input, #sign div div form button {
+        margin-bottom: 40px; }
