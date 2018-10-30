@@ -10,6 +10,8 @@ $textFont: 'Raleway';
 
 * {
     box-sizing: border-box;
+    @extend %font;
+    
 }   
 
 button {
@@ -22,14 +24,41 @@ input {
     @extend %input;
 }
 
-div  {
-} 
-div div {
-    display : flex;
-    flex-direction: column;
-}
+
+
             
 p:empty {
     display: none;
 }
+
+div {
+    width: 80%;
+    display : flex;
+    justify-content: space-around;
+    
+    div {
+        display: flex;
+        width: 30%;
+        flex-direction:column;
+    
+    
+
+        h2{
+            align-self: center;
+            color : $mauveColor;
+        }
+        form  {
+            display: flex;
+            flex-direction: column;
+
+            /*height: 300px;*/
+            justify-content: space-around;
+
+            /*padding: 0 200px;*/
+
+        }  
+    }
+
+}
+ 
 

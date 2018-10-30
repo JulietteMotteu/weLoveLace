@@ -1,29 +1,57 @@
+<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css?family=Ralewayo:300,400,500,700,900');
+=======
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900');
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,800,900');
+>>>>>>> 33aa09e4a315e6c7e10dfd5b80189523ceaa98e3
 
 $orangeColor: #ea5920;
 $mauveColor: #6a397c;
-$textFont: 'Roboto';
+$greyColor: #4d4d4d;
+$textFont: 'Raleway';
 %font { font-family : $textFont; }
 %bouton { border-radius: 4px; padding: 10px 15px 10px 15px;}
+%section { 
+    width: 1100px;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto; }
 
 * {
     box-sizing: border-box;
 }
 
 // NAVIGATION
-#headerSection {
-    width: 1100px;
-    margin-top: 100px;
-    margin-left: auto;
-    margin-right: auto;
+
+#headerTop {
+    @extend %section;
     @extend %font;
-    #headerTop {
-        display: flex;
-        justify-content: space-between;
-        #leftLinks {
-            a:nth-of-type(3) {
-                background-color: $orangeColor;
-                @extend %bouton;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    #logo {
+        width: 200px;
+    }
+    #leftLinks {
+        a {
+            text-decoration: none;
+            color: $greyColor;
+            font-weight: 500;
+        }
+        a:nth-of-type(2)::before {
+            content : "|";
+            padding: 10px;
+            position: relative;
+            left: -2px;
+        }
+        a:nth-of-type(3) {
+            margin-left: 50px;
+            background-color: $orangeColor;
+            @extend %bouton;
+            color: #fff;
+            i {
+                padding-left: 10px;
                 color: #fff;
                 i {
                     color: #fff;
@@ -31,24 +59,53 @@ $textFont: 'Roboto';
             }
         }
     }
+    
+}
 
-
+nav {
+    @extend %section;
     #navigationMenu {
         display: flex;
         justify-content: flex-end;
+        @extend %font;
         li {
             list-style-type: none;
             padding: 10px;
+            a {
+                padding-bottom: 30px;
+                text-transform: uppercase;
+                color: $greyColor;
+                font-weight: 500;
+                text-decoration: none;
+            }
         }
+    }
+    #ligneNav {
+        position: absolute;
+        right: 0;
+        width: 0;
+        height: 2px;
+        background-color: $mauveColor;
+        opacity: 0;
+    }
+    #ligneNav::before {
+        content: '';
+        display: inline-block;
+        position: relative;
+        top: -10px;
+        left: -22px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        color: white;
+        border: 2px solid $mauveColor;
     }
 }
 
 
 // Section RESSOURCES
 #ressourceSection {
-            width: 1100px;
-            margin-left: auto;
-            margin-right: auto;
+    @extend %section;
 }
 
 #ressourceSelect {
@@ -58,21 +115,23 @@ $textFont: 'Roboto';
 }
 
 .ressourceBtn {
-    border: 2px solid #ea5920;
+    border: 2px solid $greyColor;
     @extend %bouton;
     margin: 15px;
-    background-color: #ffffff;
+    background-color: white;
     font-family: $textFont;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 15px;
-    color: $mauveColor;
+    color: $greyColor;
     transition-duration: 0.4s;
     cursor: pointer;
 }
 
-.ressourceBtn:hover {
+.ressourceBtn:hover, .ressourceBtn:active {
     background-color: $orangeColor;
+    border: 2px solid $orangeColor;
     color: #fff;
+    transition: 0.5s;
 }
 
 #leftBtn {

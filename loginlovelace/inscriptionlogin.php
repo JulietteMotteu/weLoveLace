@@ -107,10 +107,12 @@ if (isset($_POST['userIns'], $_POST['pwd1'],$_POST['pwd2']) && $_POST['userIns']
     </head>
     
     <body>
-       <div>
+     <div>
        <!--LOGIN-->
-    
-        <div>
+    <div>
+       
+       <h2>Connexion</h2>
+        
         <form id="formLog" method="post" action="">
             <input type="text" name="userLog" placeholder="LOGIN">
            
@@ -122,14 +124,15 @@ if (isset($_POST['userIns'], $_POST['pwd1'],$_POST['pwd2']) && $_POST['userIns']
         <p> <?php
                 echo $msg;
         ?> </p>
-        
-        </div>
+    </div>    
+     
         
         
         <!--INSCRIPTION-->
         
-       <div>
-         <form id='formIns' method="POST" action="">
+    <div>  
+        <h2>Inscription</h2>
+        <form id='formIns' method="POST" action="">
              <input placeholder="user" type="text" name="userIns" id="user">
              
              <input placeholder="password" type="password" name="pwd1" id="pwd1">
@@ -139,8 +142,9 @@ if (isset($_POST['userIns'], $_POST['pwd1'],$_POST['pwd2']) && $_POST['userIns']
              <button id="buttonIns">Inscription</button>
 
         </form> 
-        </div>
-        </div> 
+       
+    </div>
+    </div>  
    <!--LOGIN-->  
     <script>
     var form = document.getElementById('formIns');
