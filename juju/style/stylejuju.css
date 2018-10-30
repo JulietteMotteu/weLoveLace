@@ -9,25 +9,28 @@
 
 #headerTop, nav, #ressourceSection {
   width: 80%;
-  margin-top: 100px;
+  margin-top: 50px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 100px; }
+  margin-bottom: 50px; }
 
 * {
   box-sizing: border-box; }
 
 #headerTop {
+  margin-top: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap; }
   #headerTop #logo {
-    width: 200px; }
+    width: 200px;
+    margin-top: 50px; }
   #headerTop #leftLinks a {
     text-decoration: none;
     color: #4d4d4d;
-    font-weight: 500; }
+    font-weight: 500;
+    font-size: 12px; }
   #headerTop #leftLinks a:nth-of-type(2)::before {
     content: "|";
     padding: 10px;
@@ -53,6 +56,7 @@ nav #navigationMenu {
       padding-bottom: 30px;
       text-transform: uppercase;
       color: #4d4d4d;
+      font-size: 14px;
       font-weight: 500;
       text-decoration: none; }
 nav #ligneNav {
@@ -75,7 +79,7 @@ nav #ligneNav::before {
   border: 2px solid #6a397c; }
 
 #ressourceSelect {
-  margin: 10px 10px 10px 0;
+  margin: 10px 10px 30px 0;
   display: flex;
   justify-content: flex-start; }
 
@@ -85,7 +89,7 @@ nav #ligneNav::before {
   background-color: white;
   font-family: "Raleway";
   font-weight: 600;
-  font-size: 15px;
+  font-size: 12px;
   color: #4d4d4d;
   transition-duration: 0.4s;
   cursor: pointer; }
@@ -106,7 +110,8 @@ nav #ligneNav::before {
 
 .ressourceChild {
   position: relative;
-  margin-top: 60px;
+  margin-top: 0;
+  margin-bottom: 50px;
   width: 300px; }
   .ressourceChild img {
     display: block;
@@ -142,8 +147,8 @@ nav #ligneNav::before {
       text-decoration: none; }
     .ressourceChild .overlay .infoLink:hover {
       background-color: #6a397c;
-      border: none;
-      border: 2px solid #6a397c; }
+      border: 2px solid #6a397c;
+      transition-duration: 0.4s; }
 
 .ressourceChild:hover .overlay {
   opacity: 1; }
@@ -185,9 +190,13 @@ nav #ligneNav::before {
     background-color: white;
     text-decoration: none;
     color: #6a397c;
-    font-weight: 600; }
+    font-weight: 600;
+    transition-duration: 0.4s; }
     .white-popup-block .lienBtn i {
       padding-right: 5px; }
   .white-popup-block .lienBtn:hover {
     color: #fff;
-    background-color: #ea5920; }
+    background-color: #ea5920;
+    transition-duration: 0.4s; }
+
+/*# sourceMappingURL=stylejuju.css.map */
