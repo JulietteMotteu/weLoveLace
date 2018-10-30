@@ -12,10 +12,11 @@ $textFont: 'Raleway';
 %font { font-family : $textFont; }
 %bouton { border-radius: 4px; padding: 10px 15px 10px 15px;}
 %section { 
-    width: 1100px;
+    width: 80%;
     margin-top: 100px;
     margin-left: auto;
-    margin-right: auto; }
+    margin-right: auto;
+    margin-bottom: 100px; }
 
 * {
     box-sizing: border-box;
@@ -127,7 +128,7 @@ nav {
     cursor: pointer;
 }
 
-.ressourceBtn:hover, .ressourceBtn:active {
+.ressourceBtn:hover, .ressourceBtn:focus {
     background-color: $orangeColor;
     border: 2px solid $orangeColor;
     color: #fff;
@@ -156,6 +157,8 @@ nav {
     }
     
     .overlay {
+        display: flex;
+        flex-direction: column;
         padding: 20px;
         position: absolute;
         top: 0;
@@ -178,7 +181,18 @@ nav {
             font-size: 13px;
         }
         .infoLink {
+            @extend %bouton;
+            margin-top: 10px;
+            align-self: flex-end;
+            border: 2px solid #fff;
             color: #fff;
+            font-weight: 500;
+            text-decoration: none;
+        }
+        .infoLink:hover {
+            background-color: $mauveColor;
+            border: none;
+            border: 2px solid $mauveColor;
         }
     }
 }
@@ -191,7 +205,7 @@ nav {
 }
 
 .mfp-bg {
-    width: 1105px;
+    width: 82%;
     top: 0;
     left:0;
     right:0;
@@ -200,8 +214,43 @@ nav {
 }
 
 .white-popup-block {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 100px;
+    margin-top: 100px;
     h2, h3, a, p {
         color: #fff;
         font-family: $textFont;
+    }
+    h2, h3 {
+        text-align: center;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+    img, iframe {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 30px;
+        margin-top: 20px;
+    }
+    p {
+        line-height: 1.5;
+        margin-bottom: 50px;
+    }
+    .lienBtn {
+        align-self: flex-end;
+        background-color: white;
+        @extend %bouton;
+        text-decoration: none;
+        color: $mauveColor;
+        font-weight: 600;
+        i {
+            padding-right: 5px;
+        }
+    }
+    .lienBtn:hover {
+        color: #fff;
+        background-color: $orangeColor;
     }
 }
