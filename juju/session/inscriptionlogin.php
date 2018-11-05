@@ -41,7 +41,7 @@ if (isset($_POST['buttonLog'],$_POST['userLog'], $_POST['pwd'])) {
             $_SESSION['lastAccess'] = time();
             $_SESSION['pseudo'] = $motDePasse[0]['pseudo'];
             
-            header("Location: ./session_nav1.php"); // Officiellement il FAUT un URL absolu
+            header("Location: ./_index.php?page=compte"); // Officiellement il FAUT un URL absolu
             die();
         } else {
             $msg1 = 'Couple Login/MdP invalide.';
@@ -92,6 +92,7 @@ if (isset($_POST['userIns'], $_POST['pwd1'],$_POST['pwd2']) && $_POST['userIns']
         $reponse = $statement->fetchAll(PDO::FETCH_ASSOC);
 
         $msg2 = 'Votre compte a été créé';
+        // Ouvrir session
         
     }
 }

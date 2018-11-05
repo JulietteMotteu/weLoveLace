@@ -25,6 +25,25 @@
         <div id="leftLinks">
            <a href="" class="lang">EN</a>
            <a href="" class="lang">FR</a>
-           <a href="">Log in<i class="fas fa-user"></i></a>
+           
+           <?php
+            if (isset($_SESSION['pseudo'])) {
+                echo '<a href="?session=session_logout">Log out<i class="fas fa-user"></i></a>';
+                echo '<p color="black">Bonjour badass ' . $_SESSION['pseudo'] . '</p>';
+            }
+            else {
+                echo '<a href="?session=inscriptionlogin">Log in<i class="fas fa-user"></i></a>';
+            }
+            
+           /* if (session_status() !== PHP_SESSION_ACTIVE) {
+                echo '<a href="?session=inscriptionlogin">Log in<i class="fas fa-user"></i></a>';
+            }
+            else {
+                echo '<a href="?session=session_logout">Log out<i class="fas fa-user"></i></a>';
+                echo '<p color="black">Bonjour badass ' . $_SESSION['pseudo'] . '</p>';
+            }*/
+            
+            
+           ?>
         </div>
     </div>
