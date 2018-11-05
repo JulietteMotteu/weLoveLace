@@ -3,7 +3,8 @@
 <?php
 ob_start();
 
-$msg = '';
+$msg1 = '';
+$msg2 = '';
 
 
 
@@ -31,7 +32,7 @@ if (isset($_POST['buttonLog'],$_POST['userLog'], $_POST['pwd'])) {
     $motDePasse = $statement->fetchAll(PDO::FETCH_ASSOC);
 /*    var_dump($motDePasse);*/
     if (count($motDePasse) == 0) {
-        $msg = 'Couple Login/MdP invalide.';
+        $msg1 = 'Couple Login/MdP invalide.';
     }
     else {
         if (password_verify($_POST['pwd'] , $motDePasse[0]['password'])) {
@@ -42,7 +43,7 @@ if (isset($_POST['buttonLog'],$_POST['userLog'], $_POST['pwd'])) {
             header("Location: ./session_nav1.php"); // Officiellement il FAUT un URL absolu
             die();
         } else {
-            $msg = 'Couple Login/MdP invalide.';
+            $msg1 = 'Couple Login/MdP invalide.';
         }
     }
 }
@@ -82,9 +83,16 @@ if (isset($_POST['userIns'], $_POST['pwd1'],$_POST['pwd2']) && $_POST['userIns']
     $statement->execute();
     
   /* var_dump($pdo->errorInfo());*/
-    $reponse = $statement->fetchAll(PDO::FETCH_ASSOC);
-    
-   
+    $error = $statement->errorInfo();
+    if ($error[1] != null) {
+        $msg2 = 'Ce login est déjà utilisé, veuillez en choisir un autre';    
+    }
+    else {
+        $reponse = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+        $msg2 = 'Votre compte a été créé';
+        
+    }
 }
 
 ?>
@@ -122,9 +130,11 @@ if (isset($_POST['userIns'], $_POST['pwd1'],$_POST['pwd2']) && $_POST['userIns']
             <button name="buttonLog">Connexion</button>
         </form>
         
-        <p> <?php
-                echo $msg;
-        ?> </p>
+        <p> 
+            <?php
+            echo $msg1;
+            ?> 
+        </p>
     </div>    
      
         
@@ -142,7 +152,12 @@ if (isset($_POST['userIns'], $_POST['pwd1'],$_POST['pwd2']) && $_POST['userIns']
            
              <button id="buttonIns">Inscription</button>
 
-        </form> 
+        </form>
+        <p id="message2">
+            <?php
+            echo $msg2;
+            ?>
+        </p> 
        
     </div>
     </div>  
@@ -153,13 +168,15 @@ if (isset($_POST['userIns'], $_POST['pwd1'],$_POST['pwd2']) && $_POST['userIns']
     var btn = document.getElementById('buttonIns');
     var pwd1 = document.getElementById('pwd1');
     var pwd2 = document.getElementById('pwd2');
+        
     btn.addEventListener("click",function(e){
         
         e.preventDefault();
-        if (user.value !='' && pwd1.value==pwd2.value){
+        if (user.value !='' && pwd1.value==pwd2.value &&  pwd1.value !='' &&  pwd2.value !=''){
             form.submit();
         } else {
-            console.log ('mal encodé !!!')
+            var messageForm = document.createTextNode('Veuillez insérer des mots de passe identiques');
+            message2.appendChild(messageForm);
         }
     })
     </script>
