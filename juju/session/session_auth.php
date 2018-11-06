@@ -14,7 +14,7 @@ if (!isset($_SESSION['lastAccess'])){
         session_destroy(); 
     }
     
-    header("Location: ./session/inscriptionlogin.php"); 
+    header("Location: ./_index.php?session=inscriptionlogin"); 
     die();
 }
 

@@ -21,7 +21,9 @@ $ressources = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 <div id="compteSection">
 
-    <h2>Mon profil</h2>
+    <div id="profil">
+        <h2>Mon profil</h2>
+    </div>
     
     <?php
     

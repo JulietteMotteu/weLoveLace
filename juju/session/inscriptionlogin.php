@@ -26,7 +26,7 @@ if (isset($_POST['buttonLog'],$_POST['userLog'], $_POST['pwd'])) {
     // Le nom des utilisateurs doit donc être un champ avec une contrainte UNIQUE 
     $userLog = $_POST['userLog'];
     $pwd = $_POST['pwd'];
-    $statement = $pdo->prepare('SELECT password, pseudo FROM t_personne WHERE pseudo = :pseudo');
+    $statement = $pdo->prepare('SELECT id, password, pseudo FROM t_personne WHERE pseudo = :pseudo');
     $statement->bindValue(':pseudo', $userLog, PDO::PARAM_STR);
     $statement->execute();
     $motDePasse = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -37,12 +37,12 @@ if (isset($_POST['buttonLog'],$_POST['userLog'], $_POST['pwd'])) {
     else {
         if (password_verify($_POST['pwd'] , $motDePasse[0]['password'])) {
             //$msg = 'ok';
-            session_start();
             $_SESSION['lastAccess'] = time();
             $_SESSION['pseudo'] = $motDePasse[0]['pseudo'];
+            $_SESSION['id'] = $motDePasse[0]['id'];
             
             header("Location: ./_index.php?page=compte"); // Officiellement il FAUT un URL absolu
-            die();
+            
         } else {
             $msg1 = 'Couple Login/MdP invalide.';
         }
@@ -98,81 +98,65 @@ if (isset($_POST['userIns'], $_POST['pwd1'],$_POST['pwd2']) && $_POST['userIns']
 }
 
 ?>
-
-
-
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>sign</title>
-        <!--LOGIN-->
-        <link rel="stylesheet" href="./stylesabrina.css">
-        
-        
-        
-    </head>
     
-    <body id="sign">
-    
-     <div>
-       <!--LOGIN-->
+<div id="sign">
+
     <div>
-       
-       <h2>Connexion</h2>
-        
-        <form id="formLog" method="post" action="">
-            <input type="text" name="userLog" placeholder="pseudo">
-           
-            <input type="password" name="pwd" placeholder="password">
-           
-            <button name="buttonLog">Connexion</button>
-        </form>
-        
-        <p> 
-            <?php
-            echo $msg1;
-            ?> 
-        </p>
-    </div>    
-     
-        
-        
-        <!--INSCRIPTION-->
-        
-    <div>  
-        <h2>Inscription</h2>
-        <form id='formIns' method="POST" action="">
-             <input placeholder="pseudo" type="text" name="userIns" id="user">
-             
-             <input placeholder="password" type="password" name="pwd1" id="pwd1">
-        
-             <input placeholder="confirmez votre password" type="password" name="pwd2" id="pwd2">
-           
-             <button id="buttonIns">Inscription</button>
+       <!--LOGIN-->
+        <div>
 
-        </form>
-        <p id="message2">
-            <?php
-            echo $msg2;
-            ?>
-        </p> 
-       
-    </div>
+           <h2>Connexion</h2>
+
+            <form id="formLog" method="post" action="">
+                <input type="text" name="userLog" placeholder="pseudo">
+
+                <input type="password" name="pwd" placeholder="password">
+
+                <button name="buttonLog">Connexion</button>
+            </form>
+
+            <p> 
+                <?php
+                echo $msg1;
+                ?> 
+            </p>
+        </div>    
+
+
+
+            <!--INSCRIPTION-->
+
+        <div>  
+            <h2>Inscription</h2>
+            <form id='formIns' method="POST" action="">
+                 <input placeholder="pseudo" type="text" name="userIns" id="user">
+
+                 <input placeholder="password" type="password" name="pwd1" id="pwd1">
+
+                 <input placeholder="confirmez votre password" type="password" name="pwd2" id="pwd2">
+
+                 <button id="buttonIns">Inscription</button>
+
+            </form>
+            <p id="message2">
+                <?php
+                echo $msg2;
+                ?>
+            </p> 
+
+        </div>
     </div>  
+</div>
    <!--LOGIN-->  
-    <script>
+<script>
     var form = document.getElementById('formIns');
     var user = document.getElementById('user');
     var btn = document.getElementById('buttonIns');
     var pwd1 = document.getElementById('pwd1');
     var pwd2 = document.getElementById('pwd2');
-        
+
     btn.addEventListener("click",function(e){
-        
+
         e.preventDefault();
         if (user.value !='' && pwd1.value==pwd2.value &&  pwd1.value !='' &&  pwd2.value !=''){
             form.submit();
@@ -181,10 +165,8 @@ if (isset($_POST['userIns'], $_POST['pwd1'],$_POST['pwd2']) && $_POST['userIns']
             message2.appendChild(messageForm);
         }
     })
-    </script>
-    
-    </body>
-</html>
+</script>
+
 <?php
 ob_flush();
 ?>

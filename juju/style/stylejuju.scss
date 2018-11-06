@@ -13,17 +13,30 @@ $textFont: 'Raleway';
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 50px; }
+%input { border-radius: 4px; padding: 10px 15px 10px 15px; border: 1px solid $mauveColor;}
+%rond {
+    content: '';
+    display: inline-block;
+    position: relative;
+    top:100%;
+    left: -13px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    color: white;
+    border: 2px solid $orangeColor;
+}
 
 * {
     box-sizing: border-box;
+    @extend %font;
+    
 }
 
 // HEADER
-
 #headerTop {
     @extend %section;
     margin-top: 20px;
-    @extend %font;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -59,7 +72,6 @@ $textFont: 'Raleway';
             }
         }
     }
-    
 }
 
 // NAVIGATION
@@ -257,5 +269,141 @@ nav {
         color: #fff;
         background-color: $orangeColor;
         transition-duration: 0.4s;
+    }
+}
+
+// Style Sabrina -> inscription / Login
+#sign button {
+    @extend %bouton;
+    color: #fff; 
+    background-color: $mauveColor; 
+    border: 1px solid;
+}
+
+#sign input {
+    @extend %input;
+}
+            
+#sign p:empty {
+    display: none;
+}
+
+#sign>div {
+    border-left: 2px solid $orangeColor;
+    position: relative;
+    height: 400px;
+}
+
+#sign>div::before {
+    @extend %rond;
+}
+
+#sign div {
+    @extend %section;
+    display : flex;
+    
+    div {
+        display: flex;
+        width: 40%;
+        flex-direction:column;
+
+        h2 {
+            align-self: flex-start;
+            color : $greyColor;
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+            
+            input, button {
+                margin-bottom: 40px;
+            }
+        }  
+    }
+}
+
+// Style Fatima
+#eventSection {
+    @extend %section;
+    .eventParent {
+        
+        display: flex;
+        flex-wrap: wrap;
+        border-left: 2px solid $orangeColor;
+        position: relative;
+        height: 300px;
+        margin-bottom: 100px;
+    }
+    .eventParent::before {
+        @extend %rond;
+    }
+    .dateHeure {
+        width: 15%;
+        
+    }
+    .eventDetail {
+        width: 80%;
+    }
+}
+
+.nomImg {
+    display: flex;
+    height: auto;
+    h2 {
+        background-color: $orangeColor;
+        color: white;
+        width: 40%;
+        margin: 0;
+        padding: 0;
+    }
+    img {
+        z-index: 0;
+        width: 100%;
+        margin: 0;
+    }
+    i {
+        display: block;
+        z-index: 1000;
+        position: relative;
+        right: 0
+    }
+}
+
+.descriptionIns {
+    display: flex;
+    height: auto;
+    .description {
+        display: flex;
+        width: 80%;
+        button {
+            align-self: flex-end;
+            color: $orangeColor;
+            border: none;
+            background-color: white;
+        }
+    }
+    .inscription {
+        width: 20%;
+        background-color: $orangeColor;
+        border: none;
+        color: white;
+    }
+}
+
+
+// Section compte
+#compteSection {
+    @extend %section;
+    #profil {
+        border-left: 2px solid $orangeColor;
+        position: relative;
+        height: 400px;
+        h2 {
+            
+        }
+    }
+    #profil::before {
+        @extend %rond;
     }
 }

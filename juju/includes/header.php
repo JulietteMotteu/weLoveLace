@@ -14,6 +14,7 @@
     <!-- Ici les fichiers JS -->
     <script src="./js/jquery/jquery-3.3.1.min.js"></script>
     <script src="./js/jquery/jquery.magnific-popup.js"></script>
+
 </head>
 
 <body>
@@ -23,27 +24,19 @@
         </div>
 
         <div id="leftLinks">
-           <a href="" class="lang">EN</a>
-           <a href="" class="lang">FR</a>
-           
+               <a href="">EN</a>
+               <a href="">FR</a>
+
            <?php
+
             if (isset($_SESSION['pseudo'])) {
-                echo '<a href="?session=session_logout">Log out<i class="fas fa-user"></i></a>';
-                echo '<p color="black">Bonjour badass ' . $_SESSION['pseudo'] . '</p>';
+                echo '<a href="?session=session_logout">Sign out<i class="fas fa-user"></i></a>';
+                echo '<p id="welcomePseudo">Bienvenue ' . $_SESSION['pseudo'] . ' You\'re badass !</p>';
             }
             else {
-                echo '<a href="?session=inscriptionlogin">Log in<i class="fas fa-user"></i></a>';
+                echo '<a href="?session=inscriptionlogin">Sign<i class="fas fa-user"></i></a>';
             }
-            
-           /* if (session_status() !== PHP_SESSION_ACTIVE) {
-                echo '<a href="?session=inscriptionlogin">Log in<i class="fas fa-user"></i></a>';
-            }
-            else {
-                echo '<a href="?session=session_logout">Log out<i class="fas fa-user"></i></a>';
-                echo '<p color="black">Bonjour badass ' . $_SESSION['pseudo'] . '</p>';
-            }*/
-            
-            
+
            ?>
         </div>
     </div>

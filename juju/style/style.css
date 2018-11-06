@@ -1,0 +1,90 @@
+ #1events{
+        width:60%;
+        height:70%;
+    }
+    h1{
+        color: white;
+        background-color:#F15A22;
+        text-align:center;
+        width: 340px;
+        height: 90px;
+    }
+    img{
+/*        la taille de img */
+        width: 400px;
+        height:90px;
+/*        por positione img droit avec h1*/
+         position: relative;
+        bottom: 0px;
+    }
+/*    cette  div class pour atelieh1 et img*/
+    .atelimg{
+        display: flex;
+         flex-direction: row;
+        font-size: 20px
+    }
+
+.imgnom{
+    display: flex;
+    justify-content: center;
+}
+/*pour la date */
+h2{
+    color: #582f66;
+    display: flex;
+    justify-content: center;
+     position: relative;
+        bottom: 130px;
+    right: 440px;
+    
+    
+}
+/*    cette h3 est pour sinscrire */
+    h3{
+        height: 60px;
+        width: 130px;
+        color: white;
+        text-align: center;
+        background-color:#F15A22;
+        position: relative;
+        left: 892px;
+        bottom: 327px;
+    }
+
+
+
+/*    cette clas est pour le paratexte*/
+    #divPara1{
+        position: relative;
+        bottom: 100x;
+        font-size: 18px;
+        color: #272626;
+    }
+   #divPara1 > a{
+        position: relative;
+        left: 750px;
+    }
+
+
+
+
+
+/*ce css pour le partge*/
+
+
+.facebook-share {
+position: relative;
+bottom: 220px;
+left: 685px;
+color: #F15A22;
+font-size: 25px;
+cursor: pointer;
+display: inline-block;
+padding: 1em 2em;
+-webkit-border-radius: 6px;
+border-radius: 6px;
+} 
+
+.facebook-share:hover {
+    position: relative;
+    top: -1px; }

@@ -2,7 +2,7 @@
 
     <ul id="navigationMenu">
         <li><a href="?page=portraits">Portraits</a></li>
-        <li><a href="?page=evenements">Evénements</a></li>
+        <li><a href="?page=evenement">Evénements</a></li>
         <li><a href="?page=ressources">Ressources</a></li>
         <li><a href="?page=infos">Infos</a></li>
         <li><a href="?page=compte">Compte</a></li>
