@@ -19,8 +19,7 @@
 <?php
     for($i = 0; $i < count($t_evenement); $i++){
         $time = explode(":", $t_evenement[$i]['heure']);
-        var_dump($time);
-        echo '<div class="eventParent"><div class="dateHeure"><p>'  . $t_evenement[$i]['jour'] . '</p><p>' . $t_evenement[$i]['mois'] . '</p><p>' .$t_evenement[$i]['heure'] . '</p></div>';
+        echo '<div class="eventParent"><div class="dateHeure"><p>'  . $t_evenement[$i]['jour'] . '</p><p>' . $t_evenement[$i]['mois'] . '</p><p>' . $time[0] . 'h</p></div>';
         
         echo '<div class="eventDetail"><div class="nomImg"><h2>' . $t_evenement[$i]['nom'] . '</h2><i class="fas fa-heart fa-lg"></i><img src="./img/evenements/' . $t_evenement[$i]['image'] . '.jpg"></div>';
         

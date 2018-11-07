@@ -339,8 +339,12 @@ nav {
     }
     .dateHeure {
         width: 15%;
+        height: 300px;
         color: $mauveColor;
         font-weight: 600;
+        p:first-of-type, p:nth-of-type(2) {
+            font-size: 70px;
+        }
     }
     .eventDetail {
         width: 80%;
