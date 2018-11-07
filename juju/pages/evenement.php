@@ -18,45 +18,16 @@
     
 <?php
     for($i = 0; $i < count($t_evenement); $i++){
-        echo '<div class="eventParent"><div class="dateHeure"><p>' .$t_evenement[$i]['heure'] . '</p><p>'  . $t_evenement[$i]['jour'] . '</p><p>' . $t_evenement[$i]['mois'] . '</p></div>';
+        $time = explode(":", $t_evenement[$i]['heure']);
+        var_dump($time);
+        echo '<div class="eventParent"><div class="dateHeure"><p>'  . $t_evenement[$i]['jour'] . '</p><p>' . $t_evenement[$i]['mois'] . '</p><p>' .$t_evenement[$i]['heure'] . '</p></div>';
         
-        echo '<div class="eventDetail"><div class="nomImg"><h2>' . $t_evenement[$i]['nom'] . '</h2><i class="far fa-heart fa-2x"></i><img src="./img/evenements/' . $t_evenement[$i]['image'] . '.jpg"></div>';
+        echo '<div class="eventDetail"><div class="nomImg"><h2>' . $t_evenement[$i]['nom'] . '</h2><i class="fas fa-heart fa-lg"></i><img src="./img/evenements/' . $t_evenement[$i]['image'] . '.jpg"></div>';
         
         echo '<div class="descriptionIns"><div class="description"><p>' . substr($t_evenement[$i]['description'],0,200). '</p><button>Partager</button></div><button class="inscription">S\'inscrire</button></div></div></div>';
     }
 ?>
 </div>
-
-<?php
-//    $description  = "";
-//    $pieces = explode(" ", $description);
-//    echo $pieces[0]; // piece1
-//    echo $pieces[1]; // piece2
-//    $t_evenement($heur, $min, $secende) = explode('.', $row_Recordset1['heure']);
-//    // affichage du heure
-//    echo $heur. "H";
-//    
-//function break_date($date)
-//	{
-//		$date = explode('-',str_replace('/','-',$date)); 
-//		return $date[1].'-'.$date[2].'-'.$date[0];
-//	}
-//    $t_evenement = "Y-m-d H:i:s";
-//$t_evenement = explode(" ",$t_evenement);
-//$date = $t_evenement[1];
-//$date = $t_evenement[2];
-//$heure = $t_evenement[0];
-    
-//$date = date('Y-m-d',strtotime($timestamp));
-//$time = date('H:i:s',strtotime($timestamp));
-    
-// $date = explode('-',$date); // pour virer le caractère /
-//  $date = new Datetime($date);
-//  $datenaissance = $date->format('Y-m-d'); //format mysql
-//                        $date = "y-d-m"; 
-//                        $date = explode('-', $date);    
-
-?>
 
 
 <!--ce script pour le partage  fb-->
@@ -108,12 +79,3 @@ function Submit() {
 }
 </script>
 -->
-
-<div id="coeur1">
-    <input type="checkbox" id="like"/>
-    <label for="like">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-    <path d="M12 21.35l-1.45-1.32c-5.15-4.67-8.55-7.75-8.55-11.53 0-3.08 2.42-5.5 5.5-5.5 1.74 0 3.41.81 4.5 2.09 1.09-1.28 2.76-2.09 4.5-2.09 3.08 0 5.5 2.42 5.5 5.5 0 3.78-3.4 6.86-8.55 11.54l-1.45 1.31z"/>
-    </svg>
-</label>
-</div>
