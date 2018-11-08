@@ -36,7 +36,7 @@
         window.addEventListener ("resize",function(e){
             console.log('Resize');
                 let tailleLigne = (window.innerWidth - elemChoisiEnCours.offsetLeft - 25 + "px");
-                console.log(tailleLigne);
+               /* console.log(tailleLigne);*/
                 ligneNav.style.width = tailleLigne;
                                                     
         })    

@@ -371,7 +371,8 @@ nav {
         width: 100%;
         margin: 0;
     }
-    i {
+    button {
+        border: none;
         width: 35px;
         height: 35px;
         line-height: 35px;
@@ -382,7 +383,7 @@ nav {
         right: 0;
         top: 0;
         color: white;
-        background-color: $orangeColor;
+        background-color: $greyColor;
       
     }
 }

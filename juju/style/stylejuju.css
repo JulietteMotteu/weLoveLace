@@ -279,7 +279,8 @@ nav #ligneNav::before {
   .nomImg img {
     width: 100%;
     margin: 0; }
-  .nomImg i {
+  .nomImg button {
+    border: none;
     width: 35px;
     height: 35px;
     line-height: 35px;
@@ -290,7 +291,7 @@ nav #ligneNav::before {
     right: 0;
     top: 0;
     color: white;
-    background-color: #ea5920; }
+    background-color: #4d4d4d; }
 
 .descriptionIns {
   display: flex;
