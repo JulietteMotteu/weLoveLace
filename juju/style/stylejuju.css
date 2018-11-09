@@ -244,29 +244,41 @@ nav #ligneNav::before {
       #sign div div form input, #sign div div form button {
         margin-bottom: 40px; }
 
-#eventSection .eventParent {
-  display: flex;
-  flex-wrap: wrap;
-  border-left: 2px solid #ea5920;
-  position: relative;
-  height: 300px;
-  margin-bottom: 100px; }
-#eventSection .dateHeure {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  width: 15%;
-  height: 300px;
-  color: #6a397c;
-  font-weight: 500; }
-  #eventSection .dateHeure p:first-of-type, #eventSection .dateHeure p:nth-of-type(2) {
-    font-size: 50px;
-    margin: 0; }
-#eventSection .eventDetail {
-  width: 80%; }
+#eventSection {
+  margin-top: 100px; }
+  #eventSection .eventParent {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    border-left: 2px solid #ea5920;
+    position: relative;
+    height: 300px;
+    margin-bottom: 100px; }
+  #eventSection .dateHeure {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 15%;
+    height: 300px;
+    color: #6a397c; }
+    #eventSection .dateHeure .date {
+      font-weight: 600;
+      font-size: 50px;
+      margin: 0; }
+      #eventSection .dateHeure .date p {
+        margin: 0;
+        font-family: Roboto; }
+    #eventSection .dateHeure > p {
+      font-size: 35px;
+      font-weight: 400;
+      font-family: Roboto; }
+  #eventSection .eventDetail {
+    width: 80%; }
 
 .nomImg {
+  margin: 0;
   display: flex;
   height: auto;
   position: relative; }
@@ -275,7 +287,7 @@ nav #ligneNav::before {
     color: white;
     width: 40%;
     margin: 0;
-    padding: 10px; }
+    padding: 50px; }
   .nomImg img {
     width: 100%;
     margin: 0; }
@@ -294,9 +306,11 @@ nav #ligneNav::before {
     background-color: #4d4d4d; }
 
 .descriptionIns {
+  margin: 0;
   display: flex;
   height: auto; }
   .descriptionIns .description {
+    font-size: 13px;
     display: flex;
     width: 80%; }
     .descriptionIns .description button {

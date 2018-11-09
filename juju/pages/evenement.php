@@ -22,11 +22,11 @@ $statement2 = $pdo->prepare('SELECT * FROM t_like WHERE idPersonne = :idSession'
 <?php
     for($i = 0; $i < count($t_evenement); $i++){
         $time = explode(":", $t_evenement[$i]['heure']);
-        echo '<div class="eventParent"><div class="dateHeure"><p>'  . $t_evenement[$i]['jour'] . '</p><p>' . $t_evenement[$i]['mois'] . '</p><p>' . $time[0] . 'h</p></div>';
+        echo '<div class="eventParent"><div class="dateHeure"><div class="date"><p>'  . $t_evenement[$i]['jour'] . '</p><p>' . $t_evenement[$i]['mois'] . '</p></div><p>' . $time[0] . 'h</p></div>';
         
         echo '<div class="eventDetail"><div class="nomImg"><h2>' . $t_evenement[$i]['nom'] . '</h2><button data-id="' .  $t_evenement[$i]['id'] . '" class="boutonLike"><i class="fas fa-heart fa-lg"></i></button><img src="./img/evenements/' . $t_evenement[$i]['image'] . '.jpg"></div>';
         
-        echo '<div class="descriptionIns"><div class="description"><p>' . substr($t_evenement[$i]['description'],0,200). '</p><button>Partager</button></div><button class="inscription">S\'inscrire</button></div></div></div>';
+        echo '<div class="descriptionIns"><div class="description"><p>' . substr($t_evenement[$i]['description'],0,200). '</p><button class="facebook-share" data-js="facebook-share">Partager</button></div><button class="inscription">S\'inscrire</button></div></div></div>';
     }
 ?>
 </div>
@@ -75,25 +75,31 @@ $statement2 = $pdo->prepare('SELECT * FROM t_like WHERE idPersonne = :idSession'
 </script>
 
 
-<!--ce script pour le partage  fb-->
-<!--<span class="facebook-share" data-js="facebook-share">Partage</span>
-   <script type="text/javascript">
-var facebookShare = document.querySelector('[data-js="facebook-share"]');
+<!--ce script pour le partage fb-->
+<script type="text/javascript">
+    
+    var facebookShare = document.querySelectorAll('[data-js="facebook-share"]');
 
-facebookShare.onclick = function(e) {
-  e.preventDefault();
-  var facebookWindow = window.open('https://www.facebook.com/sharer/sharer.php?u=' + document.URL, 'facebook-popup', 'height=350,width=600');
-  if(facebookWindow.focus) { facebookWindow.focus(); }
-    return false;
-}
-   </script>
+    for (let i=0; i<facebookShare.length; i++) {
+        facebookShare[i].onclick = function(e) {
+            e.preventDefault();
 
-  <div>
-      
-   <a><h3 type="button" value="Submit Form" onclick= "ConfirmForm();"> s'inscrire</h3></a>
-  </div>-->
+            var facebookWindow = window.open('https://www.facebook.com/sharer/sharer.php?u=' + document.URL, 'facebook-popup', 'height=350,width=600');
 
-<!--<div id="BlockUIConfirm" class="BlockUIConfirm">
+            if(facebookWindow.focus) { 
+                facebookWindow.focus(); 
+            }
+            return false;
+        }
+    }
+</script>
+
+<!--Plugin confirm-->
+<!--<div>
+  <a><h3 type="button" value="Submit Form" onclick= "ConfirmForm();"> s'inscrire</h3></a>
+</div>
+
+<div id="BlockUIConfirm" class="BlockUIConfirm">
 	<div class="blockui-mask"></div>
 	<div class="RowDialogBody">
 		<div class="confirm-header row-dialog-hdr-success">
@@ -109,10 +115,8 @@ facebookShare.onclick = function(e) {
 			</div>
 		</div>
 	</div>
-</div>-->
+</div>
 
-
-<!--
 <script>
     function ConfirmForm() {
 	$("#BlockUIConfirm").show();
@@ -122,5 +126,4 @@ function Submit() {
 	alert("confirmée");
 	$('#BlockUIConfirm').hide();
 }
-</script>
--->
+</script>-->
