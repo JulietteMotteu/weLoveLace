@@ -252,7 +252,7 @@ nav #ligneNav::before {
     flex-wrap: wrap;
     border-left: 2px solid #ea5920;
     position: relative;
-    height: 300px;
+    height: 280px;
     margin-bottom: 100px; }
   #eventSection .dateHeure {
     margin: 0;
@@ -322,7 +322,10 @@ nav #ligneNav::before {
     width: 20%;
     background-color: #ea5920;
     border: none;
-    color: white; }
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding: 20px; }
 
 #compteSection #profil {
   border-left: 2px solid #ea5920;

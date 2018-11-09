@@ -63,9 +63,11 @@ $ressources = $statement->fetchAll(PDO::FETCH_ASSOC);
         ?>
     </div>
 </div>
-    
-<script>
+   
+   
+<!--Lien JS Magnific Popup-->    
 
+<script>
     ressourceSelect.addEventListener("click", function(event){
         if (event.target.tagName == "BUTTON") {
             // Tri tags

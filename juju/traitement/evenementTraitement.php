@@ -13,13 +13,24 @@ try {
     die();
 }
 
-if (isset($_SESSION['id'])) {
-$statement = $pdo->prepare('INSERT INTO t_like (idPersonne, idEvenement) VALUES (:idSession, :idEvent)');
+if(isset($_SESSION['id'])){
+    $statement2 = $pdo->prepare('SELECT * FROM t_like WHERE idPersonne = :idSession');  
+    $statement2->bindValue(':idSession', $_SESSION['id'], PDO::PARAM_INT);
+    $statement2->execute();
+    
+    $like = $statement2->fetchAll(PDO::FETCH_ASSOC);
+    
+    if (count($like) == 0) {
+        $statement = $pdo->prepare('INSERT INTO t_like (idPersonne, idEvenement) VALUES (:idSession, :idEvent)');
 
-$statement->bindValue(':idSession', $_SESSION['id'], PDO::PARAM_INT);
-$statement->bindValue(':idEvent', $_GET['idEvent'], PDO::PARAM_INT);
+        $statement->bindValue(':idSession', $_SESSION['id'], PDO::PARAM_INT);
+        $statement->bindValue(':idEvent', $_GET['idEvent'], PDO::PARAM_INT);
 
-$statement->execute();
+        $statement->execute();
+    }
+    else {
+        echo json_encode($like);
+    }
 }
 
 ob_flush();

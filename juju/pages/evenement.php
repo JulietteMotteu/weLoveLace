@@ -13,8 +13,6 @@ try {
 $statement = $pdo->query('SELECT *, DATE_FORMAT(date, "%d") as jour, DATE_FORMAT(date, "%m") as mois FROM t_evenement'); 
 $t_evenement = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-$statement2 = $pdo->prepare('SELECT * FROM t_like WHERE idPersonne = :idSession');    
-
 ?>
     
 <div id="eventSection">
@@ -26,9 +24,13 @@ $statement2 = $pdo->prepare('SELECT * FROM t_like WHERE idPersonne = :idSession'
         
         echo '<div class="eventDetail"><div class="nomImg"><h2>' . $t_evenement[$i]['nom'] . '</h2><button data-id="' .  $t_evenement[$i]['id'] . '" class="boutonLike"><i class="fas fa-heart fa-lg"></i></button><img src="./img/evenements/' . $t_evenement[$i]['image'] . '.jpg"></div>';
         
-        echo '<div class="descriptionIns"><div class="description"><p>' . substr($t_evenement[$i]['description'],0,200). '</p><button class="facebook-share" data-js="facebook-share">Partager</button></div><button class="inscription">S\'inscrire</button></div></div></div>';
+        echo '<div class="descriptionIns"><div class="description"><p>' . substr($t_evenement[$i]['description'],0,200). '</p><button class="facebook-share" data-js="facebook-share">Partager</button></div><a class="inscription" href="#inscrire">S\'inscrire</a></div></div></div>';
     }
 ?>
+
+<div id="inscrire" class="white-popup-block mfp-hide">
+	<p>Vous désirez participer? En cliquant sur inscription, vous êtes automatiquement enregistré à notre événement badass!</p>
+	<p><a class="popup-modal-dismiss" href="#">Inscription</a></p>
 </div>
 
 <script>
@@ -43,7 +45,7 @@ $statement2 = $pdo->prepare('SELECT * FROM t_like WHERE idPersonne = :idSession'
         likeBtn[i].style.color = "#ea5920";
         }
     })*/
- 
+    
     eventSection.addEventListener('click', function(e){
         
         var xhr = new XMLHttpRequest();
@@ -69,11 +71,33 @@ $statement2 = $pdo->prepare('SELECT * FROM t_like WHERE idPersonne = :idSession'
 		xhr.open ("GET", "./traitement/evenementTraitement.php?idEvent=" + e.target.getAttribute('data-id'));
 		xhr.send (null);
         
-    })
+    });
     
-
+/*    window.onload = function(e){
+        var xhr = new XMLHttpRequest();
+         xhr.onreadystatechange = function (){
+			if (xhr.readyState == 4){
+				if (xhr.status == 200){
+					console.log (xhr.responseText);
+                    if (e.target.className == 'boutonLike') {
+                        e.target.style.color = "#ea5920";
+                        e.target.style.backgroundColor = 'transparent';
+                        e.target.style.transition = "0.5s";
+                        e.target.disabled = "disabled";
+                    }
+				
+				}
+				else {
+					console.log ("Erreur dans AJAX");
+				}
+			}
+		}
+		
+		xhr.open ("GET", "./traitement/evenementTraitement.php?idEvent=" + e.target.getAttribute('data-id'));
+		xhr.send (null);
+    }*/
+    
 </script>
-
 
 <!--ce script pour le partage fb-->
 <script type="text/javascript">
@@ -92,38 +116,19 @@ $statement2 = $pdo->prepare('SELECT * FROM t_like WHERE idPersonne = :idSession'
             return false;
         }
     }
+    
+    /*Popup modal*/
+    $(document).ready(function() {
+        $('.inscription').magnificPopup({
+            type: 'inline',
+            preloader: false,
+            focus: '#username',
+            modal: true
+        });
+        $(document).on('click', '.popup-modal-dismiss', function (e) {
+            e.preventDefault();
+            $.magnificPopup.close();
+        });
+    });
+    
 </script>
-
-<!--Plugin confirm-->
-<!--<div>
-  <a><h3 type="button" value="Submit Form" onclick= "ConfirmForm();"> s'inscrire</h3></a>
-</div>
-
-<div id="BlockUIConfirm" class="BlockUIConfirm">
-	<div class="blockui-mask"></div>
-	<div class="RowDialogBody">
-		<div class="confirm-header row-dialog-hdr-success">
-			Confirm Acceptance
-		</div>
-		<div class="confirm-body">
-			vous-etes sur de voloir participer acette evenement ?
-		</div>
-		<div class="confirm-btn-panel pull-right">
-			<div class="btn-holder pull-right">
-				<input type="submit" class="row-dialog-btn btn btn-success" value="oui j'Accept" onclick="Submit();" />
-				<input type="button" class="row-dialog-btn btn btn-naked" value=" annuller" onclick="$('#BlockUIConfirm').hide();"/>
-			</div>
-		</div>
-	</div>
-</div>
-
-<script>
-    function ConfirmForm() {
-	$("#BlockUIConfirm").show();
-}
-
-function Submit() {
-	alert("confirmée");
-	$('#BlockUIConfirm').hide();
-}
-</script>-->

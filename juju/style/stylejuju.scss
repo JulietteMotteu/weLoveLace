@@ -333,7 +333,7 @@ nav {
         flex-wrap: wrap;
         border-left: 2px solid $orangeColor;
         position: relative;
-        height: 300px;
+        height: 280px;
         margin-bottom: 100px;
     }
     .eventParent::before {
@@ -422,9 +422,11 @@ nav {
         background-color: $orangeColor;
         border: none;
         color: white;
+        text-decoration: none;
+        text-align: center;
+        padding: 20px;
     }
 }
-
 
 // Section compte
 #compteSection {
