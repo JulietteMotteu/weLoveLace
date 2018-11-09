@@ -1,12 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900');
 @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,800,900');
 
+%section { 
+    width: 1100px;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto; }
+
 $orangeColor: #ea5920;
 $mauveColor: #6a397c;
 $greyColor: #4d4d4d;
 $textFont: 'Raleway';
 %font { font-family : $textFont; }
 %bouton { border-radius: 4px; padding: 10px 15px 10px 15px;}
+%boutonInfo { border-radius: 4px; padding: 10px 15px 10px 15px; color: #fff; background-color: $mauveColor; border: 1px solid; }
 %section { 
     width: 80%;
     margin-top: 50px;
@@ -442,4 +449,125 @@ nav {
     #profil::before {
         @extend %rond;
     }
+}
+
+/* Style info*/
+
+/*
+#info>div {
+    border-left: 2px solid $orangeColor;
+    position: relative;
+    height: 500px;
+  
+}
+#info>div::before {
+  content: '';
+  display: inline-block;
+  position: relative;
+  top:100%;
+  left: -13px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  color: white;
+  border: 2px solid $orangeColor; }
+*/
+
+#info {
+    @extend %section;
+    display : flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+input, textarea {
+    @extend %input;
+    margin-bottom: 40px;
+    
+    
+}
+    button {
+    
+    @extend %boutonInfo;
+    
+}
+
+    
+    #mailer {
+        display : flex;
+        flex-direction: column;
+        width: 40%;
+
+    }
+    h1 {
+        display: flex;
+        span {
+            font-weight:normal;
+            font-size: 150px;
+        }
+       
+       
+    }
+    h2{
+            align-self: flex-start;
+            color : $greyColor;;
+        }
+    
+}
+
+
+          
+
+
+// plugin faq // 
+
+
+
+ul, li { list-style: none; }
+
+#container {
+  width: 100%;
+  margin: 150px auto;
+  overflow: auto;
+}
+
+
+
+
+.faq li { padding: 10px 15px 10px 15px;
+   margin-bottom: 20px; 
+}
+
+.faq li.q {
+  background: #FFFFFF;
+  font-weight: bold;
+  font-size: 120%;
+  cursor: pointer;
+  color: #6A3875;
+  border: 1px solid #6A3875;
+  border-radius: 4px; 
+  padding: 10px 15px 10px 15px;
+  width: 100%
+}
+
+
+
+
+.faq li.a {
+  background: #FFFFFF;
+  /*border: 1px solid #6A3875;
+  border-radius: 4px;*/
+  display: none;
+  color:#6A3875;
+}
+
+
+
+.rotate {
+  -moz-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+@media (max-width:800px) {
+
+#container { width: 90%; }
 }

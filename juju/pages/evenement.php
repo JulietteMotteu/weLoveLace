@@ -31,6 +31,7 @@ $t_evenement = $statement->fetchAll(PDO::FETCH_ASSOC);
 <div id="inscrire" class="white-popup-block mfp-hide">
 	<p>Vous désirez participer? En cliquant sur inscription, vous êtes automatiquement enregistré à notre événement badass!</p>
 	<p><a class="popup-modal-dismiss" href="#">Inscription</a></p>
+	<p><a class="popup-modal-dismiss" href="#">Ne pas s'inscrire</a></p>
 </div>
 
 <script>
@@ -130,5 +131,7 @@ $t_evenement = $statement->fetchAll(PDO::FETCH_ASSOC);
             $.magnificPopup.close();
         });
     });
+    
+    $(".mfp-bg").css('background-color', '#fff');
     
 </script>

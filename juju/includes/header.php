@@ -6,14 +6,16 @@
     <meta charset="UTF-8">
     <title>Ressources</title>
     <link rel="stylesheet" href="./style/normalize.css">
+    <!-- Ici le CSS pour les plugins -->
+    <link rel="stylesheet" href="./style/jquery/magnific-popup.css">
+    <link rel="stylesheet" href="./style/jquery/faq.css">
     <!-- Ici on met le fichier CSS compilé -->
     <link rel="stylesheet" href="./style/stylejuju.css">
     <link rel="stylesheet" href="./style/fontAwesome/css/all.css">
-    <!-- Ici le CSS pour les plugins -->
-    <link rel="stylesheet" href="./style/jquery/magnific-popup.css">
     <!-- Ici les fichiers JS -->
     <script src="./js/jquery/jquery-3.3.1.min.js"></script>
     <script src="./js/jquery/jquery.magnific-popup.js"></script>
+    <script src="./js/jquery/script.js"></script>
 
 </head>
 
