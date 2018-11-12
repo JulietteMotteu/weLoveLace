@@ -24,7 +24,7 @@ $t_evenement = $statement->fetchAll(PDO::FETCH_ASSOC);
         
         echo '<div class="eventDetail"><div class="nomImg"><h2>' . $t_evenement[$i]['nom'] . '</h2><button data-id="' .  $t_evenement[$i]['id'] . '" class="boutonLike"><i class="fas fa-heart fa-lg"></i></button><img src="./img/evenements/' . $t_evenement[$i]['image'] . '.jpg"></div>';
         
-        echo '<div class="descriptionIns"><div class="description"><p>' . substr($t_evenement[$i]['description'],0,200). '</p><button class="facebook-share" data-js="facebook-share">Partager</button></div><a class="inscription" href="#inscrire">S\'inscrire</a></div></div></div>';
+        echo '<div class="descriptionIns"><div class="description"><p>' . substr($t_evenement[$i]['description'],0,200). '</p><button><i class="fas fa-chevron-right fa-rotate-90"></i></button><button class="facebook-share" data-js="facebook-share">Partager</button></div><a class="inscription" href="#inscrire">S\'inscrire</a></div></div></div>';
     }
 ?>
 

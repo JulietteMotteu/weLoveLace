@@ -414,7 +414,8 @@ nav {
     display: flex;
     height: auto;
     .description {
-        font-size: 13px;
+        font-size: 15px;
+        line-height: 1.5;
         display: flex;
         width: 80%;
         button {
@@ -422,6 +423,9 @@ nav {
             color: $orangeColor;
             border: none;
             background-color: white;
+            i {
+                color: $mauveColor;
+            }
         }
     }
     .inscription {
@@ -430,8 +434,10 @@ nav {
         border: none;
         color: white;
         text-decoration: none;
-        text-align: center;
         padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
 
@@ -452,86 +458,114 @@ nav {
 }
 
 /* Style info*/
-
-/*
-#info>div {
+#mailer, #map, #faqParent {
     border-left: 2px solid $orangeColor;
     position: relative;
-    height: 500px;
-  
 }
-#info>div::before {
-  content: '';
-  display: inline-block;
-  position: relative;
-  top:100%;
-  left: -13px;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  color: white;
-  border: 2px solid $orangeColor; }
-*/
+
+#mailer::before, #map::before, #faqParent::before {
+  @extend %rond;
+}
 
 #info {
     @extend %section;
-    display : flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-input, textarea {
+    input, textarea {
     @extend %input;
     margin-bottom: 40px;
+    }
     
-    
-}
     button {
-    
     @extend %boutonInfo;
+    }
     
+    h2 {
+        margin-left: 50px;
+        color : $greyColor;
+        
+    }
 }
 
-    
-    #mailer {
-        display : flex;
-        flex-direction: column;
-        width: 40%;
-
+#mailerIntro {
+    display: flex;
+    font-weight: 800;
+    font-size: 35px;
+    width: 450px;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    p {
+        text-align: center;
+        color: $greyColor;
     }
-    h1 {
+    i {
+        font-size: 80px;
+        color: $mauveColor;
+        font-weight: 800;
+    }
+    i:first-of-type {
+        margin-left: 20px;
+    }
+    i:nth-of-type(2) {
+        align-self: flex-end;
+    }
+}
+
+#mailer {
+    height: 450px;
+    margin-bottom: 100px;
+}
+
+#mailerForm {
+    width: 40%;
+    display : flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: column;
+}
+    
+#map {
+    height: 700px;
+    margin-bottom: 100px;
+    figure {
         display: flex;
-        span {
-            font-weight:normal;
-            font-size: 150px;
+        flex-direction: column;
+        align-items: center;
+        figcaption {
+            color: $greyColor;
+            display: flex;
+            margin-top: 20px;
+            text-align: center;
+            i {
+                color: $orangeColor;
+                margin-right: 20px;
+            }
+            address {
+                font-weight: 500;
+                font-size: 20px;
+                font-style: normal;
+                span {
+                    font-size: 15px;
+                }
+            }
         }
-       
-       
     }
-    h2{
-            align-self: flex-start;
-            color : $greyColor;;
-        }
-    
 }
-
-
-          
-
 
 // plugin faq // 
-
-
-
-ul, li { list-style: none; }
-
-#container {
-  width: 100%;
-  margin: 150px auto;
-  overflow: auto;
+#faqParent {
+    height: 600px;
 }
 
+ul, li { list-style-type: none;}
 
-
+#containerFaq {
+    width: 100%;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: auto;
+}
 
 .faq li { padding: 10px 15px 10px 15px;
    margin-bottom: 20px; 
@@ -549,9 +583,6 @@ ul, li { list-style: none; }
   width: 100%
 }
 
-
-
-
 .faq li.a {
   background: #FFFFFF;
   /*border: 1px solid #6A3875;
@@ -560,13 +591,12 @@ ul, li { list-style: none; }
   color:#6A3875;
 }
 
-
-
 .rotate {
   -moz-transform: rotate(90deg);
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
 }
+
 @media (max-width:800px) {
 
 #container { width: 90%; }

@@ -75,75 +75,80 @@
 </head>
 <body>
    
-   <div id="info">
-   
-   <div id="mailer">
-   <h1> <span>&lt;</span>Des questions, propositions, envie de participer ? Dites nous tout ! <span>&gt;</span></h1>
-   
-   <h2>Contacts</h2>
+    <div id="info">
+
+        <div id="mailerIntro">
+            <i class="fas fa-chevron-left"></i><p>Des questions, propositions, envie de participer ? Dites-nous tout !</p><i class="fas fa-chevron-right"></i>
+        </div>
+        <div id="mailer">
+        <h2>Contacts</h2>
+
+            <div id="mailerForm">
+                
+                <input type="text" placeholder="Email">
+                <input type="text" placeholder="Sujet">
+                
+                <textarea placeholder="Votre message"></textarea>
+                
+                <button>Envoyer</button>
+            </div>
+        </div>
     
-    <input type="text" placeholder="Email">
-    <input type="text" placeholder="Sujet">
     
-    <textarea placeholder="Votre message"></textarea>
     
-    <button>Envoyer</button>
+        <div id="map">
+
+            <h2>Adresse</h2>
+            <figure>
+                <a href="https://www.google.fr/maps/place/Rue+Gaucheret+88,+1030+Schaerbeek/@50.8638377,4.3585736,17z/data=!3m1!4b1!4m5!3m4!1s0x47c3c39e03423535:0xb4e58e8abb2713a3!8m2!3d50.8638377!4d4.3607623">
+                </a>
+                <img src="./img/infos/map.svg" width="500" height="500" alt="map" usemap="#infomap">
+
+                <map name="infomap">
+                    <area shape="rect" coords="200,190,285,276" href="https://www.google.fr/maps/place/Rue+Gaucheret+88,+1030+Schaerbeek/@50.8638377,4.3585736,17z/data=!3m1!4b1!4m5!3m4!1s0x47c3c39e03423535:0xb4e58e8abb2713a3!8m2!3d50.8638377!4d4.3607623" alt="map">
+                </map> 
+
+
+                <figcaption>
+                    <i class="fas fa-map-marker-alt fa-lg"></i>
+                    <address>Rue Gaucheret, 88<br>
+                    <span>1030 Schaerbeek</span></address>
+                </figcaption>
+            </figure>
+        </div>
     
-    <p></p>
     
+        <div id="faqParent">
+
+        <h2>F.A.Q.</h2>
+
+
+            <div id="containerFaq">
+
+                <ul class="faq">
+                    <li class="q"> Qui sommes-nous ? <img src="img/arrow.png"></li>
+                    <li class="a">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis reprehenderit suscipit repellendus cupiditate autem adipisci inventore, ullam cumque excepturi illum dolore ut nesciunt omnis fugiat libero, hic quisquam molestiae aut repellat maiores eaque. Dolor ipsam esse harum labore debitis iste, nesciunt saepe voluptatibus cupiditate rerum nostrum animi, deserunt quidem possimus perspiciatis qui velit ducimus, aut temporibus? Ex illo explicabo dolorem quisquam facere? Officia non sunt nihil obcaecati reprehenderit, eligendi saepe asperiores doloribus aut perferendis, delectus exercitationem placeat enim modi quis assumenda ducimus laudantium nostrum! Natus consequatur, quam veniam. Accusamus et similique sed officia ipsum voluptatibus eum, vero voluptates cumque earum!</li>
+
+                    <li class="q"> Le projet ? <img src="img/arrow.png"></li>
+                    <li class="a">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis reprehenderit suscipit repellendus cupiditate autem adipisci inventore, ullam cumque excepturi illum dolore ut nesciunt omnis fugiat libero, hic quisquam molestiae aut repellat maiores eaque. Dolor ipsam esse harum labore debitis iste, nesciunt saepe voluptatibus cupiditate rerum nostrum animi, deserunt quidem possimus perspiciatis qui velit ducimus, aut temporibus? Ex illo explicabo dolorem quisquam facere? Officia non sunt nihil obcaecati reprehenderit, eligendi saepe asperiores doloribus aut perferendis, delectus exercitationem placeat enim modi quis assumenda ducimus laudantium nostrum! Natus consequatur, quam veniam. Accusamus et similique sed officia ipsum voluptatibus eum, vero voluptates cumque earum!</li>
+
+                    <li class="q"> Comment nous rejoindre ? <img src="img/arrow.png"></li>
+                    <li class="a">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis reprehenderit suscipit repellendus cupiditate autem adipisci inventore, ullam cumque excepturi illum dolore ut nesciunt omnis fugiat libero, hic quisquam molestiae aut repellat maiores eaque. Dolor ipsam esse harum labore debitis iste, nesciunt saepe voluptatibus cupiditate rerum nostrum animi, deserunt quidem possimus perspiciatis qui velit ducimus, aut temporibus? Ex illo explicabo dolorem quisquam facere? Officia non sunt nihil obcaecati reprehenderit, eligendi saepe asperiores doloribus aut perferendis, delectus exercitationem placeat enim modi quis assumenda ducimus laudantium nostrum! Natus consequatur, quam veniam. Accusamus et similique sed officia ipsum voluptatibus eum, vero voluptates cumque earum!</li>
+
+                    <li class="q"> Lorem ? <img src="img/arrow.png"></li>
+                    <li class="a">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis reprehenderit suscipit repellendus cupiditate autem adipisci inventore, ullam cumque excepturi illum dolore ut nesciunt omnis fugiat libero, hic quisquam molestiae aut repellat maiores eaque. Dolor ipsam esse harum labore debitis iste, nesciunt saepe voluptatibus cupiditate rerum nostrum animi, deserunt quidem possimus perspiciatis qui velit ducimus, aut temporibus? Ex illo explicabo dolorem quisquam facere? Officia non sunt nihil obcaecati reprehenderit, eligendi saepe asperiores doloribus aut perferendis, delectus exercitationem placeat enim modi quis assumenda ducimus laudantium nostrum! Natus consequatur, quam veniam. Accusamus et similique sed officia ipsum voluptatibus eum, vero voluptates cumque earum!.</li>
+
+                    <li class="q"> Lorem ipsum ? <img src="img/arrow.png"></li>
+                    <li class="a">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis reprehenderit suscipit repellendus cupiditate autem adipisci inventore, ullam cumque excepturi illum dolore ut nesciunt omnis fugiat libero, hic quisquam molestiae aut repellat maiores eaque. Dolor ipsam esse harum labore debitis iste, nesciunt saepe voluptatibus cupiditate rerum nostrum animi, deserunt quidem possimus perspiciatis qui velit ducimus, aut temporibus? Ex illo explicabo dolorem quisquam facere? Officia non sunt nihil obcaecati reprehenderit, eligendi saepe asperiores doloribus aut perferendis, delectus exercitationem placeat enim modi quis assumenda ducimus laudantium nostrum! Natus consequatur, quam veniam. Accusamus et similique sed officia ipsum voluptatibus eum, vero voluptates cumque earum!.</li>
+
+                    <li class="q"> Lorem ipsum love love? <img src="img/arrow.png"></li>
+                    <li class="a">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis reprehenderit suscipit repellendus cupiditate autem adipisci inventore, ullam cumque excepturi illum dolore ut nesciunt omnis fugiat libero, hic quisquam molestiae aut repellat maiores eaque. Dolor ipsam esse harum labore debitis iste, nesciunt saepe voluptatibus cupiditate rerum nostrum animi, deserunt quidem possimus perspiciatis qui velit ducimus, aut temporibus? Ex illo explicabo dolorem quisquam facere? Officia non sunt nihil obcaecati reprehenderit, eligendi saepe asperiores doloribus aut perferendis, delectus exercitationem placeat enim modi quis assumenda ducimus laudantium nostrum! Natus consequatur, quam veniam. Accusamus et similique sed officia ipsum voluptatibus eum, vero voluptates cumque earum!</li>
+                </ul>
+            </div>
+        </div>
     </div>
     
-    
-    
-    <div id="map">
-    
-    <h2>Adresse</h2>
-    
-    <p>
-        <figure>
-            <a href="https://www.google.fr/maps/place/Rue+Gaucheret+88,+1030+Schaerbeek/@50.8638377,4.3585736,17z/data=!3m1!4b1!4m5!3m4!1s0x47c3c39e03423535:0xb4e58e8abb2713a3!8m2!3d50.8638377!4d4.3607623">
-                <img src="./img/infos/map-illustrator.svg" alt="" target=_blank>
-            </a>
-            
-            <figcaption>Rue Gaucheret, 88 <br> 1030 Schaerbeek</figcaption>
-            
-        </figure>
-    </p>
-    
-    </div>
-    
-    
-    <div id="faq">
-    
-    <h2>F.A.Q.</h2>
-  
-    
-    <div id="container">
-      
-      <ul class="faq">
-        <li class="q"> Qui sommes-nous ? <img src="img/arrow.png"></li>
-        <li class="a">Suspendisse sit amet elit lacinia, feugiat magna at, luctus massa. Aliquam sodales dictum nulla. consectetur adipiscing elit.</li>
-        
-        <li class="q"> Le projet ? <img src="img/arrow.png"></li>
-        <li class="a">Suspendisse sit amet elit lacinia, feugiat magna at, luctus massa. Aliquam sodales dictum nulla. consectetur adipiscing elit.</li>
-        
-        <li class="q"> Comment nous rejoindre ? <img src="img/arrow.png"></li>
-        <li class="a">Suspendisse sit amet elit lacinia, feugiat magna at, luctus massa. Aliquam sodales dictum nulla. consectetur adipiscing elit.</li>
-        
-        <li class="q"> Lorem ? <img src="img/arrow.png"></li>
-        <li class="a">Suspendisse sit amet elit lacinia, feugiat magna at, luctus massa. Aliquam sodales dictum nulla. consectetur adipiscing elit.</li>
-        
-        <li class="q"> Lorem ipsum ? <img src="img/arrow.png"></li>
-        <li class="a">Suspendisse sit amet elit lacinia, feugiat magna at, luctus massa. Aliquam sodales dictum nulla. consectetur adipiscing elit.</li>
-        
-        <li class="q"> Lorem ipsum love love? <img src="img/arrow.png"></li>
-        <li class="a">Suspendisse sit amet elit lacinia, feugiat magna at, luctus massa. Aliquam sodales dictum nulla. consectetur adipiscing elit.</li>
-      </ul>
-      </div>
-    </div>
-    </div>
-    
-    <script type="text/javascript">
+<script type="text/javascript">
 
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-36251023-1']);
@@ -157,7 +162,5 @@
   })();
 
 </script>
-    
-    
 </body>
 </html>

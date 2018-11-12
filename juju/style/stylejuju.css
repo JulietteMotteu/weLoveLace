@@ -32,7 +32,7 @@
   padding: 10px 15px 10px 15px;
   border: 1px solid #6a397c; }
 
-#sign > div::before, #eventSection .eventParent::before, #compteSection #profil::before {
+#sign > div::before, #eventSection .eventParent::before, #compteSection #profil::before, #mailer::before, #map::before, #faqParent::before {
   content: '';
   display: inline-block;
   position: relative;
@@ -323,7 +323,8 @@ nav #ligneNav::before {
   display: flex;
   height: auto; }
   .descriptionIns .description {
-    font-size: 13px;
+    font-size: 15px;
+    line-height: 1.5;
     display: flex;
     width: 80%; }
     .descriptionIns .description button {
@@ -331,14 +332,18 @@ nav #ligneNav::before {
       color: #ea5920;
       border: none;
       background-color: white; }
+      .descriptionIns .description button i {
+        color: #6a397c; }
   .descriptionIns .inscription {
     width: 20%;
     background-color: #ea5920;
     border: none;
     color: white;
     text-decoration: none;
-    text-align: center;
-    padding: 20px; }
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
 
 #compteSection #profil {
   border-left: 2px solid #ea5920;
@@ -346,51 +351,81 @@ nav #ligneNav::before {
   height: 400px; }
 
 /* Style info*/
-/*
-#info>div {
-    border-left: 2px solid $orangeColor;
-    position: relative;
-    height: 500px;
-  
-}
-#info>div::before {
-  content: '';
-  display: inline-block;
-  position: relative;
-  top:100%;
-  left: -13px;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  color: white;
-  border: 2px solid $orangeColor; }
-*/
-#info {
+#mailer, #map, #faqParent {
+  border-left: 2px solid #ea5920;
+  position: relative; }
+
+#info input, #info textarea {
+  margin-bottom: 40px; }
+#info h2 {
+  margin-left: 50px;
+  color: #4d4d4d; }
+
+#mailerIntro {
   display: flex;
-  flex-direction: column;
+  font-weight: 800;
+  font-size: 35px;
+  width: 450px;
   justify-content: center;
-  align-items: center; }
-  #info input, #info textarea {
-    margin-bottom: 40px; }
-  #info #mailer {
+  margin-left: auto;
+  margin-right: auto; }
+  #mailerIntro p {
+    text-align: center;
+    color: #4d4d4d; }
+  #mailerIntro i {
+    font-size: 80px;
+    color: #6a397c;
+    font-weight: 800; }
+  #mailerIntro i:first-of-type {
+    margin-left: 20px; }
+  #mailerIntro i:nth-of-type(2) {
+    align-self: flex-end; }
+
+#mailer {
+  height: 450px;
+  margin-bottom: 100px; }
+
+#mailerForm {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  flex-direction: column; }
+
+#map {
+  height: 700px;
+  margin-bottom: 100px; }
+  #map figure {
     display: flex;
     flex-direction: column;
-    width: 40%; }
-  #info h1 {
-    display: flex; }
-    #info h1 span {
-      font-weight: normal;
-      font-size: 150px; }
-  #info h2 {
-    align-self: flex-start;
-    color: #4d4d4d; }
+    align-items: center; }
+    #map figure figcaption {
+      color: #4d4d4d;
+      display: flex;
+      margin-top: 20px;
+      text-align: center; }
+      #map figure figcaption i {
+        color: #ea5920;
+        margin-right: 20px; }
+      #map figure figcaption address {
+        font-weight: 500;
+        font-size: 20px;
+        font-style: normal; }
+        #map figure figcaption address span {
+          font-size: 15px; }
+
+#faqParent {
+  height: 600px; }
 
 ul, li {
-  list-style: none; }
+  list-style-type: none; }
 
-#container {
+#containerFaq {
   width: 100%;
-  margin: 150px auto;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
   overflow: auto; }
 
 .faq li {
