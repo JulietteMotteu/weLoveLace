@@ -14,7 +14,7 @@ if (!isset($_SESSION['lastAccess'])){
         session_destroy(); 
     }
     
-    header("Location: ./_index.php?session=inscriptionlogin"); 
+    header("Location: ./index.php?session=inscriptionlogin"); 
     die();
 }
 
@@ -29,7 +29,7 @@ if (time() - $_SESSION['lastAccess'] > $sessionTimeOut) {
         session_destroy(); 
     }
     
-    header("Location: ./_index.php"); 
+    header("Location: ./index.php"); 
     die();
 }
 

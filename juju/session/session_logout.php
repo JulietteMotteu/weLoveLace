@@ -12,7 +12,7 @@ if (session_status() == PHP_SESSION_ACTIVE) {
 }
 
 // Header redirect
-header("Location: ./_index.php"); 
+header("Location: ./index.php"); 
 die();
 
 ob_flush();

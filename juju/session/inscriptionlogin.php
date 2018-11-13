@@ -41,7 +41,7 @@ if (isset($_POST['buttonLog'],$_POST['userLog'], $_POST['pwd'])) {
             $_SESSION['pseudo'] = $motDePasse[0]['pseudo'];
             $_SESSION['id'] = $motDePasse[0]['id'];
             
-            header("Location: ./_index.php?page=compte"); // Officiellement il FAUT un URL absolu
+            header("Location: ./index.php?page=compte"); // Officiellement il FAUT un URL absolu
             
         } else {
             $msg1 = 'Couple Login/MdP invalide.';

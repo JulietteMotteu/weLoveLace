@@ -1,4 +1,3 @@
-
 <?php
 //on charge le contenu du fichier config.php
 require_once('./config.php');
@@ -24,15 +23,15 @@ $t_evenement = $statement->fetchAll(PDO::FETCH_ASSOC);
         
         echo '<div class="eventDetail"><div class="nomImg"><h2>' . $t_evenement[$i]['nom'] . '</h2><button data-id="' .  $t_evenement[$i]['id'] . '" class="boutonLike"><i class="fas fa-heart fa-lg"></i></button><img src="./img/evenements/' . $t_evenement[$i]['image'] . '.jpg"></div>';
         
-        echo '<div class="descriptionIns"><div class="description"><p>' . substr($t_evenement[$i]['description'],0,200). '</p><button><i class="fas fa-chevron-right fa-rotate-90"></i></button><button class="facebook-share" data-js="facebook-share">Partager</button></div><a class="inscription" href="#inscrire">S\'inscrire</a></div></div></div>';
+        echo '<div class="descriptionIns"><div class="description"><p>' . substr($t_evenement[$i]['description'],0,200). '</p><button><i class="fas fa-chevron-right fa-rotate-90"></i></button><button class="facebook-share" data-js="facebook-share">Partager</button></div><button class="inscription" data-id="' .  $t_evenement[$i]['id'] . '">S\'inscrire</button></div></div></div>';
     }
 ?>
 
-<div id="inscrire" class="white-popup-block mfp-hide">
+<!--<div id="inscrire" class="white-popup-block mfp-hide">
 	<p>Vous désirez participer? En cliquant sur inscription, vous êtes automatiquement enregistré à notre événement badass!</p>
 	<p><a class="popup-modal-dismiss" href="#">Inscription</a></p>
 	<p><a class="popup-modal-dismiss" href="#">Ne pas s'inscrire</a></p>
-</div>
+</div>-->
 
 <script>
     
@@ -69,10 +68,43 @@ $t_evenement = $statement->fetchAll(PDO::FETCH_ASSOC);
 			}
 		}
 		
-		xhr.open ("GET", "./traitement/evenementTraitement.php?idEvent=" + e.target.getAttribute('data-id'));
+		xhr.open ("GET", "./traitement/evenementLike.php?idEvent=" + e.target.getAttribute('data-id'));
 		xhr.send (null);
         
     });
+    
+    eventSection.addEventListener('click', function(e){
+   
+        var xhr2 = new XMLHttpRequest();
+        
+        xhr2.onreadystatechange = function (){
+			if (xhr2.readyState == 4){
+				if (xhr2.status == 200){
+					console.log (xhr2.responseText);
+                    if (e.target.className == 'inscription') {
+                        e.target.innerHTML = 'Participe<i class="fas fa-check"></i>';
+                        e.target.disabled = "disabled";
+                    }
+				
+				}
+				else {
+					console.log ("Erreur dans AJAX");
+				}
+			}
+		}
+		xhr2.open ("GET", "./traitement/evenementParticipation.php?idEvent=" + e.target.getAttribute('data-id'));
+		xhr2.send (null);
+    });
+    
+		
+    
+    window.onload = function(e) {
+        console.log(participationJS);
+        if (participationJS.length > 0) {
+            e.target.innerHTML = 'Participe<i class="fas fa-check"></i>';
+            e.target.disabled = "disabled";
+        }
+    }
     
 /*    window.onload = function(e){
         var xhr = new XMLHttpRequest();
@@ -119,6 +151,8 @@ $t_evenement = $statement->fetchAll(PDO::FETCH_ASSOC);
     }
     
     /*Popup modal*/
+/*    
+    utiliser dans s'inscire : href = "#inscription"
     $(document).ready(function() {
         $('.inscription').magnificPopup({
             type: 'inline',
@@ -132,6 +166,6 @@ $t_evenement = $statement->fetchAll(PDO::FETCH_ASSOC);
         });
     });
     
-    $(".mfp-bg").css('background-color', '#fff');
+    $(".mfp-bg").css('background-color', '#fff');*/
     
 </script>

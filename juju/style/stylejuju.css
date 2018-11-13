@@ -112,6 +112,8 @@ nav #ligneNav::before {
   margin: 10px 10px 30px 0;
   display: flex;
   justify-content: flex-start; }
+  #ressourceSelect #left-btn {
+    margin-left: 0; }
 
 .ressourceBtn {
   border: 2px solid #4d4d4d;
@@ -284,7 +286,10 @@ nav #ligneNav::before {
         margin: 0;
         font-family: Roboto; }
     #eventSection .dateHeure > p {
-      font-size: 35px;
+      border-top: 2px solid #6a397c;
+      padding-top: 50px;
+      margin-bottom: 50px;
+      font-size: 30px;
       font-weight: 400;
       font-family: Roboto; }
   #eventSection .eventDetail {
@@ -343,7 +348,10 @@ nav #ligneNav::before {
     padding: 20px;
     display: flex;
     align-items: center;
-    justify-content: center; }
+    justify-content: center;
+    cursor: pointer; }
+    .descriptionIns .inscription i {
+      margin-left: 10px; }
 
 #compteSection #profil {
   border-left: 2px solid #ea5920;
@@ -435,7 +443,7 @@ ul, li {
 .faq li.q {
   background: #FFFFFF;
   font-weight: bold;
-  font-size: 120%;
+  font-size: 13px;
   cursor: pointer;
   color: #6A3875;
   border: 1px solid #6A3875;
@@ -444,11 +452,8 @@ ul, li {
   width: 100%; }
 
 .faq li.a {
-  background: #FFFFFF;
-  /*border: 1px solid #6A3875;
-  border-radius: 4px;*/
   display: none;
-  color: #6A3875; }
+  color: #4d4d4d; }
 
 .rotate {
   -moz-transform: rotate(90deg);

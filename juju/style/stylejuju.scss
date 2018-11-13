@@ -133,7 +133,10 @@ nav {
 #ressourceSelect {
     margin: 10px 10px 30px 0;
     display: flex;
-    justify-content: flex-start;    
+    justify-content: flex-start;   
+    #left-btn {
+        margin-left: 0;
+    }
 }
 
 .ressourceBtn {
@@ -366,7 +369,10 @@ nav {
             }
         }
         > p {
-            font-size: 35px;
+            border-top: 2px solid $mauveColor;
+            padding-top: 50px;
+            margin-bottom: 50px;
+            font-size: 30px;
             font-weight: 400;
             font-family: Roboto;
         }
@@ -438,6 +444,10 @@ nav {
         display: flex;
         align-items: center;
         justify-content: center;
+        cursor: pointer;
+        i {
+            margin-left: 10px;
+        }
     }
 }
 
@@ -574,7 +584,7 @@ ul, li { list-style-type: none;}
 .faq li.q {
   background: #FFFFFF;
   font-weight: bold;
-  font-size: 120%;
+  font-size: 13px;
   cursor: pointer;
   color: #6A3875;
   border: 1px solid #6A3875;
@@ -584,11 +594,8 @@ ul, li { list-style-type: none;}
 }
 
 .faq li.a {
-  background: #FFFFFF;
-  /*border: 1px solid #6A3875;
-  border-radius: 4px;*/
   display: none;
-  color:#6A3875;
+  color: $greyColor;
 }
 
 .rotate {
