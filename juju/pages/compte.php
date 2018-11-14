@@ -11,9 +11,13 @@ try {
 }
 
 // Si session existe -> afficher compte
-
-$statement = $pdo->prepare('SELECT * FROM t_personne');
-$ressources = $statement->fetchAll(PDO::FETCH_ASSOC);
+if(isset($_SESSION['id'])) {
+    $statement = $pdo->prepare('SELECT * FROM t_personne WHERE id = :id');
+    $statement->bindValue(':id', $_SESSION['id'], PDO::PARAM_INT);
+    $statement->execute();
+    $personne = $statement->fetchAll(PDO::FETCH_ASSOC);
+    var_dump($personne);
+}
 
 
 ?>
@@ -23,14 +27,23 @@ $ressources = $statement->fetchAll(PDO::FETCH_ASSOC);
 
     <div id="profil">
         <h2>Mon profil</h2>
+        <div id="profilDetail"> 
+            <?php
+            echo '<div id="photo">';
+            if (!empty($personne[0]['photo'])) {
+                echo '<img src="' . $personne[0]['photo'] . '" alt="Ma photo">';
+            }
+            else {
+                echo '<i class="fas fa-user-alt" id="userLogo"></i>';
+            }
+            echo '</div><div id="profilDesc"><h3>' . ucfirst($personne[0]['pseudo']) . '</h3></div>';
+
+            ?>
+        </div>
     </div>
     
-    <?php
-    
-    ?>
 
 </div>
-
 
 <?php
 ob_flush();

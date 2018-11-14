@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900");
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,800,900");
-#headerTop, nav, #ressourceSection, #sign div, #eventSection, #compteSection, #info {
+#headerTop, nav, #ressourceSection, #sign div, #eventSection, #info, #compteSection {
   width: 1100px;
   margin-top: 100px;
   margin-left: auto;
@@ -20,7 +20,7 @@
   background-color: #6a397c;
   border: 1px solid; }
 
-#headerTop, nav, #ressourceSection, #sign div, #eventSection, #compteSection, #info {
+#headerTop, nav, #ressourceSection, #sign div, #eventSection, #info, #compteSection {
   width: 80%;
   margin-top: 50px;
   margin-left: auto;
@@ -32,7 +32,7 @@
   padding: 10px 15px 10px 15px;
   border: 1px solid #6a397c; }
 
-#sign > div::before, #eventSection .eventParent::before, #compteSection #profil::before, #mailer::before, #map::before, #faqParent::before {
+#sign > div::before, #eventSection .eventParent::before, #mailer::before, #map::before, #faqParent::before, #compteSection #profil::before {
   content: '';
   display: inline-block;
   position: relative;
@@ -353,11 +353,6 @@ nav #ligneNav::before {
     .descriptionIns .inscription i {
       margin-left: 10px; }
 
-#compteSection #profil {
-  border-left: 2px solid #ea5920;
-  position: relative;
-  height: 400px; }
-
 /* Style info*/
 #mailer, #map, #faqParent {
   border-left: 2px solid #ea5920;
@@ -425,41 +420,93 @@ nav #ligneNav::before {
 
 #faqParent {
   height: 600px; }
-
-ul, li {
-  list-style-type: none; }
-
-#containerFaq {
-  width: 100%;
-  margin-top: 50px;
-  margin-left: auto;
-  margin-right: auto;
-  overflow: auto; }
-
-.faq li {
-  padding: 10px 15px 10px 15px;
-  margin-bottom: 20px; }
-
-.faq li.q {
-  background: #FFFFFF;
-  font-weight: bold;
-  font-size: 13px;
-  cursor: pointer;
-  color: #6A3875;
-  border: 1px solid #6A3875;
-  border-radius: 4px;
-  padding: 10px 15px 10px 15px;
-  width: 100%; }
-
-.faq li.a {
-  display: none;
-  color: #4d4d4d; }
-
-.rotate {
-  -moz-transform: rotate(90deg);
-  -webkit-transform: rotate(90deg);
-  transform: rotate(90deg); }
+  #faqParent ul, #faqParent li {
+    list-style-type: none; }
+  #faqParent li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+  #faqParent #containerFaq {
+    width: 100%;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: auto; }
+  #faqParent .faq li {
+    padding: 10px 15px 10px 15px;
+    margin-bottom: 20px; }
+  #faqParent .faq li.q {
+    background: #FFFFFF;
+    font-weight: bold;
+    font-size: 13px;
+    cursor: pointer;
+    color: #6A3875;
+    border: 1px solid #6A3875;
+    border-radius: 4px;
+    padding: 10px 15px 10px 15px;
+    width: 100%; }
+  #faqParent .faq li.a {
+    display: none;
+    color: #4d4d4d; }
+  #faqParent .rotate {
+    -moz-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg); }
 
 @media (max-width: 800px) {
   #container {
     width: 90%; } }
+.q a {
+  transition: 300ms ease-in-out background-color;
+  border-radius: 10px; }
+.q .arrow-down-close {
+  width: 80%;
+  height: 25px;
+  display: block;
+  text-align: right;
+  padding-right: 30px; }
+  .q .arrow-down-close:before, .q .arrow-down-close:after {
+    content: '';
+    display: inline-block;
+    height: 24px;
+    width: 4px;
+    background-color: #6a397c;
+    border-radius: 10px;
+    position: relative;
+    transition: 300ms ease-in-out all; }
+  .q .arrow-down-close:before {
+    transform: rotate(-45deg);
+    left: 7px;
+    top: -2px; }
+  .q .arrow-down-close:after {
+    transform: rotate(45deg);
+    left: 17px;
+    top: -2px; }
+  .q .arrow-down-close.open:before {
+    transform: translateX(7px) rotate(-45deg);
+    background-color: #e95a24; }
+  .q .arrow-down-close.open:after {
+    transform: translateX(-7px) rotate(45deg);
+    background-color: #e95a24; }
+
+#compteSection #profil {
+  border-left: 2px solid #ea5920;
+  position: relative;
+  height: 600px; }
+#compteSection h2 {
+  color: #4d4d4d;
+  margin-left: 50px; }
+
+#profilDetail {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto; }
+  #profilDetail #photo {
+    width: 100%;
+    height: 300px;
+    background-color: #ea5920; }
+    #profilDetail #photo #userLogo {
+      color: #fff;
+      text-align: center; }
+  #profilDetail #profilDesc {
+    padding-left: 40px; }

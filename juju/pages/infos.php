@@ -121,27 +121,26 @@
         <div id="faqParent">
 
         <h2>F.A.Q.</h2>
-
-
+  
             <div id="containerFaq">
 
                 <ul class="faq">
-                    <li class="q"> Qui sommes-nous ? <img src="img/arrow.png"></li>
+                    <li class="q"> Qui sommes-nous ?<a class="arrow-down-close" onclick="openDropdown(this)"></a></li>
                     <li class="a">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis reprehenderit suscipit repellendus cupiditate autem adipisci inventore, ullam cumque excepturi illum dolore ut nesciunt omnis fugiat libero, hic quisquam molestiae aut repellat maiores eaque. Dolor ipsam esse harum labore debitis iste, nesciunt saepe voluptatibus cupiditate rerum nostrum animi, deserunt quidem possimus perspiciatis qui velit ducimus, aut temporibus? Ex illo explicabo dolorem quisquam facere? Officia non sunt nihil obcaecati reprehenderit, eligendi saepe asperiores doloribus aut perferendis, delectus exercitationem placeat enim modi quis assumenda ducimus laudantium nostrum! Natus consequatur, quam veniam. Accusamus et similique sed officia ipsum voluptatibus eum, vero voluptates cumque earum!</li>
 
-                    <li class="q"> Le projet ? <img src="img/arrow.png"></li>
+                    <li class="q"> Le projet ?<a class="arrow-down-close" onclick="openDropdown(this)"></a></li>
                     <li class="a">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis reprehenderit suscipit repellendus cupiditate autem adipisci inventore, ullam cumque excepturi illum dolore ut nesciunt omnis fugiat libero, hic quisquam molestiae aut repellat maiores eaque. Dolor ipsam esse harum labore debitis iste, nesciunt saepe voluptatibus cupiditate rerum nostrum animi, deserunt quidem possimus perspiciatis qui velit ducimus, aut temporibus? Ex illo explicabo dolorem quisquam facere? Officia non sunt nihil obcaecati reprehenderit, eligendi saepe asperiores doloribus aut perferendis, delectus exercitationem placeat enim modi quis assumenda ducimus laudantium nostrum! Natus consequatur, quam veniam. Accusamus et similique sed officia ipsum voluptatibus eum, vero voluptates cumque earum!</li>
 
-                    <li class="q"> Comment nous rejoindre ? <img src="img/arrow.png"></li>
+                    <li class="q"> Comment nous rejoindre ?<a class="arrow-down-close" onclick="openDropdown(this)"></a></li>
                     <li class="a">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis reprehenderit suscipit repellendus cupiditate autem adipisci inventore, ullam cumque excepturi illum dolore ut nesciunt omnis fugiat libero, hic quisquam molestiae aut repellat maiores eaque. Dolor ipsam esse harum labore debitis iste, nesciunt saepe voluptatibus cupiditate rerum nostrum animi, deserunt quidem possimus perspiciatis qui velit ducimus, aut temporibus? Ex illo explicabo dolorem quisquam facere? Officia non sunt nihil obcaecati reprehenderit, eligendi saepe asperiores doloribus aut perferendis, delectus exercitationem placeat enim modi quis assumenda ducimus laudantium nostrum! Natus consequatur, quam veniam. Accusamus et similique sed officia ipsum voluptatibus eum, vero voluptates cumque earum!</li>
 
-                    <li class="q"> Lorem ? <img src="img/arrow.png"></li>
+                    <li class="q"> Lorem ?<a class="arrow-down-close" onclick="openDropdown(this)"></a></li>
                     <li class="a">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis reprehenderit suscipit repellendus cupiditate autem adipisci inventore, ullam cumque excepturi illum dolore ut nesciunt omnis fugiat libero, hic quisquam molestiae aut repellat maiores eaque. Dolor ipsam esse harum labore debitis iste, nesciunt saepe voluptatibus cupiditate rerum nostrum animi, deserunt quidem possimus perspiciatis qui velit ducimus, aut temporibus? Ex illo explicabo dolorem quisquam facere? Officia non sunt nihil obcaecati reprehenderit, eligendi saepe asperiores doloribus aut perferendis, delectus exercitationem placeat enim modi quis assumenda ducimus laudantium nostrum! Natus consequatur, quam veniam. Accusamus et similique sed officia ipsum voluptatibus eum, vero voluptates cumque earum!.</li>
 
-                    <li class="q"> Lorem ipsum ? <img src="img/arrow.png"></li>
+                    <li class="q"> Lorem ipsum ?<a class="arrow-down-close" onclick="openDropdown(this)"></a></li>
                     <li class="a">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis reprehenderit suscipit repellendus cupiditate autem adipisci inventore, ullam cumque excepturi illum dolore ut nesciunt omnis fugiat libero, hic quisquam molestiae aut repellat maiores eaque. Dolor ipsam esse harum labore debitis iste, nesciunt saepe voluptatibus cupiditate rerum nostrum animi, deserunt quidem possimus perspiciatis qui velit ducimus, aut temporibus? Ex illo explicabo dolorem quisquam facere? Officia non sunt nihil obcaecati reprehenderit, eligendi saepe asperiores doloribus aut perferendis, delectus exercitationem placeat enim modi quis assumenda ducimus laudantium nostrum! Natus consequatur, quam veniam. Accusamus et similique sed officia ipsum voluptatibus eum, vero voluptates cumque earum!.</li>
 
-                    <li class="q"> Lorem ipsum love love? <img src="img/arrow.png"></li>
+                    <li class="q"> Lorem ipsum love love?<a class="arrow-down-close" onclick="openDropdown(this)"></a></li>
                     <li class="a">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis reprehenderit suscipit repellendus cupiditate autem adipisci inventore, ullam cumque excepturi illum dolore ut nesciunt omnis fugiat libero, hic quisquam molestiae aut repellat maiores eaque. Dolor ipsam esse harum labore debitis iste, nesciunt saepe voluptatibus cupiditate rerum nostrum animi, deserunt quidem possimus perspiciatis qui velit ducimus, aut temporibus? Ex illo explicabo dolorem quisquam facere? Officia non sunt nihil obcaecati reprehenderit, eligendi saepe asperiores doloribus aut perferendis, delectus exercitationem placeat enim modi quis assumenda ducimus laudantium nostrum! Natus consequatur, quam veniam. Accusamus et similique sed officia ipsum voluptatibus eum, vero voluptates cumque earum!</li>
                 </ul>
             </div>
@@ -161,6 +160,12 @@
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
 
+    // Arrow - Close
+    function openDropdown(element){
+    element.classList.toggle('open');
+    document.getElementsByTagName('body')[0].classList.toggle('open');
+    };
+    
 </script>
 </body>
 </html>

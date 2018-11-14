@@ -106,30 +106,6 @@ $t_evenement = $statement->fetchAll(PDO::FETCH_ASSOC);
         }
     }
     
-/*    window.onload = function(e){
-        var xhr = new XMLHttpRequest();
-         xhr.onreadystatechange = function (){
-			if (xhr.readyState == 4){
-				if (xhr.status == 200){
-					console.log (xhr.responseText);
-                    if (e.target.className == 'boutonLike') {
-                        e.target.style.color = "#ea5920";
-                        e.target.style.backgroundColor = 'transparent';
-                        e.target.style.transition = "0.5s";
-                        e.target.disabled = "disabled";
-                    }
-				
-				}
-				else {
-					console.log ("Erreur dans AJAX");
-				}
-			}
-		}
-		
-		xhr.open ("GET", "./traitement/evenementTraitement.php?idEvent=" + e.target.getAttribute('data-id'));
-		xhr.send (null);
-    }*/
-    
 </script>
 
 <!--ce script pour le partage fb-->
