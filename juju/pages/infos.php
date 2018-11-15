@@ -77,7 +77,7 @@
    
     <div id="info">
 
-        <div id="mailerIntro">
+        <div class="intro">
             <i class="fas fa-chevron-left"></i><p>Des questions, propositions, envie de participer ? Dites-nous tout !</p><i class="fas fa-chevron-right"></i>
         </div>
         <div id="mailer">

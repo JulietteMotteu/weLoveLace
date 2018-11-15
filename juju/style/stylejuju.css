@@ -1,11 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900");
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,800,900");
-#headerTop, nav, #ressourceSection, #sign div, #eventSection, #info, #compteSection {
-  width: 1100px;
-  margin-top: 100px;
-  margin-left: auto;
-  margin-right: auto; }
-
 *, nav #navigationMenu {
   font-family: "Raleway"; }
 
@@ -20,7 +14,7 @@
   background-color: #6a397c;
   border: 1px solid; }
 
-#headerTop, nav, #ressourceSection, #sign div, #eventSection, #info, #compteSection {
+#headerTop, nav, #portraitSection, #ressourceSection, #sign div, #eventSection, #info, #compteSection {
   width: 80%;
   margin-top: 50px;
   margin-left: auto;
@@ -43,6 +37,12 @@
   border-radius: 50%;
   color: white;
   border: 2px solid #ea5920; }
+
+#timeline .timeline-item:after, #timeline .timeline-item:before {
+  content: '';
+  display: block;
+  width: 100%;
+  clear: both; }
 
 * {
   box-sizing: border-box; }
@@ -107,6 +107,156 @@ nav #ligneNav::before {
   border-radius: 50%;
   color: white;
   border: 2px solid #6a397c; }
+
+.project-name {
+  text-align: center;
+  padding: 10px 0; }
+
+#timeline {
+  background-image: url(../img/portraits/ligneTemps.svg), url(..//img/portraits/ligneTemps.svg), url(..//img/portraits/ligneTemps.svg);
+  background-repeat: no-repeat;
+  background-position: 48% 0, 48.1% 150rem, 48.2% 300rem;
+  background-size: 265px, 265px, 265px;
+  width: 100%;
+  margin: 30px auto;
+  position: relative;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  transition: all 0.4s ease; }
+  #timeline:after {
+    content: "";
+    clear: both;
+    display: table;
+    width: 100%; }
+  #timeline .timeline-item {
+    margin-bottom: 50px;
+    position: relative; }
+    #timeline .timeline-item .timeline-content {
+      width: 45%;
+      background: transparent;
+      padding: 20px;
+      -webkit-transition: all 0.3s ease;
+      -moz-transition: all 0.3s ease;
+      -ms-transition: all 0.3s ease;
+      transition: all 0.3s ease; }
+      #timeline .timeline-item .timeline-content h2 {
+        display: none; }
+      #timeline .timeline-item .timeline-content.right {
+        float: right; }
+      #timeline .timeline-item .timeline-content .profession {
+        position: relative;
+        top: -15px;
+        width: 100%;
+        font-size: 20px;
+        font-weight: 700;
+        color: #6a397c;
+        padding-right: 10px;
+        display: flex;
+        justify-content: flex-end;
+        text-align: right; }
+      #timeline .timeline-item .timeline-content .nationalite {
+        width: 100%;
+        font-size: 15px;
+        font-weight: 700;
+        color: #4d4d4d;
+        padding-left: 10px; }
+      #timeline .timeline-item .timeline-content .datePortrait {
+        width: 100%;
+        border-bottom: 2px solid #ea5920;
+        font-size: 20px;
+        font-weight: 700;
+        color: #4d4d4d;
+        padding-left: 10px;
+        padding-bottom: 5px; }
+      #timeline .timeline-item .timeline-content .right .datePortrait {
+        padding-right: 10px; }
+      #timeline .timeline-item .timeline-content .descriptionBtn {
+        border: none;
+        color: #6a397c;
+        background-color: transparent; }
+      #timeline .timeline-item .timeline-content .portraitDesc {
+        padding-left: 10px;
+        color: #4d4d4d; }
+
+.left .datePortrait::before {
+  content: '';
+  display: block;
+  position: relative;
+  top: 36px;
+  left: -23px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  color: white;
+  border: 2px solid #ea5920; }
+
+.right .datePortrait::before {
+  content: '';
+  display: block;
+  position: relative;
+  top: 36px;
+  right: -100%;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  color: white;
+  border: 2px solid #ea5920; }
+
+.btn {
+  padding: 5px 15px;
+  text-decoration: none;
+  background: transparent;
+  border: 2px solid #ee7c4f;
+  color: #ee7c4f;
+  display: inline-block;
+  position: relative;
+  text-transform: uppercase;
+  font-size: 12px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-transition: background 0.3s ease;
+  -moz-transition: background 0.3s ease;
+  -ms-transition: background 0.3s ease;
+  transition: background 0.3s ease;
+  -webkit-box-shadow: 2px 2px 0 #ee7c4f;
+  -moz-box-shadow: 2px 2px 0 #ee7c4f;
+  -ms-box-shadow: 2px 2px 0 #ee7c4f;
+  box-shadow: 2px 2px 0 #ee7c4f; }
+  .btn:hover {
+    box-shadow: none;
+    top: 2px;
+    left: 2px;
+    -webkit-box-shadow: 2px 2px 0 transparent;
+    -moz-box-shadow: 2px 2px 0 transparent;
+    -ms-box-shadow: 2px 2px 0 transparent;
+    box-shadow: 2px 2px 0 transparent; }
+
+@media screen and (max-width: 768px) {
+  #timeline {
+    margin: 0px;
+    padding: 0px;
+    width: 90%; }
+    #timeline .timeline-item .timeline-content {
+      width: 90%;
+      float: right; }
+      #timeline .timeline-item .timeline-content:before, #timeline .timeline-item .timeline-content.right:before {
+        left: 10%;
+        margin-left: -6px;
+        border-left: 0;
+        border-right: 7px solid #ea5920; }
+    #timeline .timeline-item .timeline-icon {
+      left: 0; } }
+.portraitImg {
+  display: block;
+  width: 90%;
+  margin-left: 0; }
+
+.right .portraitImg {
+  margin-left: auto;
+  margin-right: 0; }
 
 #ressourceSelect {
   margin: 10px 10px 30px 0;
@@ -364,7 +514,7 @@ nav #ligneNav::before {
   margin-left: 50px;
   color: #4d4d4d; }
 
-#mailerIntro {
+.intro {
   display: flex;
   font-weight: 800;
   font-size: 35px;
@@ -372,16 +522,16 @@ nav #ligneNav::before {
   justify-content: center;
   margin-left: auto;
   margin-right: auto; }
-  #mailerIntro p {
+  .intro p {
     text-align: center;
     color: #4d4d4d; }
-  #mailerIntro i {
+  .intro i {
     font-size: 80px;
     color: #6a397c;
     font-weight: 800; }
-  #mailerIntro i:first-of-type {
+  .intro i:first-of-type {
     margin-left: 20px; }
-  #mailerIntro i:nth-of-type(2) {
+  .intro i:nth-of-type(2) {
     align-self: flex-end; }
 
 #mailer {

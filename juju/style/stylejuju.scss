@@ -1,16 +1,24 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900');
 @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,800,900');
 
-%section { 
-    width: 1100px;
-    margin-top: 100px;
-    margin-left: auto;
-    margin-right: auto; }
-
 $orangeColor: #ea5920;
 $mauveColor: #6a397c;
 $greyColor: #4d4d4d;
 $textFont: 'Raleway';
+$bg-body: #f9f9f9;
+$primary-color: $orangeColor;
+$secondary-color: $mauveColor;
+
+
+// Typography
+$base-font: helvetica, arial, tahoma, verdana;
+$base-font-title: "Dosis", arial, tahoma, verdana;
+
+$base-font-color: #4d4d4d;
+
+// Timeline
+$timeline-color: $primary-color;
+
 %font { font-family : $textFont; }
 %bouton { border-radius: 4px; padding: 10px 15px 10px 15px;}
 %boutonInfo { border-radius: 4px; padding: 10px 15px 10px 15px; color: #fff; background-color: $mauveColor; border: 1px solid; }
@@ -32,6 +40,22 @@ $textFont: 'Raleway';
     border-radius: 50%;
     color: white;
     border: 2px solid $orangeColor;
+}
+
+// Mixins and Placeholders Timeline
+%clearfix {
+	&:after, &:before {
+		content: '';
+		display: block;
+		width: 100%;
+		clear: both;
+	}
+}
+
+@mixin prefix($prop, $val) {
+	@each $prefix in '-webkit-', '-moz-', '-ms-', '' {
+		#{$prefix}#{$prop}: $val;
+	}
 }
 
 * {
@@ -124,6 +148,183 @@ nav {
     }
 }
 
+
+// Timeline
+#portraitSection {
+	@extend %section;
+}
+
+.project-name {
+  text-align: center;
+  padding: 10px 0;
+}
+
+#timeline {
+    background-image: url(../img/portraits/ligneTemps.svg), url(..//img/portraits/ligneTemps.svg), url(..//img/portraits/ligneTemps.svg);
+    background-repeat: no-repeat;
+    background-position: 48% 0, 48.1% 150rem, 48.2% 300rem;
+    background-size: 265px, 265px, 265px;
+    width: 100%;
+    margin: 30px auto;
+    position: relative;
+	@include prefix(transition, all .4s ease);
+
+	&:after {
+		content: "";
+		clear: both;
+		display: table;
+		width: 100%;
+	}
+	
+	.timeline-item {
+		margin-bottom: 50px;
+		position: relative;
+		@extend %clearfix;
+        
+		.timeline-content {
+			width: 45%;
+			background: transparent;
+			padding: 20px;
+			@include prefix(transition, all .3s ease);
+
+			h2 {
+				display: none;
+			}
+
+			&.right {
+				float: right;
+			}
+            .dateProf {
+                
+            }
+            .profession {
+                position: relative;
+                top: -15px;
+                width: 100%;
+                font-size: 20px;
+                font-weight: 700;
+                color: $mauveColor;
+                padding-right: 10px;
+                display: flex;
+                justify-content: flex-end;
+                text-align: right;
+            }
+            .nationalite {
+                width: 100%;
+                font-size: 15px;
+                font-weight: 700;
+                color: $greyColor;
+                padding-left: 10px;
+                
+            }
+            .datePortrait {
+                width: 100%;
+                border-bottom: 2px solid $orangeColor;
+                font-size: 20px;
+                font-weight: 700;
+                color: $greyColor;
+                padding-left: 10px;
+                padding-bottom: 5px;
+            }
+            .right .datePortrait {
+                padding-right: 10px;
+            }
+            .descriptionBtn {
+                border: none;
+                color: $mauveColor;
+                background-color: transparent;
+            }
+            .portraitDesc {
+                padding-left: 10px;
+                color: $greyColor;
+            }
+		}
+	}
+}
+.left .datePortrait::before {
+    content: '';
+    display: block;
+    position: relative;
+    top: 36px;
+    left: -23px;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    color: white;
+    border: 2px solid $orangeColor;
+}
+.right .datePortrait::before {
+    content: '';
+    display: block;
+    position: relative;
+    top: 36px;
+    right: -100%;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    color: white;
+    border: 2px solid $orangeColor;
+}
+
+// Buttons
+.btn {
+	padding: 5px 15px;
+	text-decoration: none;
+	background: transparent;
+	border: 2px solid lighten($primary-color, 10%);
+	color: lighten($primary-color, 10%);
+	display: inline-block;
+	position: relative;
+	text-transform: uppercase;
+	font-size: 12px;
+	@include prefix(border-radius, 5px);
+	@include prefix(transition, background .3s ease);
+	@include prefix(box-shadow, 2px 2px 0 lighten($primary-color, 10%));
+
+	&:hover {
+		box-shadow: none ;
+		top: 2px;
+		left: 2px;
+		@include prefix(box-shadow, 2px 2px 0 transparent);
+	}
+}
+
+@media screen and (max-width: 768px) {
+	#timeline {
+		margin: 0px;
+		padding: 0px;
+    width: 90%;
+		
+		.timeline-item {
+			.timeline-content {
+				width: 90%;
+				float: right;
+				
+				&:before, &.right:before {
+					left: 10%;
+					margin-left: -6px;
+					border-left: 0;
+					border-right: 7px solid $timeline-color;
+				}
+			}
+
+			.timeline-icon {
+				left: 0;
+			}
+		}
+	}
+}
+
+.portraitImg {
+    display: block;
+    width: 90%;
+    margin-left: 0;
+}
+
+.right .portraitImg {
+    margin-left: auto;
+    margin-right: 0;
+}
 
 // Section RESSOURCES
 #ressourceSection {
@@ -479,7 +680,7 @@ nav {
     }
 }
 
-#mailerIntro {
+.intro {
     display: flex;
     font-weight: 800;
     font-size: 35px;

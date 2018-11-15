@@ -19,7 +19,7 @@ if (isset($_GET['page']) || isset($_GET['session'])) {
     
 }
 else {
-    include("./circuit-acueil2.html");
+    include("./accueil.html");
 }
 
 /*else {
