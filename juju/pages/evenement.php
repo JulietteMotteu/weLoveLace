@@ -9,8 +9,33 @@ try {
     $pdo = null ;
     die();
 }
-$statement = $pdo->query('SELECT *, DATE_FORMAT(date, "%d") as jour, DATE_FORMAT(date, "%m") as mois FROM t_evenement'); 
+
+$sql = 'SELECT *, t_evenement.id as id, DATE_FORMAT(date, "%d") as jour, DATE_FORMAT(date, "%m") as mois FROM                   t_evenement';
+        
+$statement = $pdo->query($sql); 
 $t_evenement = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+if(isset($_SESSION['id'])) {
+    $statement2 = $pdo->prepare('SELECT idEvenement FROM t_like WHERE idPersonne = :idPersonne'); 
+    $statement2->bindValue(':idPersonne', $_SESSION['id'], PDO::PARAM_INT);
+    $statement2->execute();
+    $t_like = $statement2->fetchAll(PDO::FETCH_ASSOC);
+
+    $arrIds=[];
+    foreach ($t_like as $cle => $valeur){
+        $arrIds[] =  $valeur['idEvenement'];
+    }
+    
+    $statement3 = $pdo->prepare('SELECT idEvenement FROM t_participation WHERE idPersonne = :idPersonne'); 
+    $statement3->bindValue(':idPersonne', $_SESSION['id'], PDO::PARAM_INT);
+    $statement3->execute();
+    $t_like = $statement3->fetchAll(PDO::FETCH_ASSOC);
+
+    $arrIds=[];
+    foreach ($t_like as $cle => $valeur){
+        $arrIds[] =  $valeur['idEvenement'];
+    }
+}
 
 ?>
     
@@ -18,13 +43,30 @@ $t_evenement = $statement->fetchAll(PDO::FETCH_ASSOC);
     
 <?php
     for($i = 0; $i < count($t_evenement); $i++){
+        
         $time = explode(":", $t_evenement[$i]['heure']);
         echo '<div class="eventParent"><div class="dateHeure"><div class="date"><p>'  . $t_evenement[$i]['jour'] . '</p><p>' . $t_evenement[$i]['mois'] . '</p></div><p>' . $time[0] . 'h</p></div>';
         
-        echo '<div class="eventDetail"><div class="nomImg"><h2>' . $t_evenement[$i]['nom'] . '</h2><button data-id="' .  $t_evenement[$i]['id'] . '" class="boutonLike"><i class="fas fa-heart fa-lg"></i></button><img src="./img/evenements/' . $t_evenement[$i]['image'] . '.jpg"></div>';
+        echo '<div class="eventDetail"><div class="nomImg"><h2>' . $t_evenement[$i]['nom'] . '</h2>';
         
-        echo '<div class="descriptionIns"><div class="description"><p>' . substr($t_evenement[$i]['description'],0,200). '</p><button><i class="fas fa-chevron-right fa-rotate-90"></i></button><button class="facebook-share" data-js="facebook-share">Partager</button></div><button class="inscription" data-id="' .  $t_evenement[$i]['id'] . '">S\'inscrire</button></div></div></div>';
+        if(isset($_SESSION['id'])) {
+                
+                if(in_array ($t_evenement[$i]['id'],$arrIds)) {
+                    
+                    echo '<button data-id="' .  $t_evenement[$i]['id'] . '" class="like boutonLike" disable><i class="fas fa-heart fa-lg"></i></button>';
+                }
+                else {
+                    echo '<button data-id="' .  $t_evenement[$i]['id'] . '" class="boutonLike"><i class="fas fa-heart fa-lg"></i></button>';
+                }
+        }
+        
+        else {
+            echo '<button data-id="' .  $t_evenement[$i]['id'] . '"><i class="fas fa-heart fa-lg"></i></button>';
+        }
+        
+        echo '<img src="./img/evenements/' . $t_evenement[$i]['image'] . '.jpg"></div><div class="descriptionIns"><div class="description"><p>' . substr($t_evenement[$i]['description'],0,200). '</p><button><i class="fas fa-chevron-right fa-rotate-90"></i></button><button class="facebook-share" data-js="facebook-share">Partager</button></div><button class="inscription" data-id="' .  $t_evenement[$i]['id'] . '">S\'inscrire</button></div></div></div>';
     }
+    
 ?>
 
 <!--<div id="inscrire" class="white-popup-block mfp-hide">
@@ -47,6 +89,7 @@ $t_evenement = $statement->fetchAll(PDO::FETCH_ASSOC);
     })*/
     
     eventSection.addEventListener('click', function(e){
+        console.log('click');
         
         var xhr = new XMLHttpRequest();
         
@@ -55,12 +98,10 @@ $t_evenement = $statement->fetchAll(PDO::FETCH_ASSOC);
 				if (xhr.status == 200){
 					console.log (xhr.responseText);
                     if (e.target.className == 'boutonLike') {
-                        e.target.style.color = "#ea5920";
-                        e.target.style.backgroundColor = 'transparent';
-                        e.target.style.transition = "0.5s";
-                        e.target.disabled = "disabled";
+                        e.target.classList.add("like");
+                        e.target.style.color = "EA5920"; 
+                        console.log("hello");
                     }
-				
 				}
 				else {
 					console.log ("Erreur dans AJAX");

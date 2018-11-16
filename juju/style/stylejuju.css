@@ -26,7 +26,7 @@
   padding: 10px 15px 10px 15px;
   border: 1px solid #6a397c; }
 
-#sign > div::before, #eventSection .eventParent::before, #mailer::before, #map::before, #faqParent::before, #compteSection #profil::before {
+#sign > div::before, .eventParent::before, #mailer::before, #map::before, #faqParent::before, #compteSection #profil::before {
   content: '';
   display: inline-block;
   position: relative;
@@ -411,39 +411,42 @@ nav #ligneNav::before {
 
 #eventSection {
   margin-top: 100px; }
-  #eventSection .eventParent {
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    border-left: 2px solid #ea5920;
-    position: relative;
-    height: 280px;
-    margin-bottom: 100px; }
-  #eventSection .dateHeure {
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 15%;
-    height: 300px;
-    color: #6a397c; }
-    #eventSection .dateHeure .date {
-      font-weight: 600;
-      font-size: 50px;
-      margin: 0; }
-      #eventSection .dateHeure .date p {
-        margin: 0;
-        font-family: Roboto; }
-    #eventSection .dateHeure > p {
-      border-top: 2px solid #6a397c;
-      padding-top: 50px;
-      margin-bottom: 50px;
-      font-size: 30px;
-      font-weight: 400;
+
+.eventParent {
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  border-left: 2px solid #ea5920;
+  position: relative;
+  height: 280px;
+  margin-bottom: 100px; }
+
+.dateHeure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 15%;
+  height: 300px;
+  color: #6a397c; }
+  .dateHeure .date {
+    font-weight: 600;
+    font-size: 50px;
+    margin: 0; }
+    .dateHeure .date p {
+      margin: 0;
       font-family: Roboto; }
-  #eventSection .eventDetail {
-    width: 80%; }
+  .dateHeure > p {
+    border-top: 2px solid #6a397c;
+    padding-top: 50px;
+    margin-bottom: 50px;
+    font-size: 30px;
+    font-weight: 400;
+    font-family: Roboto; }
+
+.eventDetail {
+  width: 80%; }
 
 .nomImg {
   margin: 0;
@@ -502,6 +505,11 @@ nav #ligneNav::before {
     cursor: pointer; }
     .descriptionIns .inscription i {
       margin-left: 10px; }
+
+.like i {
+  color: #ea5920;
+  background-color: transparent;
+  transition: 0.5s; }
 
 /* Style info*/
 #mailer, #map, #faqParent {

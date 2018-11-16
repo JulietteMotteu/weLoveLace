@@ -32,7 +32,13 @@
             }
             echo '<img class="portraitImg" src="./img/portraits/' . $t_women[$i]['image'] . '.png" alt=""><h2>' . $t_women[$i]['prenom'] . ' ' . $t_women[$i]['nom'] . '</h2><p class="datePortrait">' . $t_women[$i]['dateBirth'] . '-' . $t_women[$i]['dateDeath'] . '</p><p class="profession">' . ucfirst($t_women[$i]['profession']) . '</p><p class="nationalite">' . $t_women[$i]['nationality'] . '</p><button class="descriptionBtn"><i class="fas fa-chevron-right fa-rotate-90"></i></button><p class="portraitDesc">' . $t_women[$i]['description'] . '</p>' .  '</div></div>';
         }
+        
         ?> 
+        
+        <script>
+            
+                
+        </script>
         
     </div>
 </div>

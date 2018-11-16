@@ -538,49 +538,49 @@ nav {
 #eventSection {
     @extend %section;
     margin-top: 100px;
-    .eventParent {
-        padding: 0;
-        display: flex;
-        flex-wrap: wrap;
-        border-left: 2px solid $orangeColor;
-        position: relative;
-        height: 280px;
-        margin-bottom: 100px;
-    }
-    .eventParent::before {
-        @extend %rond;
-    }
-    .dateHeure {
+}
+.eventParent {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    border-left: 2px solid $orangeColor;
+    position: relative;
+    height: 280px;
+    margin-bottom: 100px;
+}
+.eventParent::before {
+    @extend %rond;
+}
+.dateHeure {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 15%;
+    height: 300px;
+
+    color: $mauveColor;
+    .date {
+        font-weight: 600;
+        font-size: 50px;
         margin: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        width: 15%;
-        height: 300px;
-    
-        color: $mauveColor;
-        .date {
-            font-weight: 600;
-            font-size: 50px;
+        p {
             margin: 0;
-            p {
-                margin: 0;
-                font-family: Roboto;
-            }
-        }
-        > p {
-            border-top: 2px solid $mauveColor;
-            padding-top: 50px;
-            margin-bottom: 50px;
-            font-size: 30px;
-            font-weight: 400;
             font-family: Roboto;
         }
     }
-    .eventDetail {
-        width: 80%;
+    > p {
+        border-top: 2px solid $mauveColor;
+        padding-top: 50px;
+        margin-bottom: 50px;
+        font-size: 30px;
+        font-weight: 400;
+        font-family: Roboto;
     }
+}
+.eventDetail {
+    width: 80%;
 }
 
 .nomImg {
@@ -635,6 +635,7 @@ nav {
             }
         }
     }
+    
     .inscription {
         width: 20%;
         background-color: $orangeColor;
@@ -650,6 +651,12 @@ nav {
             margin-left: 10px;
         }
     }
+}
+
+.like i {
+    color: #ea5920;
+    background-color: transparent;
+    transition: 0.5s;
 }
 
 /* Style info*/
