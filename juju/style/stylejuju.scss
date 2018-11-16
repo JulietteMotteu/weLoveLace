@@ -64,6 +64,11 @@ $timeline-color: $primary-color;
     
 }
 
+h2 {
+    font-family: Raleway;
+    color: $orangeColor;
+    font-weight: 800;
+}
 // HEADER
 #headerTop {
     @extend %section;
@@ -636,7 +641,7 @@ nav {
         }
     }
     
-    .inscription {
+    .inscriptionBtn {
         width: 20%;
         background-color: $orangeColor;
         border: none;
@@ -683,7 +688,6 @@ nav {
     h2 {
         margin-left: 50px;
         color : $greyColor;
-        
     }
 }
 
@@ -865,7 +869,7 @@ nav {
     #profil {
         border-left: 2px solid $orangeColor;
         position: relative;
-        height: 600px;
+        height: 900px;
     }
     #profil::before {
         @extend %rond;
@@ -882,11 +886,14 @@ nav {
     margin-right: auto;
     #photo {
         width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         height: 300px;
         background-color: $orangeColor;
         #userLogo {
+            display: flex;
             color: #fff;
-            text-align: center;
         }
     }
     #profilDesc {

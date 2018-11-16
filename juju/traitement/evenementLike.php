@@ -31,9 +31,6 @@ if(isset($_SESSION['id'])){
         
 
     }
-    else {
-        echo json_encode($like);
-    }
 }
 
 ob_flush();

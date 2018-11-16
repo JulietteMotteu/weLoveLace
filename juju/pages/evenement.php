@@ -21,19 +21,19 @@ if(isset($_SESSION['id'])) {
     $statement2->execute();
     $t_like = $statement2->fetchAll(PDO::FETCH_ASSOC);
 
-    $arrIds=[];
+    $arrLike=[];
     foreach ($t_like as $cle => $valeur){
-        $arrIds[] =  $valeur['idEvenement'];
+        $arrLike[] =  $valeur['idEvenement'];
     }
     
     $statement3 = $pdo->prepare('SELECT idEvenement FROM t_participation WHERE idPersonne = :idPersonne'); 
     $statement3->bindValue(':idPersonne', $_SESSION['id'], PDO::PARAM_INT);
     $statement3->execute();
-    $t_like = $statement3->fetchAll(PDO::FETCH_ASSOC);
+    $t_participation = $statement3->fetchAll(PDO::FETCH_ASSOC);
 
-    $arrIds=[];
-    foreach ($t_like as $cle => $valeur){
-        $arrIds[] =  $valeur['idEvenement'];
+    $arrParticipation=[];
+    foreach ($t_participation as $cle => $valeur){
+        $arrParticipation[] =  $valeur['idEvenement'];
     }
 }
 
@@ -51,7 +51,7 @@ if(isset($_SESSION['id'])) {
         
         if(isset($_SESSION['id'])) {
                 
-                if(in_array ($t_evenement[$i]['id'],$arrIds)) {
+                if(in_array ($t_evenement[$i]['id'], $arrLike)) {
                     
                     echo '<button data-id="' .  $t_evenement[$i]['id'] . '" class="like boutonLike" disable><i class="fas fa-heart fa-lg"></i></button>';
                 }
@@ -64,7 +64,22 @@ if(isset($_SESSION['id'])) {
             echo '<button data-id="' .  $t_evenement[$i]['id'] . '"><i class="fas fa-heart fa-lg"></i></button>';
         }
         
-        echo '<img src="./img/evenements/' . $t_evenement[$i]['image'] . '.jpg"></div><div class="descriptionIns"><div class="description"><p>' . substr($t_evenement[$i]['description'],0,200). '</p><button><i class="fas fa-chevron-right fa-rotate-90"></i></button><button class="facebook-share" data-js="facebook-share">Partager</button></div><button class="inscription" data-id="' .  $t_evenement[$i]['id'] . '">S\'inscrire</button></div></div></div>';
+        echo '<img src="./img/evenements/' . $t_evenement[$i]['image'] . '.jpg"></div><div class="descriptionIns"><div class="description"><p>' . substr($t_evenement[$i]['description'],0,200). '</p><button><i class="fas fa-chevron-right fa-rotate-90"></i></button><button class="facebook-share" data-js="facebook-share">Partager</button></div>';
+        
+        if(isset($_SESSION['id'])) {
+            
+            if(in_array($t_evenement[$i]['id'], $arrParticipation)) {
+                echo '<button class="inscriptionBtn inscription" data-id="' .  $t_evenement[$i]['id'] . '">Participe<i class="fas fa-check"></i></button>';
+            }
+            else {
+                echo '<button class="inscriptionBtn" data-id="' .  $t_evenement[$i]['id'] . '">S\'inscrire</button>';
+            }
+        }
+        else {
+                echo '<button class="inscriptionBtn" data-id="' .  $t_evenement[$i]['id'] . '">S\'inscrire</button>';
+            }
+        
+        echo '</div></div></div>';
     }
     
 ?>
@@ -88,6 +103,7 @@ if(isset($_SESSION['id'])) {
         }
     })*/
     
+    // Liker un événement
     eventSection.addEventListener('click', function(e){
         console.log('click');
         
@@ -96,11 +112,8 @@ if(isset($_SESSION['id'])) {
         xhr.onreadystatechange = function (){
 			if (xhr.readyState == 4){
 				if (xhr.status == 200){
-					console.log (xhr.responseText);
                     if (e.target.className == 'boutonLike') {
                         e.target.classList.add("like");
-                        e.target.style.color = "EA5920"; 
-                        console.log("hello");
                     }
 				}
 				else {
@@ -114,6 +127,7 @@ if(isset($_SESSION['id'])) {
         
     });
     
+    // Participer à un événement
     eventSection.addEventListener('click', function(e){
    
         var xhr2 = new XMLHttpRequest();
@@ -122,7 +136,7 @@ if(isset($_SESSION['id'])) {
 			if (xhr2.readyState == 4){
 				if (xhr2.status == 200){
 					console.log (xhr2.responseText);
-                    if (e.target.className == 'inscription') {
+                    if (e.target.className == 'inscriptionBtn') {
                         e.target.innerHTML = 'Participe<i class="fas fa-check"></i>';
                         e.target.disabled = "disabled";
                     }
@@ -136,16 +150,6 @@ if(isset($_SESSION['id'])) {
 		xhr2.open ("GET", "./traitement/evenementParticipation.php?idEvent=" + e.target.getAttribute('data-id'));
 		xhr2.send (null);
     });
-    
-		
-    
-    window.onload = function(e) {
-        console.log(participationJS);
-        if (participationJS.length > 0) {
-            e.target.innerHTML = 'Participe<i class="fas fa-check"></i>';
-            e.target.disabled = "disabled";
-        }
-    }
     
 </script>
 

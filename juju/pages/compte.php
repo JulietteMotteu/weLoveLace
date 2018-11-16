@@ -16,19 +16,15 @@ if(isset($_SESSION['id'])) {
     $statement->bindValue(':id', $_SESSION['id'], PDO::PARAM_INT);
     $statement->execute();
     $personne = $statement->fetchAll(PDO::FETCH_ASSOC);
-    var_dump($personne);
     
+    // Afficher les événements likés ou auxquels on participe
     $statement2 = $pdo->prepare('SELECT *, DATE_FORMAT(date, "%d") as jour, DATE_FORMAT(date, "%m") as mois FROM t_evenement INNER JOIN t_participation ON t_evenement.id = t_participation.idEvenement WHERE t_participation.idPersonne = :idPersonne;');
     $statement2->bindvalue(':idPersonne',$_SESSION['id'], PDO::PARAM_INT);
     $statement2->execute();
     $participation = $statement2->fetchAll(PDO::FETCH_ASSOC);
-    
-    
 }
 
-
 ?>
-    
 
 <div id="compteSection">
 
@@ -41,11 +37,15 @@ if(isset($_SESSION['id'])) {
                 echo '<img src="' . $personne[0]['photo'] . '" alt="Ma photo">';
             }
             else {
-                echo '<i class="fas fa-user-alt" id="userLogo"></i>';
+                echo '<div id="userLogo"><i class="fas fa-user-alt fa-10x"></i></div>';
             }
-            echo '</div><div id="profilDesc"><h3>' . ucfirst($personne[0]['pseudo']) . '</h3></div>';
-
+            echo '</div><div id="profilDesc"><h3>' . ucfirst($personne[0]['pseudo']) . '</h3><p>' . $personne[0]['description'] . '</p></div>';
+            
             ?>
+            
+            <button>Modifier</button>
+            
+            
         </div>
     </div>
     
@@ -63,6 +63,7 @@ if(isset($_SESSION['id'])) {
     }
     
 ?>
+
 </div>
 
 <?php

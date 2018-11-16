@@ -12,7 +12,7 @@ if (session_status() == PHP_SESSION_ACTIVE) {
 }
 
 // Header redirect
-header("Location: ./index.php"); 
+header("Location: ./index.php?page=portraits"); 
 die();
 
 ob_flush();

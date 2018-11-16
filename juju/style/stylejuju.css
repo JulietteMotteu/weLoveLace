@@ -47,6 +47,11 @@
 * {
   box-sizing: border-box; }
 
+h2 {
+  font-family: Raleway;
+  color: #ea5920;
+  font-weight: 800; }
+
 #headerTop {
   margin-top: 20px;
   display: flex;
@@ -492,7 +497,7 @@ nav #ligneNav::before {
       background-color: white; }
       .descriptionIns .description button i {
         color: #6a397c; }
-  .descriptionIns .inscription {
+  .descriptionIns .inscriptionBtn {
     width: 20%;
     background-color: #ea5920;
     border: none;
@@ -503,7 +508,7 @@ nav #ligneNav::before {
     align-items: center;
     justify-content: center;
     cursor: pointer; }
-    .descriptionIns .inscription i {
+    .descriptionIns .inscriptionBtn i {
       margin-left: 10px; }
 
 .like i {
@@ -650,7 +655,7 @@ nav #ligneNav::before {
 #compteSection #profil {
   border-left: 2px solid #ea5920;
   position: relative;
-  height: 600px; }
+  height: 900px; }
 #compteSection h2 {
   color: #4d4d4d;
   margin-left: 50px; }
@@ -661,10 +666,13 @@ nav #ligneNav::before {
   margin-right: auto; }
   #profilDetail #photo {
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 300px;
     background-color: #ea5920; }
     #profilDetail #photo #userLogo {
-      color: #fff;
-      text-align: center; }
+      display: flex;
+      color: #fff; }
   #profilDetail #profilDesc {
     padding-left: 40px; }

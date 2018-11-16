@@ -81,7 +81,7 @@
             <i class="fas fa-chevron-left"></i><p>Des questions, propositions, envie de participer ? Dites-nous tout !</p><i class="fas fa-chevron-right"></i>
         </div>
         <div id="mailer">
-        <h2>Contacts</h2>
+        <h2>Contact</h2>
 
             <div id="mailerForm">
                 

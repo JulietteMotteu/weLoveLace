@@ -12,6 +12,7 @@
     <!-- Ici on met le fichier CSS compilé -->
     <link rel="stylesheet" href="./style/stylejuju.css">
     <link rel="stylesheet" href="./style/fontAwesome/css/all.css">
+     <link rel="icon" href="./img/logo/logo_url.png" type="image/png"> 
     <!-- Ici les fichiers JS -->
     <script src="./js/jquery/jquery-3.3.1.min.js"></script>
     <script src="./js/jquery/jquery.magnific-popup.js"></script>
@@ -22,7 +23,7 @@
 <body>
     <div id="headerTop">
         <div id="logo">
-           <img src="./img/logo/logo_nom.png" alt="">
+           <a href="./index.php"><img src="./img/logo/logo_nom.png" alt=""></a>
         </div>
 
         <div id="leftLinks">
