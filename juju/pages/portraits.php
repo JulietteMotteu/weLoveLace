@@ -1,5 +1,3 @@
-
-   
 <div id="portraitSection">
 
     <div class="intro">
