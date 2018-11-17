@@ -179,8 +179,9 @@ if(isset($_SESSION['id'])) {
             for (let i=0; i<descr.length; i++) {
                 if (e.target.id == descr[i].id) {
                     if (descr[i].classList.contains("descriptionOpen"))
-                    {descr[i].classList.remove("descriptionOpen");
-                    event[i].classList.remove("eventOpen"); 
+                    {
+                        descr[i].classList.remove("descriptionOpen");
+                        event[i].classList.remove("eventOpen"); 
                     }
                     
                     else {

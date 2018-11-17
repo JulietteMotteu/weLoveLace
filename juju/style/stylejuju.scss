@@ -268,7 +268,7 @@ h2 {
     flex-wrap: wrap;
     #logo {
         width: 200px;
-        margin-top: 50px;
+        margin-top: 25px;
     }
     #leftLinks {
         a {
@@ -297,6 +297,7 @@ h2 {
             }
         }
     }
+    
 }
 
 #top {
@@ -366,12 +367,13 @@ nav {
 }
 
 #timeline {
-    background-image: url(../img/portraits/ligneTemps.svg), url(..//img/portraits/ligneTemps.svg), url(..//img/portraits/ligneTemps.svg);
+    background-image: url(../img/portraits/ligneTemps.svg), url(..//img/portraits/ligneTemps.svg), url(..//img/portraits/ligneTemps.svg), url(..//img/portraits/ligneTemps.svg);
     background-repeat: no-repeat;
-    background-position: 48% 0, 48.1% 150rem, 48.2% 300rem;
-    background-size: 265px, 265px, 265px;
+    background-position: 48% 0, 48.1% 150rem, 48.2% 300rem, 48.3% 450rem;
+    background-size: 265px, 265px, 265px, 265px;
     width: 100%;
     margin: 30px auto;
+    margin-bottom: 0;
     position: relative;
 	@include prefix(transition, all .4s ease);
 
@@ -447,12 +449,28 @@ nav {
                 position: relative;
                 display: flex;
                 justify-content: flex-start;
+                align-items: center;
                 padding-left: 10px;
+                position: relative;
+                top: -60px;
+                i {
+                    font-size: 30px;
+                    margin-right: 10px;
+                }
+                span {
+                    font-size: 15px;
+                    color: $greyColor;
+                    font-weight: 500;
+                }
                 
             }
             .portraitDesc {
+                margin-top: 0;
                 padding-left: 10px;
                 color: $greyColor;
+                color: $greyColor;
+                font-size: 14px;
+                line-height: 1.5;
             }
 		}
 	}
@@ -540,6 +558,10 @@ nav {
 .right .portraitImg {
     margin-left: auto;
     margin-right: 0;
+}
+
+.visible {
+    display: none;
 }
 
 // Section RESSOURCES

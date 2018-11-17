@@ -28,15 +28,35 @@
             else {
                  echo  '<div class="timeline-content right">';
             }
-            echo '<img class="portraitImg" src="./img/portraits/' . $t_women[$i]['image'] . '.png" alt=""><h2>' . $t_women[$i]['prenom'] . ' ' . $t_women[$i]['nom'] . '</h2><p class="datePortrait">' . $t_women[$i]['dateBirth'] . '-' . $t_women[$i]['dateDeath'] . '</p><p class="profession">' . ucfirst($t_women[$i]['profession']) . '</p><p class="nationalite">' . $t_women[$i]['nationality'] . '</p><button class="descriptionBtn"><i class="fas fa-chevron-right fa-rotate-90"></i></button><p class="portraitDesc">' . $t_women[$i]['description'] . '</p>' .  '</div></div>';
+            echo '<img class="portraitImg" src="./img/portraits/' . $t_women[$i]['image'] . '.png" alt=""><h2>' . $t_women[$i]['prenom'] . ' ' . $t_women[$i]['nom'] . '</h2><p class="datePortrait">' . $t_women[$i]['dateBirth'] . '-' . $t_women[$i]['dateDeath'] . '</p><p class="profession">' . ucfirst($t_women[$i]['profession']) . '</p><p class="nationalite">' . $t_women[$i]['nationality'] . '</p><button class="descriptionBtn" id="' . $t_women[$i]['idWomen'] . '"><i class="fas fa-chevron-right fa-rotate-90"></i><span>Découvrir la badass !</span></button><p class="portraitDesc visible" id="' . $t_women[$i]['idWomen'] . '">' . $t_women[$i]['description'] . '</p>' .  '</div></div>';
         }
         
         ?> 
         
-        <script>
-            
-                
-        </script>
-        
     </div>
 </div>
+
+<script>
+            
+    timeline.addEventListener('click', function(e){
+        if (e.target.className == 'descriptionBtn') {
+            var portrait = document.getElementsByClassName('portraitDesc');
+            for (let i=0; i<portrait.length; i++) {
+                if (e.target.id == portrait[i].id) {
+                    console.log(e.target);
+                    if (portrait[i].classList.contains("visible"))
+                    {
+                        portrait[i].classList.remove("visible");
+                    }
+
+                    else {
+                        portrait[i].classList.add("visible"); 
+                    }
+                }
+            }
+        }
+    });
+                
+</script>
+        
+    
