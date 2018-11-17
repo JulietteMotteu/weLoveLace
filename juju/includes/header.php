@@ -42,4 +42,17 @@
 
            ?>
         </div>
+    
+        <div id="top">
+            <a href="#" class="to-top"><span><i class="fas fa-angle-up"></i> </span></a>
+        </div>
+
+<script>
+    $(document).ready(function() {
+        $('.to-top').click(function() {
+            $('html, body').animate({scrollTop: 0}, 300);
+        })
+    });
+</script>
+
     </div>

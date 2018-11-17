@@ -81,6 +81,15 @@ h2 {
       #headerTop #leftLinks a:nth-of-type(3) i i {
         color: #fff; }
 
+#top {
+  position: fixed;
+  bottom: 4%;
+  width: 50px;
+  right: 0; }
+  #top i {
+    color: #6a397c;
+    font-size: 30px; }
+
 nav #navigationMenu {
   display: flex;
   justify-content: flex-end; }
@@ -161,9 +170,15 @@ nav #ligneNav::before {
         justify-content: flex-end;
         text-align: right; }
       #timeline .timeline-item .timeline-content .nationalite {
+        position: relative;
+        top: -30px;
+        display: flex;
+        text-align: right;
+        padding-right: 10px;
+        justify-content: flex-end;
         width: 100%;
         font-size: 15px;
-        font-weight: 700;
+        font-weight: 600;
         color: #4d4d4d;
         padding-left: 10px; }
       #timeline .timeline-item .timeline-content .datePortrait {
@@ -179,7 +194,11 @@ nav #ligneNav::before {
       #timeline .timeline-item .timeline-content .descriptionBtn {
         border: none;
         color: #6a397c;
-        background-color: transparent; }
+        background-color: transparent;
+        position: relative;
+        display: flex;
+        justify-content: flex-start;
+        padding-left: 10px; }
       #timeline .timeline-item .timeline-content .portraitDesc {
         padding-left: 10px;
         color: #4d4d4d; }
@@ -426,6 +445,9 @@ nav #ligneNav::before {
   height: 280px;
   margin-bottom: 100px; }
 
+.eventOpen {
+  height: 350px; }
+
 .dateHeure {
   margin: 0;
   display: flex;
@@ -484,19 +506,23 @@ nav #ligneNav::before {
 .descriptionIns {
   margin: 0;
   display: flex;
-  height: auto; }
+  height: 110px; }
   .descriptionIns .description {
     font-size: 15px;
     line-height: 1.5;
     display: flex;
-    width: 80%; }
+    width: 80%;
+    overflow: hidden; }
     .descriptionIns .description button {
-      align-self: flex-end;
+      position: relative;
+      top: 40px;
       color: #ea5920;
       border: none;
       background-color: white; }
       .descriptionIns .description button i {
         color: #6a397c; }
+  .descriptionIns .descriptionOpen {
+    height: 350px; }
   .descriptionIns .inscriptionBtn {
     width: 20%;
     background-color: #ea5920;
@@ -676,3 +702,5 @@ nav #ligneNav::before {
       color: #fff; }
   #profilDetail #profilDesc {
     padding-left: 40px; }
+
+/*# sourceMappingURL=stylejuju.css.map */

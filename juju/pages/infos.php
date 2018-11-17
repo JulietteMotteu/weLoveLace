@@ -1,3 +1,33 @@
+<?php
+// A t on reçu des données du formulaire ?
+if (isset($_POST['email'], $_POST['question'])) {
+    // Sont-elles valides ?
+    // $_POST['email'] est il un email ?
+    // $_POST['message'] est il vide ou trop long ?
+    if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) !== false && $_POST['question'] != '' && strlen($_POST['question'])) {
+        // Envoi de mail
+        $to = 'webmaster@monsite.be'; // le bénéficicaire
+        $subject = 'Un visiteur du site monsite.be a laissé un message';
+        $message = 'Un visiteur avec l email ' . $_POST['email'] . ' a laissé le message suivant : ' . $_POST['question'];
+        
+        // Le résultat est stocké dans un booléen
+        $isMailSend = @mail($to, $subject, $message);
+        
+        // On affiche le résultat pour l'utilisateur
+        if ($isMailSend) {
+            $result = '<p>Votre message a bien été envoyé. Nous vous recontactons au plus vite :)<p>';
+        } else {
+            $result = 'Problème technique, retentez votre chance plus tard.';
+        }
+    } else {
+        $result = 'Le formulaire a été mal rempli, nous ne pouvons traiter votre demande';
+    }
+} else {
+    $result = '';
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,66 +41,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/script.js"></script>
 
-    <script>
-    
-        $(document).ready(function(){
-            
-            $('button').on('click', function(e){
-                
-                var monEmail = $('input').val();
-                var monMsg = $('textarea').val();
-                var monFormEstValide = true;
-                
-//                console.log(email,msg);
-            
-                if (monEmail != '') {
-                    $('input').removeClass('error');
-                }
-                else {
-                    $('input').addClass('error');
-                    monFormEstValide = false;
-                }
-                
-                if (monMsg != '') {
-                    $('textarea').removeClass('error');
-                }
-                else {
-                    $('textarea').addClass('error');
-                    monFormEstValide = false;
-                }
-                
-                
-            //Call Ajax
-                
-                if (monFormEstValide) {
-            
-                    $.ajax ({
-                        url      : './envoiemailwelovelace.php',
-                        type     : 'POST',
-                        dataType : 'json',
-                        data : {
-                            email : monEmail, // <input type = "texte" name="email" value="...">
-                            msg   : monMsg
-                        },
-                        success: function(data) {
-                            console.log(data);
-                            $('p').html('Merci, votre message a bien été envoyé !');
-                        },
-                        error: function() {
-                            $('p').html('Désolé, problème technique');
-                            for (var i = 0; i < arguments.length; i++) {
-                            }
-
-                        },
-                        complete : function() {}
-                        
-                    })
-                }    
-            })
-        })
-        
-    
-    </script>
     
 </head>
 <body>
@@ -83,15 +53,18 @@
         <div id="mailer">
         <h2>Contact</h2>
 
-            <div id="mailerForm">
-                
-                <input type="text" placeholder="Email">
-                <input type="text" placeholder="Sujet">
-                
-                <textarea placeholder="Votre message"></textarea>
-                
-                <button>Envoyer</button>
-            </div>
+            <form action="" method="post">
+                <div id="mailerForm">
+
+                    <input type="text" name="email" placeholder="Email">
+                    <input type="text" placeholder="Sujet">
+
+                    <textarea name='question' placeholder="Votre message"></textarea>
+
+                    <button>Envoyer</button>
+                    <p><?php echo $result; ?></p>
+                </div>
+            </form>
         </div>
     
     

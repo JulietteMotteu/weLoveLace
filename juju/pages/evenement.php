@@ -64,7 +64,7 @@ if(isset($_SESSION['id'])) {
             echo '<button data-id="' .  $t_evenement[$i]['id'] . '"><i class="fas fa-heart fa-lg"></i></button>';
         }
         
-        echo '<img src="./img/evenements/' . $t_evenement[$i]['image'] . '.jpg"></div><div class="descriptionIns"><div class="description"><p>' . substr($t_evenement[$i]['description'],0,200). '</p><button><i class="fas fa-chevron-right fa-rotate-90"></i></button><button class="facebook-share" data-js="facebook-share">Partager</button></div>';
+        echo '<img src="./img/evenements/' . $t_evenement[$i]['image'] . '.jpg"></div><div class="descriptionIns"><div class="description" id="' . $t_evenement[$i]['id'] . '"><p>' . $t_evenement[$i]['description'] . '</p><button class="descriptionBtn" id="' . $t_evenement[$i]['id'] . '"><i class="fas fa-chevron-right fa-rotate-90"></i></button><button class="facebook-share" data-js="facebook-share">Partager</button></div>';
         
         if(isset($_SESSION['id'])) {
             
@@ -170,6 +170,32 @@ if(isset($_SESSION['id'])) {
             return false;
         }
     }
+    
+    // Ce script pour le texte qui apparaît
+    eventSection.addEventListener('click', function(e){
+        if (e.target.className == 'descriptionBtn') {
+            var descr = document.getElementsByClassName('description');
+            var event = document.getElementsByClassName('eventParent');
+            for (let i=0; i<descr.length; i++) {
+                if (e.target.id == descr[i].id) {
+                    if (descr[i].classList.contains("descriptionOpen"))
+                    {descr[i].classList.remove("descriptionOpen");
+                    event[i].classList.remove("eventOpen"); 
+                    }
+                    
+                    
+                    else {
+                  
+                    descr[i].classList.add("descriptionOpen");
+                    event[i].classList.add("eventOpen");     
+                    }
+                }
+            }
+        }
+    })
+    
+        
+ 
     
     /*Popup modal*/
 /*    

@@ -110,6 +110,18 @@ h2 {
     }
 }
 
+#top {
+    position: fixed; 
+    bottom: 4%;         
+    width: 50px;
+    right : 0;
+    i {
+        color: $mauveColor; 
+        font-size: 30px;
+    }
+            
+}
+
 // NAVIGATION
 
 nav {
@@ -215,12 +227,17 @@ nav {
                 text-align: right;
             }
             .nationalite {
+                position: relative;
+                top: -30px;
+                display: flex;
+                text-align: right;
+                padding-right: 10px;
+                justify-content: flex-end;
                 width: 100%;
                 font-size: 15px;
-                font-weight: 700;
+                font-weight: 600;
                 color: $greyColor;
                 padding-left: 10px;
-                
             }
             .datePortrait {
                 width: 100%;
@@ -238,6 +255,11 @@ nav {
                 border: none;
                 color: $mauveColor;
                 background-color: transparent;
+                position: relative;
+                display: flex;
+                justify-content: flex-start;
+                padding-left: 10px;
+                
             }
             .portraitDesc {
                 padding-left: 10px;
@@ -553,6 +575,9 @@ nav {
     height: 280px;
     margin-bottom: 100px;
 }
+.eventOpen {
+    height : 350px;
+}
 .eventParent::before {
     @extend %rond;
 }
@@ -624,22 +649,30 @@ nav {
 .descriptionIns {
     margin: 0;
     display: flex;
-    height: auto;
+    height: 110px;
     .description {
         font-size: 15px;
         line-height: 1.5;
         display: flex;
         width: 80%;
+        overflow: hidden;
         button {
-            align-self: flex-end;
+            position: relative;
+            top: 40px;
             color: $orangeColor;
             border: none;
             background-color: white;
             i {
                 color: $mauveColor;
+            
             }
         }
+        
     }
+    .descriptionOpen {
+            
+            height: 350px;
+        }
     
     .inscriptionBtn {
         width: 20%;
