@@ -43,11 +43,14 @@ if(isset($_SESSION['id'])) {
             
             ?>
             
-            <button>Modifier</button>
+            <button id="profilBtn">Modifier</button>
             
             
         </div>
     </div>
+    
+<div id="compteEventSection">
+    
     
 <?php
     for($i = 0; $i < count($participation); $i++){
@@ -59,8 +62,9 @@ if(isset($_SESSION['id'])) {
  
         echo '<button class="boutonLike" disable>';
         
-        echo '<i class="fas fa-heart fa-lg"></i></button><img src="./img/evenements/' . $participation[$i]['image'] . '.jpg"></div><div class="descriptionIns"><div class="description"><p>' . substr($participation[$i]['description'],0,200). '</p><button><i class="fas fa-chevron-right fa-rotate-90"></i></button><button class="facebook-share" data-js="facebook-share">Partager</button></div><button class="inscription" data-id="' .  $participation[$i]['id'] . '">S\'inscrire</button></div></div></div>';
+        echo '<i class="fas fa-heart fa-lg"></i></button><img src="./img/evenements/' . $participation[$i]['image'] . '.jpg"></div><div class="descriptionIns"><div class="description"><p>' . substr($participation[$i]['description'],0,200). '</p><button><i class="fas fa-chevron-right fa-rotate-90"></i></button><button class="facebook-share" data-js="facebook-share">Partager</button></div><button class="inscriptionBtn" data-id="' .  $participation[$i]['id'] . '">S\'inscrire</button></div></div>';
     }
+
     
 ?>
 

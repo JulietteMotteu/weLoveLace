@@ -3,7 +3,7 @@
 *, nav #navigationMenu {
   font-family: "Raleway"; }
 
-#headerTop #leftLinks a:nth-of-type(3), .ressourceBtn, .ressourceChild .overlay .infoLink, .white-popup-block .lienBtn, #sign button {
+#compteSection #profilDetail #profilBtn, #headerTop #leftLinks a:nth-of-type(3), .ressourceBtn, .ressourceChild .overlay .infoLink, .white-popup-block .lienBtn, #sign button {
   border-radius: 4px;
   padding: 10px 15px 10px 15px; }
 
@@ -14,7 +14,7 @@
   background-color: #6a397c;
   border: 1px solid; }
 
-#headerTop, nav, #portraitSection, #ressourceSection, #sign div, #eventSection, #info, #compteSection {
+#compteSection, #headerTop, nav, #portraitSection, #ressourceSection, #sign div, #eventSection, #info {
   width: 80%;
   margin-top: 50px;
   margin-left: auto;
@@ -26,7 +26,7 @@
   padding: 10px 15px 10px 15px;
   border: 1px solid #6a397c; }
 
-#sign > div::before, .eventParent::before, #mailer::before, #map::before, #faqParent::before, #compteSection #profil::before {
+#compteSection #profil::before, #compteSection .eventParent::before, #sign > div::before, .eventParent::before, #mailer::before, #map::before, #faqParent::before {
   content: '';
   display: inline-block;
   position: relative;
@@ -37,6 +37,135 @@
   border-radius: 50%;
   color: white;
   border: 2px solid #ea5920; }
+
+#compteSection #profil {
+  border-left: 2px solid #ea5920;
+  position: relative;
+  height: 600px;
+  margin-bottom: 100px; }
+#compteSection h2 {
+  color: #4d4d4d;
+  margin-left: 50px; }
+#compteSection #profilDetail {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center; }
+  #compteSection #profilDetail #photo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    background-color: #ea5920; }
+    #compteSection #profilDetail #photo #userLogo {
+      display: flex;
+      color: #fff; }
+  #compteSection #profilDetail #profilBtn {
+    color: #6a397c;
+    background-color: #fff;
+    border: 1px solid #6a397c; }
+  #compteSection #profilDetail #profilBtn:hover {
+    color: #fff;
+    background-color: #6a397c;
+    transition-duration: 0.4s; }
+#compteSection .eventParent {
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  border-left: 2px solid #ea5920;
+  position: relative;
+  height: 280px;
+  margin-bottom: 100px; }
+#compteSection .dateHeure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 15%;
+  height: 300px;
+  color: #6a397c; }
+  #compteSection .dateHeure .date {
+    font-weight: 600;
+    font-size: 50px;
+    margin: 0; }
+    #compteSection .dateHeure .date p {
+      margin: 0;
+      font-family: Roboto; }
+  #compteSection .dateHeure > p {
+    border-top: 2px solid #6a397c;
+    padding-top: 50px;
+    margin-bottom: 50px;
+    font-size: 30px;
+    font-weight: 400;
+    font-family: Roboto; }
+#compteSection .eventDetail {
+  width: 80%; }
+#compteSection .nomImg {
+  margin: 0;
+  display: flex;
+  height: auto;
+  position: relative; }
+  #compteSection .nomImg h2 {
+    background-color: #ea5920;
+    color: white;
+    width: 40%;
+    margin: 0;
+    padding: 50px; }
+  #compteSection .nomImg img {
+    width: 100%;
+    margin: 0; }
+  #compteSection .nomImg button {
+    border: none;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    display: block;
+    text-align: center;
+    vertical-align: middle;
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: white;
+    background-color: #4d4d4d; }
+#compteSection .descriptionIns {
+  margin: 0;
+  display: flex;
+  height: auto; }
+  #compteSection .descriptionIns .description {
+    font-size: 15px;
+    line-height: 1.5;
+    display: flex;
+    width: 80%; }
+    #compteSection .descriptionIns .description button {
+      align-self: flex-end;
+      color: #ea5920;
+      border: none;
+      background-color: white; }
+      #compteSection .descriptionIns .description button i {
+        color: #6a397c; }
+  #compteSection .descriptionIns .inscriptionBtn {
+    width: 20%;
+    background-color: #ea5920;
+    border: none;
+    color: white;
+    text-decoration: none;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer; }
+    #compteSection .descriptionIns .inscriptionBtn i {
+      margin-left: 10px; }
+#compteSection .like i {
+  color: #ea5920;
+  background-color: transparent;
+  transition: 0.5s; }
 
 #timeline .timeline-item:after, #timeline .timeline-item:before {
   content: '';
@@ -700,7 +829,5 @@ nav #ligneNav::before {
     #profilDetail #photo #userLogo {
       display: flex;
       color: #fff; }
-  #profilDetail #profilDesc {
-    padding-left: 40px; }
 
 /*# sourceMappingURL=stylejuju.css.map */

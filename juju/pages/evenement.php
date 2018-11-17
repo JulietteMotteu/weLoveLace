@@ -183,11 +183,9 @@ if(isset($_SESSION['id'])) {
                     event[i].classList.remove("eventOpen"); 
                     }
                     
-                    
                     else {
-                  
-                    descr[i].classList.add("descriptionOpen");
-                    event[i].classList.add("eventOpen");     
+                        descr[i].classList.add("descriptionOpen");
+                        event[i].classList.add("eventOpen");     
                     }
                 }
             }
