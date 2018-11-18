@@ -25,19 +25,24 @@
         <div id="logo">
            <a href="./index.php"><img src="./img/logo/logo_nom.png" alt=""></a>
         </div>
+        <div id="logoMobile">
+            <a href="./index.php"><img src="./img/logo/logo.png" alt=""></a>
+  
+            
+        </div>
 
         <div id="leftLinks">
-               <a href="">EN</a>
-               <a href="">FR</a>
+               <a href="" class='lang'>EN</a>
+               <a href="" class='lang'>FR</a>
 
            <?php
 
             if (isset($_SESSION['pseudo'])) {
-                echo '<a href="?session=session_logout">Sign out<i class="fas fa-user"></i></a>';
+                echo '<a href="?session=session_logout" class="sign">Sign out<i class="fas fa-user"></i></a>';
                 echo '<p id="welcomePseudo">Bienvenue ' . $_SESSION['pseudo'] . ' You\'re badass !</p>';
             }
             else {
-                echo '<a href="?session=inscriptionlogin">Sign<i class="fas fa-user"></i></a>';
+                echo '<a href="?session=inscriptionlogin" class="sign">Sign<i class="fas fa-user"></i></a>';
             }
 
            ?>

@@ -1,8 +1,10 @@
-<nav>
+<input class="burger-check" id="burger-check" type="checkbox"><label for="burger-check" class="burger"></label>
+    
+    <nav id="navigation1" class="navigation">
 
     <ul id="navigationMenu">
         <li><a href="?page=portraits">Portraits</a></li>
-        <li><a href="?page=evenement">Evénements</a></li>
+        <li><a href="?page=evenement">Evenements</a></li>
         <li><a href="?page=ressources">Ressources</a></li>
         <li><a href="?page=infos">Infos</a></li>
         <li><a href="?page=compte">Compte</a></li>

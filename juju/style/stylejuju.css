@@ -3,30 +3,30 @@
 *, nav #navigationMenu {
   font-family: "Raleway"; }
 
-#compteSection #profilDetail #profilBtn, #headerTop #leftLinks a:nth-of-type(3), .ressourceBtn, .ressourceChild .overlay .infoLink, .white-popup-block .lienBtn, #sign button {
+#headerTop #leftLinks a:nth-of-type(3), .ressourceBtn, .ressourceChild .overlay .infoLink, .white-popup-block .lienBtn, #sign button, #compteSection #profilDetail #profilBtn {
   border-radius: 4px;
   padding: 10px 15px 10px 15px; }
 
-#info button {
+#info button, #compteSection #formProfil form button {
   border-radius: 4px;
   padding: 10px 15px 10px 15px;
   color: #fff;
   background-color: #6a397c;
   border: 1px solid; }
 
-#compteSection, #headerTop, nav, #portraitSection, #ressourceSection, #sign div, #eventSection, #info {
+#headerTop, nav, #portraitSection, #ressourceSection, #sign div, #eventSection, #info, #compteSection, #compteEventSection {
   width: 80%;
   margin-top: 50px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 50px; }
 
-#sign input, #info input, #info textarea {
+#sign input, #info input, #info textarea, #compteSection #formProfil form input, #compteSection #formProfil form textarea {
   border-radius: 4px;
   padding: 10px 15px 10px 15px;
   border: 1px solid #6a397c; }
 
-#compteSection #profil::before, #compteSection .eventParent::before, #sign > div::before, .eventParent::before, #mailer::before, #map::before, #faqParent::before {
+#sign > div::before, .eventParent::before, #mailer::before, #map::before, #faqParent::before, #compteSection #profil::before, #compteSection #formProfil::before, #compteEventSection .eventParent::before {
   content: '';
   display: inline-block;
   position: relative;
@@ -37,135 +37,6 @@
   border-radius: 50%;
   color: white;
   border: 2px solid #ea5920; }
-
-#compteSection #profil {
-  border-left: 2px solid #ea5920;
-  position: relative;
-  height: 600px;
-  margin-bottom: 100px; }
-#compteSection h2 {
-  color: #4d4d4d;
-  margin-left: 50px; }
-#compteSection #profilDetail {
-  width: 60%;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center; }
-  #compteSection #profilDetail #photo {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 300px;
-    background-color: #ea5920; }
-    #compteSection #profilDetail #photo #userLogo {
-      display: flex;
-      color: #fff; }
-  #compteSection #profilDetail #profilBtn {
-    color: #6a397c;
-    background-color: #fff;
-    border: 1px solid #6a397c; }
-  #compteSection #profilDetail #profilBtn:hover {
-    color: #fff;
-    background-color: #6a397c;
-    transition-duration: 0.4s; }
-#compteSection .eventParent {
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  border-left: 2px solid #ea5920;
-  position: relative;
-  height: 280px;
-  margin-bottom: 100px; }
-#compteSection .dateHeure {
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  width: 15%;
-  height: 300px;
-  color: #6a397c; }
-  #compteSection .dateHeure .date {
-    font-weight: 600;
-    font-size: 50px;
-    margin: 0; }
-    #compteSection .dateHeure .date p {
-      margin: 0;
-      font-family: Roboto; }
-  #compteSection .dateHeure > p {
-    border-top: 2px solid #6a397c;
-    padding-top: 50px;
-    margin-bottom: 50px;
-    font-size: 30px;
-    font-weight: 400;
-    font-family: Roboto; }
-#compteSection .eventDetail {
-  width: 80%; }
-#compteSection .nomImg {
-  margin: 0;
-  display: flex;
-  height: auto;
-  position: relative; }
-  #compteSection .nomImg h2 {
-    background-color: #ea5920;
-    color: white;
-    width: 40%;
-    margin: 0;
-    padding: 50px; }
-  #compteSection .nomImg img {
-    width: 100%;
-    margin: 0; }
-  #compteSection .nomImg button {
-    border: none;
-    width: 35px;
-    height: 35px;
-    line-height: 35px;
-    display: block;
-    text-align: center;
-    vertical-align: middle;
-    position: absolute;
-    right: 0;
-    top: 0;
-    color: white;
-    background-color: #4d4d4d; }
-#compteSection .descriptionIns {
-  margin: 0;
-  display: flex;
-  height: auto; }
-  #compteSection .descriptionIns .description {
-    font-size: 15px;
-    line-height: 1.5;
-    display: flex;
-    width: 80%; }
-    #compteSection .descriptionIns .description button {
-      align-self: flex-end;
-      color: #ea5920;
-      border: none;
-      background-color: white; }
-      #compteSection .descriptionIns .description button i {
-        color: #6a397c; }
-  #compteSection .descriptionIns .inscriptionBtn {
-    width: 20%;
-    background-color: #ea5920;
-    border: none;
-    color: white;
-    text-decoration: none;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer; }
-    #compteSection .descriptionIns .inscriptionBtn i {
-      margin-left: 10px; }
-#compteSection .like i {
-  color: #ea5920;
-  background-color: transparent;
-  transition: 0.5s; }
 
 #timeline .timeline-item:after, #timeline .timeline-item:before {
   content: '';
@@ -179,7 +50,7 @@
 h2 {
   font-family: Raleway;
   color: #ea5920;
-  font-weight: 800; }
+  font-weight: 600; }
 
 #headerTop {
   margin-top: 20px;
@@ -202,6 +73,7 @@ h2 {
     left: -2px; }
   #headerTop #leftLinks a:nth-of-type(3) {
     margin-left: 50px;
+    margin-right: 0;
     background-color: #ea5920;
     color: #fff; }
     #headerTop #leftLinks a:nth-of-type(3) i {
@@ -209,6 +81,13 @@ h2 {
       color: #fff; }
       #headerTop #leftLinks a:nth-of-type(3) i i {
         color: #fff; }
+
+#welcomePseudo {
+  font-weight: 600;
+  font-size: 15px;
+  color: #4d4d4d;
+  position: relative;
+  right: 8px; }
 
 #top {
   position: fixed;
@@ -218,6 +97,12 @@ h2 {
   #top i {
     color: #6a397c;
     font-size: 30px; }
+
+#burger-check {
+  display: none; }
+
+#logoMobile {
+  display: none; }
 
 nav #navigationMenu {
   display: flex;
@@ -234,7 +119,7 @@ nav #navigationMenu {
       text-decoration: none; }
 nav #ligneNav {
   position: absolute;
-  right: 0;
+  right: 22px;
   width: 0;
   height: 2px;
   background-color: #6a397c;
@@ -828,24 +713,273 @@ nav #ligneNav::before {
 #compteSection #profil {
   border-left: 2px solid #ea5920;
   position: relative;
-  height: 900px; }
+  height: 750px;
+  margin-bottom: 100px; }
 #compteSection h2 {
   color: #4d4d4d;
   margin-left: 50px; }
-
-#profilDetail {
+#compteSection #profilDetail {
   width: 60%;
   margin-left: auto;
-  margin-right: auto; }
-  #profilDetail #photo {
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center; }
+  #compteSection #profilDetail #photo {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 300px;
     background-color: #ea5920; }
-    #profilDetail #photo #userLogo {
+    #compteSection #profilDetail #photo #userLogo {
       display: flex;
       color: #fff; }
+  #compteSection #profilDetail #profilDesc {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; }
+  #compteSection #profilDetail #profilBtn {
+    color: #6a397c;
+    background-color: #fff;
+    border: 1px solid #6a397c; }
+  #compteSection #profilDetail #profilBtn:hover {
+    color: #fff;
+    background-color: #6a397c;
+    transition-duration: 0.4s; }
+#compteSection #formProfil {
+  border-left: 2px solid #ea5920;
+  position: relative;
+  height: 550px;
+  margin-bottom: 100px; }
+  #compteSection #formProfil form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%; }
+    #compteSection #formProfil form label {
+      font-size: 15px;
+      margin-bottom: 20px;
+      font-weight: 500; }
+    #compteSection #formProfil form input, #compteSection #formProfil form textarea {
+      margin-bottom: 40px; }
+
+#compteEventSection h2 {
+  color: #4d4d4d;
+  margin-left: 50px;
+  margin-top: 50px;
+  margin-bottom: 50px; }
+#compteEventSection .eventParent {
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  border-left: 2px solid #ea5920;
+  position: relative;
+  height: 280px;
+  margin-bottom: 100px; }
+#compteEventSection .eventOpen {
+  height: 350px; }
+#compteEventSection .dateHeure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 15%;
+  height: 300px;
+  color: #6a397c; }
+  #compteEventSection .dateHeure .date {
+    font-weight: 600;
+    font-size: 50px;
+    margin: 0; }
+    #compteEventSection .dateHeure .date p {
+      margin: 0;
+      font-family: Roboto; }
+  #compteEventSection .dateHeure > p {
+    border-top: 2px solid #6a397c;
+    padding-top: 50px;
+    margin-bottom: 50px;
+    font-size: 30px;
+    font-weight: 400;
+    font-family: Roboto; }
+#compteEventSection .eventDetail {
+  width: 80%; }
+#compteEventSection .nomImg {
+  margin: 0;
+  display: flex;
+  height: auto;
+  position: relative; }
+  #compteEventSection .nomImg h2 {
+    background-color: #ea5920;
+    color: white;
+    width: 40%;
+    margin: 0;
+    padding: 50px; }
+  #compteEventSection .nomImg img {
+    width: 100%;
+    margin: 0; }
+  #compteEventSection .nomImg button {
+    border: none;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    display: block;
+    text-align: center;
+    vertical-align: middle;
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: white;
+    background-color: #4d4d4d; }
+
+.descriptionIns {
+  margin: 0;
+  display: flex;
+  height: 110px; }
+  .descriptionIns .description {
+    font-size: 15px;
+    line-height: 1.5;
+    display: flex;
+    width: 80%;
+    overflow: hidden; }
+    .descriptionIns .description button {
+      position: relative;
+      top: 40px;
+      color: #ea5920;
+      border: none;
+      background-color: white; }
+      .descriptionIns .description button i {
+        color: #6a397c; }
+  .descriptionIns .inscriptionBtn {
+    width: 20%;
+    background-color: #ea5920;
+    border: none;
+    color: white;
+    text-decoration: none;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer; }
+    .descriptionIns .inscriptionBtn i {
+      margin-left: 10px; }
+
+.like i {
+  color: #ea5920;
+  background-color: transparent;
+  transition: 0.5s; }
+
+@media only screen and (max-width: 750px) {
+  #logoMobile {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto; }
+
+  #headertop {
+    margin: 0px; }
+
+  #logo {
+    display: none; }
+
+  .lang {
+    display: none; }
+
+  .sign {
+    position: absolute;
+    left: 0px;
+    margin: 0px;
+    top: 10px; }
+
+  #ligneNav {
+    display: none; }
+
+  .burger {
+    position: absolute;
+    right: 0;
+    top: 10px;
+    display: inline-block;
+    border: 0;
+    background: none;
+    outline: 0;
+    padding: 0;
+    cursor: pointer;
+    border-bottom: 4px solid #ea5920;
+    width: 28px;
+    transition: border-bottom 1s ease-in-out;
+    -webkit-transition: border-bottom 1s ease-in-out; }
+    .burger::-moz-focus-inner {
+      border: 0;
+      padding: 0; }
+    .burger:before {
+      content: "";
+      display: block;
+      border-bottom: 4px solid #ea5920;
+      width: 100%;
+      margin-bottom: 5px;
+      transition: transform 0.5s ease-in-out;
+      -webkit-transition: -webkit-transform 0.5s ease-in-out; }
+    .burger:after {
+      content: "";
+      display: block;
+      border-bottom: 4px solid #ea5920;
+      width: 100%;
+      margin-bottom: 5px;
+      transition: transform 0.5s ease-in-out;
+      -webkit-transition: -webkit-transform 0.5s ease-in-out; }
+
+  .burger-check {
+    display: none; }
+
+  .burger-check:checked ~ .burger {
+    border-bottom: 4px solid transparent;
+    transition: border-bottom 0.8s ease-in-out;
+    -webkit-transition: border-bottom 0.8s ease-in-out; }
+    .burger-check:checked ~ .burger:before {
+      transform: rotate(-405deg) translateY(1px) translateX(-3px);
+      -webkit-transform: rotate(-405deg) translateY(1px) translateX(-3px);
+      transition: transform 0.5s ease-in-out;
+      -webkit-transition: -webkit-transform 0.5s ease-in-out; }
+    .burger-check:checked ~ .burger:after {
+      transform: rotate(405deg) translateY(-4px) translateX(-5px);
+      -webkit-transform: rotate(405deg) translateY(-4px) translateX(-5px);
+      transition: transform 0.5s ease-in-out;
+      -webkit-transition: -webkit-transform 0.5s ease-in-out; }
+
+  .navigation {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.5s ease-in-out; }
+
+  .burger-check:checked ~ .navigation {
+    max-height: 500px;
+    transition: max-height 0.5s ease-in-out; }
+
+  a {
+    color: inherit; }
+
+  small {
+    font-size: 14px; }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0; }
+
+  li {
+    list-style: none;
+    font-size: 25px;
+    padding: 0; }
+    li a {
+      text-decoration: none; }
+      li a:hover {
+        text-decoration: underline; } }
 
 /*# sourceMappingURL=stylejuju.css.map */

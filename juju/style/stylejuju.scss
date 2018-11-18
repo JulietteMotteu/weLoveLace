@@ -41,195 +41,6 @@ $timeline-color: $primary-color;
     color: white;
     border: 2px solid $orangeColor;
 }
-// COMPTE
-
-#compteSection {
-    @extend %section;
-    #profil {
-        border-left: 2px solid $orangeColor;
-        position: relative;
-        height: 600px;
-        margin-bottom: 100px;
-    }
-    #profil::before {
-        @extend %rond;
-    }
-    h2 {
-        color: $greyColor;
-        margin-left: 50px;
-    }
-
-
-#profilDetail {
-    width: 60%;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    flex-direction:column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    h3 {
-   
-    }
-    #photo {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 300px;
-        background-color: $orangeColor;
-        #userLogo {
-            display: flex;
-            color: #fff;
-        }
-    }
-    #profilDesc {
-//        padding-left: 40px;
-    }
-    
-#profilBtn {
-    @extend %bouton;
-    color: $mauveColor; 
-    background-color: #fff; 
-    border: 1px solid $mauveColor;
-    }
-    
-    #profilBtn:hover {
-        color: #fff;
-        background-color: $mauveColor;
-        transition-duration: 0.4s;
-        
-        
-    }
-}
-
-// section event
-
-// Style section Evénements
-.eventParent {
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    border-left: 2px solid $orangeColor;
-    position: relative;
-    height: 280px;
-    margin-bottom: 100px;
-}
-.eventParent::before {
-    @extend %rond;
-}
-.dateHeure {
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 15%;
-    height: 300px;
-
-    color: $mauveColor;
-    .date {
-        font-weight: 600;
-        font-size: 50px;
-        margin: 0;
-        p {
-            margin: 0;
-            font-family: Roboto;
-        }
-    }
-    > p {
-        border-top: 2px solid $mauveColor;
-        padding-top: 50px;
-        margin-bottom: 50px;
-        font-size: 30px;
-        font-weight: 400;
-        font-family: Roboto;
-    }
-}
-.eventDetail {
-    width: 80%;
-}
-
-.nomImg {
-    margin: 0;
-    display: flex;
-    height: auto;
-    position: relative;
-    h2 {
-        background-color: $orangeColor;
-        color: white;
-        width: 40%;
-        margin: 0;
-        padding: 50px;
-    }
-    img {
-        width: 100%;
-        margin: 0;
-    }
-    button {
-        border: none;
-        width: 35px;
-        height: 35px;
-        line-height: 35px;
-        display: block;
-        text-align: center;
-        vertical-align: middle;
-        position: absolute;
-        right: 0;
-        top: 0;
-        color: white;
-        background-color: $greyColor;
-      
-    }
-}
-
-.descriptionIns {
-    margin: 0;
-    display: flex;
-    height: auto;
-    .description {
-        font-size: 15px;
-        line-height: 1.5;
-        display: flex;
-        width: 80%;
-        button {
-            align-self: flex-end;
-            color: $orangeColor;
-            border: none;
-            background-color: white;
-            i {
-                color: $mauveColor;
-            }
-        }
-    }
-    
-    .inscriptionBtn {
-        width: 20%;
-        background-color: $orangeColor;
-        border: none;
-        color: white;
-        text-decoration: none;
-        padding: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        i {
-            margin-left: 10px;
-        }
-    }
-}
-
-.like i {
-    color: #ea5920;
-    background-color: transparent;
-    transition: 0.5s;
-}
-    
-
-}
-
 
 // Mixins and Placeholders Timeline
 %clearfix {
@@ -256,7 +67,7 @@ $timeline-color: $primary-color;
 h2 {
     font-family: Raleway;
     color: $orangeColor;
-    font-weight: 800;
+    font-weight: 600;
 }
 // HEADER
 #headerTop {
@@ -285,6 +96,7 @@ h2 {
         }
         a:nth-of-type(3) {
             margin-left: 50px;
+            margin-right: 0;
             background-color: $orangeColor;
             @extend %bouton;
             color: #fff;
@@ -300,6 +112,14 @@ h2 {
     
 }
 
+#welcomePseudo {
+    font-weight: 600;
+    font-size: 15px;
+    color: $greyColor;
+    position: relative;
+    right: 8px;
+}
+
 #top {
     position: fixed; 
     bottom: 4%;         
@@ -313,6 +133,14 @@ h2 {
 }
 
 // NAVIGATION
+
+#burger-check {
+    display: none;
+}
+
+#logoMobile {
+    display: none;
+}
 
 nav {
     @extend %section;
@@ -335,7 +163,7 @@ nav {
     }
     #ligneNav {
         position: absolute;
-        right: 0;
+        right: 22px;
         width: 0;
         height: 2px;
         background-color: $mauveColor;
@@ -1113,7 +941,8 @@ nav {
     #profil {
         border-left: 2px solid $orangeColor;
         position: relative;
-        height: 900px;
+        height: 750px;
+        margin-bottom: 100px;
     }
     #profil::before {
         @extend %rond;
@@ -1122,25 +951,376 @@ nav {
         color: $greyColor;
         margin-left: 50px;
     }
-}
 
-#profilDetail {
-    width: 60%;
-    margin-left: auto;
-    margin-right: auto;
-    #photo {
-        width: 100%;
+    #profilDetail {
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
         display: flex;
+        flex-direction:column;
+        flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-        height: 300px;
-        background-color: $orangeColor;
-        #userLogo {
+
+        #photo {
+            width: 100%;
             display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 300px;
+            background-color: $orangeColor;
+            #userLogo {
+                display: flex;
+                color: #fff;
+            }
+        }
+        #profilDesc {
+    //        padding-left: 40px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+    #profilBtn {
+        @extend %bouton;
+        color: $mauveColor; 
+        background-color: #fff; 
+        border: 1px solid $mauveColor;
+        }
+
+        #profilBtn:hover {
             color: #fff;
+            background-color: $mauveColor;
+            transition-duration: 0.4s;
         }
     }
-    #profilDesc {
-//        padding-left: 40px;
+    #formProfil {
+        border-left: 2px solid $orangeColor;
+        position: relative;
+        height: 550px;
+        margin-bottom: 100px;
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-left: auto;
+            margin-right: auto;
+            width: 60%;
+            label {
+                font-size: 15px;
+                margin-bottom: 20px;
+                font-weight: 500;
+            }
+            input, textarea {
+                @extend %input;
+                margin-bottom: 40px;
+            }
+            button {
+                @extend %boutonInfo;
+            }
+        }
     }
+    #formProfil::before {
+        @extend %rond;
+    }
+}
+ // Style Evénements compte
+#compteEventSection {
+    h2 {
+        color: $greyColor;
+        margin-left: 50px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+    @extend %section;
+    .eventParent {
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        border-left: 2px solid $orangeColor;
+        position: relative;
+        height: 280px;
+        margin-bottom: 100px;
+    }
+    .eventParent::before {
+        @extend %rond;
+    }
+
+.eventOpen {
+    height : 350px;
+}
+    .dateHeure {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 15%;
+        height: 300px;
+
+        color: $mauveColor;
+        .date {
+            font-weight: 600;
+            font-size: 50px;
+            margin: 0;
+            p {
+                margin: 0;
+                font-family: Roboto;
+            }
+        }
+        > p {
+            border-top: 2px solid $mauveColor;
+            padding-top: 50px;
+            margin-bottom: 50px;
+            font-size: 30px;
+            font-weight: 400;
+            font-family: Roboto;
+        }
+    }
+    .eventDetail {
+        width: 80%;
+    }
+
+    .nomImg {
+        margin: 0;
+        display: flex;
+        height: auto;
+        position: relative;
+        h2 {
+            background-color: $orangeColor;
+            color: white;
+            width: 40%;
+            margin: 0;
+            padding: 50px;
+        }
+        img {
+            width: 100%;
+            margin: 0;
+        }
+        button {
+            border: none;
+            width: 35px;
+            height: 35px;
+            line-height: 35px;
+            display: block;
+            text-align: center;
+            vertical-align: middle;
+            position: absolute;
+            right: 0;
+            top: 0;
+            color: white;
+            background-color: $greyColor;
+        }
+    }
+}
+
+.descriptionIns {
+    margin: 0;
+    display: flex;
+    height: 110px;
+    .description {
+        font-size: 15px;
+        line-height: 1.5;
+        display: flex;
+        width: 80%;
+        overflow: hidden;
+        button {
+            position: relative;
+            top: 40px;
+            color: $orangeColor;
+            border: none;
+            background-color: white;
+            i {
+                color: $mauveColor;
+            }
+        }
+    }
+
+    .inscriptionBtn {
+        width: 20%;
+        background-color: $orangeColor;
+        border: none;
+        color: white;
+        text-decoration: none;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        i {
+            margin-left: 10px;
+        }
+    }
+}
+
+.like i {
+    color: #ea5920;
+    background-color: transparent;
+    transition: 0.5s;
+}
+
+//RESPONSIVE
+
+@media only screen and (max-width: 750px) {
+    
+// logo 
+#logoMobile {
+    display: flex; 
+    
+    margin-left: auto;
+    margin-right: auto;
+    
+        
+    }
+    
+    #headertop {
+        
+        margin:0px;
+    }
+    #logo {
+        display:none;
+    }
+    
+    .lang {
+       display: none;
+    }
+    
+    .sign {
+        
+        position: absolute; 
+        left: 0px;
+        margin: 0px;
+        top: 10px;
+        
+        
+    }
+    #ligneNav {
+        display: none;
+    }
+    
+// Burger menu button
+//menu burger 
+$burger--thickness: 4px;
+.burger {
+	$width: 28px;
+	position: absolute;
+    right: 0;
+    top: 10px;
+	display: inline-block;
+    border: 0;
+	background: none;
+	outline: 0;
+	padding: 0;
+	cursor: pointer;
+
+	border-bottom: $burger--thickness solid $orangeColor;
+	width: $width;
+
+	transition: border-bottom 1s ease-in-out;
+	-webkit-transition: border-bottom 1s ease-in-out; 
+
+	// Fix for extra space in Firefox
+	&::-moz-focus-inner {
+		border: 0;
+		padding: 0;
+	}	 
+
+	&:before {
+		content: "";
+		display: block;
+		border-bottom: $burger--thickness solid $orangeColor;
+		width: 100%;
+		margin-bottom: 5px;
+		transition: transform 0.5s ease-in-out;    
+		-webkit-transition: -webkit-transform 0.5s ease-in-out;        
+	}
+
+	&:after {
+		content: "";
+		display: block;
+		border-bottom: $burger--thickness solid $orangeColor;
+		width: 100%;
+		margin-bottom: 5px;
+		transition: transform 0.5s ease-in-out;
+		-webkit-transition: -webkit-transform 0.5s ease-in-out;
+	}
+}
+
+.burger-check {
+  display: none;
+}
+
+.burger-check:checked ~ .burger {
+  border-bottom: $burger--thickness solid transparent;
+  transition: border-bottom 0.8s ease-in-out;
+  -webkit-transition: border-bottom 0.8s ease-in-out;
+
+  &:before {
+    transform: rotate(-405deg) translateY(1px) translateX(-3px);
+    -webkit-transform: rotate(-405deg) translateY(1px) translateX(-3px);      
+    transition: transform 0.5s ease-in-out;
+    -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  }
+
+  &:after {
+    transform: rotate(405deg) translateY(-4px) translateX(-5px); 
+    -webkit-transform: rotate(405deg) translateY(-4px) translateX(-5px);       
+    transition: transform 0.5s ease-in-out;
+    -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  }
+}
+
+// * * * Navigation * * *
+$navigation__transition: max-height 0.5s ease-in-out;
+
+.navigation {
+  overflow: hidden;
+  max-height: 0;
+  transition: $navigation__transition;
+
+}
+
+.burger-check:checked ~ .navigation {
+  max-height: 500px;
+  
+  transition: $navigation__transition;
+}
+
+// * * * Demo * * *
+
+
+a {
+  color: inherit;
+  
+}
+
+small {
+  font-size: 14px;
+}
+
+ul {
+  
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+}
+
+li {
+  list-style: none;
+  font-size: 25px;
+  padding: 0;
+  
+  a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }    
+  }
+}
 }
