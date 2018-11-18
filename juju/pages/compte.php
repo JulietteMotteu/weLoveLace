@@ -22,7 +22,20 @@ if(isset($_SESSION['id'])) {
     $statement2->bindvalue(':idPersonne',$_SESSION['id'], PDO::PARAM_INT);
     $statement2->execute();
     $participation = $statement2->fetchAll(PDO::FETCH_ASSOC);
-}
+    
+    // Mise à jour données perso -> marche à moitié -> textarea ne s'insère pas!
+//    if(isset($_POST['photo'], $_POST['descriptionText'])) {
+//        $statement3 = $pdo->prepare('UPDATE t_personne SET description = :description, photo = :photo, WHERE id = :idPersonne');
+//        $statement3->bindValue(':photo', $_POST['photo'], PDO::PARAM_STR);
+//        $statement3->bindValue(':description', $_POST['descriptionText'], PDO::PARAM_STR);
+//        $statement3->bindValue(':idPersonne', $_SESSION['id'], PDO::PARAM_INT);
+//        $statement3->execute();
+//        $insertion = $statement3->fetchAll(PDO::FETCH_ASSOC);
+//        var_dump($_POST);
+//    }
+//    echo $_POST['descriptionText'];
+//    
+//}
 
 ?>
 
@@ -51,10 +64,10 @@ if(isset($_SESSION['id'])) {
     
     <div id="formProfil" class="visible">
        <h2>Modifier</h2>
-        <form action="">
+        <form action="./index.php?page=compte" method="post">
             <label for="photo">Télécharger votre photo</label>
             <input type="file" name="photo">
-            <textarea name="" id="" cols="30" rows="10" placeholder="Votre description de badass!"></textarea>
+            <textarea name="descriptionText" id="" cols="30" rows="10" placeholder="Votre description de badass!"></textarea>
             <button type="submit">Enregistrer</button>
         </form>
     </div>
