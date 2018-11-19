@@ -1,0 +1,93 @@
+// slider mixin
+@mixin slider($slider-item: 9) {
+    .c-slider {
+        position: relative;
+    }
+    .c-slider__body {
+        overflow: hidden;
+    }
+    .c-slider__list {
+        display: flex;
+        margin: 0;
+        padding-left: 0;
+        transition: .4s;
+    }
+    .c-slider__item {
+        position: relative;
+        flex: 0 0 auto;
+        width: 100%;
+        list-style: none;
+    }
+    @for $i from 1 through $slider-item {
+        .c-slider__toggle:nth-of-type(#{$i}):checked ~ .c-slider__btn:nth-of-type(#{$i + 1}) {
+            display: block;
+            left: auto;
+            transform: scale(-1,1);
+        }
+        .c-slider__toggle:nth-of-type(#{$i}):checked ~ .c-slider__btn:nth-of-type(#{$i - 1}) {
+            display: block;
+        }
+        .c-slider__toggle:nth-of-type(#{$i + 1}):checked ~ * .c-slider__list {
+            transform: translateX(percentage(-$i));
+        }
+    }
+    .c-slider__toggle:first-of-type:checked ~ .c-slider__btn:last-of-type,
+    .c-slider__toggle:last-of-type:checked ~ .c-slider__btn:first-of-type {
+        display: block;
+    }
+    .c-slider__toggle:last-of-type:checked ~ .c-slider__btn:first-of-type {
+        left: auto;
+        transform: scale(-1,1);
+    }
+}
+
+// object wrapper
+.o-wrapper {
+    max-width: 20rem;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+// utility hidden
+.u-visually-hidden {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    border: 0;
+}
+
+// component slider img
+.c-slider__img {
+    width: 100%;
+    height: auto;
+}
+
+// component slider btn
+.c-slider__btn {
+    position: absolute;
+    z-index: 10;
+    top: calc(50% - 2rem);
+    right: 1rem;
+    left: 1rem;
+    width: 4rem;
+    height: 4rem;
+    text-align: center;
+    font-size: 1em;
+    line-height: 3.6rem;
+//    background: rgba(134, 134, 134, 0.75);
+    border-radius: 50%;
+    cursor: pointer;
+    &::before {
+        content:"↜";
+        display: inline-block;
+        font: normal normal normal 3rem/0 icons;     
+        vertical-align: middle;
+        color: #6a397c;
+    }
+}
+
+// include slider($slider-item)
+@include slider(13);

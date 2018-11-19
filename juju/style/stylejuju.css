@@ -876,8 +876,12 @@ nav #ligneNav::before {
 @media only screen and (max-width: 750px) {
   #logoMobile {
     display: flex;
+    top: 75px;
+    position: relative;
     margin-left: auto;
-    margin-right: auto; }
+    margin-right: auto;
+    left: 30px;
+    right: 0; }
 
   #headertop {
     margin: 0px; }
@@ -890,9 +894,18 @@ nav #ligneNav::before {
 
   .sign {
     position: absolute;
-    left: 0px;
-    margin: 0px;
-    top: 10px; }
+    left: 0;
+    top: 10px;
+    cursor: pointer;
+    left: 0; }
+
+  #headerTop #leftLinks a:nth-of-type(3) {
+    margin-left: 0; }
+
+  #welcomePseudo {
+    position: absolute;
+    top: 50px;
+    left: 0; }
 
   #ligneNav {
     display: none; }
@@ -900,7 +913,7 @@ nav #ligneNav::before {
   .burger {
     position: absolute;
     right: 0;
-    top: 10px;
+    top: 17px;
     display: inline-block;
     border: 0;
     background: none;
@@ -980,6 +993,40 @@ nav #ligneNav::before {
     li a {
       text-decoration: none; }
       li a:hover {
-        text-decoration: underline; } }
+        text-decoration: underline; }
 
-/*# sourceMappingURL=stylejuju.css.map */
+  .intro {
+    display: flex;
+    font-weight: 800;
+    font-size: 17px;
+    width: 225px;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto; }
+    .intro p {
+      display: flex;
+      color: #4d4d4d; }
+    .intro i {
+      font-size: 40px;
+      color: #6a397c;
+      font-weight: 800; }
+    .intro i:first-of-type {
+      margin-left: 20px; }
+    .intro i:nth-of-type(2) {
+      align-self: flex-end; }
+
+  #timeline {
+    background-image: none; }
+
+  #timeline .timeline-item .timeline-content .nationalite {
+    position: relative;
+    top: 30px;
+    display: flex;
+    text-align: right;
+    padding-right: 10px;
+    justify-content: flex-end;
+    width: 100%;
+    font-size: 15px;
+    font-weight: 600;
+    color: #4d4d4d;
+    padding-left: 10px; } }
