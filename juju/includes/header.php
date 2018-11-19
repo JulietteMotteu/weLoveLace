@@ -26,7 +26,7 @@
            <a href="./index.php"><img src="./img/logo/logo_nom.png" alt=""></a>
         </div>
         <div id="logoMobile">
-            <a href="./index.php"><img src="./img/logo/logo.png" alt=""></a>
+            <a href="./index.php"><img src="./img/logo/logo_mob.png" alt=""></a>
   
             
         </div>
