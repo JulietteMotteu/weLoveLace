@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.1
 -- https://www.phpmyadmin.net/
 --
--- Hôte : localhost
--- Généré le :  sam. 17 nov. 2018 à 22:51
--- Version du serveur :  10.1.36-MariaDB
--- Version de PHP :  7.2.11
+-- Host: 127.0.0.1
+-- Generation Time: Nov 19, 2018 at 12:49 PM
+-- Server version: 10.1.33-MariaDB
+-- PHP Version: 7.2.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `weLoveLace`
+-- Database: `welovelace`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `t_evenement`
+-- Table structure for table `t_evenement`
 --
 
 CREATE TABLE `t_evenement` (
@@ -40,7 +40,7 @@ CREATE TABLE `t_evenement` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Déchargement des données de la table `t_evenement`
+-- Dumping data for table `t_evenement`
 --
 
 INSERT INTO `t_evenement` (`id`, `nom`, `lieu`, `date`, `heure`, `description`, `type`, `image`) VALUES
@@ -52,7 +52,7 @@ INSERT INTO `t_evenement` (`id`, `nom`, `lieu`, `date`, `heure`, `description`, 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `t_like`
+-- Table structure for table `t_like`
 --
 
 CREATE TABLE `t_like` (
@@ -62,7 +62,7 @@ CREATE TABLE `t_like` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Déchargement des données de la table `t_like`
+-- Dumping data for table `t_like`
 --
 
 INSERT INTO `t_like` (`id`, `idPersonne`, `idEvenement`) VALUES
@@ -74,7 +74,7 @@ INSERT INTO `t_like` (`id`, `idPersonne`, `idEvenement`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `t_participation`
+-- Table structure for table `t_participation`
 --
 
 CREATE TABLE `t_participation` (
@@ -84,7 +84,7 @@ CREATE TABLE `t_participation` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Déchargement des données de la table `t_participation`
+-- Dumping data for table `t_participation`
 --
 
 INSERT INTO `t_participation` (`id`, `idPersonne`, `idEvenement`) VALUES
@@ -94,7 +94,7 @@ INSERT INTO `t_participation` (`id`, `idPersonne`, `idEvenement`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `t_personne`
+-- Table structure for table `t_personne`
 --
 
 CREATE TABLE `t_personne` (
@@ -107,7 +107,7 @@ CREATE TABLE `t_personne` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Déchargement des données de la table `t_personne`
+-- Dumping data for table `t_personne`
 --
 
 INSERT INTO `t_personne` (`id`, `pseudo`, `email`, `password`, `description`, `photo`) VALUES
@@ -127,7 +127,7 @@ INSERT INTO `t_personne` (`id`, `pseudo`, `email`, `password`, `description`, `p
 -- --------------------------------------------------------
 
 --
--- Structure de la table `t_ressources`
+-- Table structure for table `t_ressources`
 --
 
 CREATE TABLE `t_ressources` (
@@ -142,7 +142,7 @@ CREATE TABLE `t_ressources` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Déchargement des données de la table `t_ressources`
+-- Dumping data for table `t_ressources`
 --
 
 INSERT INTO `t_ressources` (`id`, `titre`, `auteur`, `type`, `lien`, `description`, `image`, `media`) VALUES
@@ -160,7 +160,7 @@ INSERT INTO `t_ressources` (`id`, `titre`, `auteur`, `type`, `lien`, `descriptio
 -- --------------------------------------------------------
 
 --
--- Structure de la table `t_women`
+-- Table structure for table `t_women`
 --
 
 CREATE TABLE `t_women` (
@@ -176,37 +176,37 @@ CREATE TABLE `t_women` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
--- Déchargement des données de la table `t_women`
+-- Dumping data for table `t_women`
 --
 
 INSERT INTO `t_women` (`idWomen`, `nom`, `prenom`, `dateBirth`, `dateDeath`, `nationality`, `profession`, `description`, `image`) VALUES
-(1, 'Lovelace', 'Ada', 1815, 1852, 'GB', 'programmeuse informatique', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae assumenda consequatur sapiente magnam, praesentium ratione at vel dolore quidem ullam illo, inventore delectus labore iste voluptatum nisi modi eveniet aspernatur iure. Assumenda necessitatibus, laborum neque inventore dolorum reiciendis ipsum at et aperiam esse cum dolor ab tempora odit repellendus id, dignissimos nihil, a laudantium. Similique dolorum eligendi, reiciendis facere ea qui iure quisquam earum ducimus tenetur quos voluptatibus sed quis consequuntur, perferendis deleniti illo, officiis explicabo. Facere in at numquam magni perspiciatis suscipit quas corporis eum sint obcaecati nisi rem odit, tempore asperiores incidunt sed esse veritatis repellendus eveniet praesentium.', 'ada'),
-(2, 'Hopper', 'Grace', 1906, 1992, 'USA', 'Informaticienne', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae assumenda consequatur sapiente magnam, praesentium ratione at vel dolore quidem ullam illo, inventore delectus labore iste voluptatum nisi modi eveniet aspernatur iure. Assumenda necessitatibus, laborum neque inventore dolorum reiciendis ipsum at et aperiam esse cum dolor ab tempora odit repellendus id, dignissimos nihil, a laudantium. Similique dolorum eligendi, reiciendis facere ea qui iure quisquam earum ducimus tenetur quos voluptatibus sed quis consequuntur, perferendis deleniti illo, officiis explicabo. Facere in at numquam magni perspiciatis suscipit quas corporis eum sint obcaecati nisi rem odit, tempore asperiores incidunt sed esse veritatis repellendus eveniet praesentium.', 'hopper'),
-(3, 'Hamilton', 'Margaret', 1936, NULL, 'USA', 'informaticienne, ingénieure stystème', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae assumenda consequatur sapiente magnam, praesentium ratione at vel dolore quidem ullam illo, inventore delectus labore iste voluptatum nisi modi eveniet aspernatur iure. Assumenda necessitatibus, laborum neque inventore dolorum reiciendis ipsum at et aperiam esse cum dolor ab tempora odit repellendus id, dignissimos nihil, a laudantium. Similique dolorum eligendi, reiciendis facere ea qui iure quisquam earum ducimus tenetur quos voluptatibus sed quis consequuntur, perferendis deleniti illo, officiis explicabo. Facere in at numquam magni perspiciatis suscipit quas corporis eum sint obcaecati nisi rem odit, tempore asperiores incidunt sed esse veritatis repellendus eveniet praesentium.', 'hamilton'),
-(4, 'Johnson', 'Katherine', 1918, NULL, 'USA', 'Mathématicienne, informaticien', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae assumenda consequatur sapiente magnam, praesentium ratione at vel dolore quidem ullam illo, inventore delectus labore iste voluptatum nisi modi eveniet aspernatur iure. Assumenda necessitatibus, laborum neque inventore dolorum reiciendis ipsum at et aperiam esse cum dolor ab tempora odit repellendus id, dignissimos nihil, a laudantium. Similique dolorum eligendi, reiciendis facere ea qui iure quisquam earum ducimus tenetur quos voluptatibus sed quis consequuntur, perferendis deleniti illo, officiis explicabo. Facere in at numquam magni perspiciatis suscipit quas corporis eum sint obcaecati nisi rem odit, tempore asperiores incidunt sed esse veritatis repellendus eveniet praesentium.', 'johnson'),
-(5, 'Borg', 'Anita', 1949, 2003, 'USA', 'scientifique informatique', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae assumenda consequatur sapiente magnam, praesentium ratione at vel dolore quidem ullam illo, inventore delectus labore iste voluptatum nisi modi eveniet aspernatur iure. Assumenda necessitatibus, laborum neque inventore dolorum reiciendis ipsum at et aperiam esse cum dolor ab tempora odit repellendus id, dignissimos nihil, a laudantium. Similique dolorum eligendi, reiciendis facere ea qui iure quisquam earum ducimus tenetur quos voluptatibus sed quis consequuntur, perferendis deleniti illo, officiis explicabo. Facere in at numquam magni perspiciatis suscipit quas corporis eum sint obcaecati nisi rem odit, tempore asperiores incidunt sed esse veritatis repellendus eveniet praesentium.', 'borg'),
-(6, 'Dorcas', 'Muthoni', 1976, NULL, 'Kenya', 'entrepreneuse, scientifique informatique', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae assumenda consequatur sapiente magnam, praesentium ratione at vel dolore quidem ullam illo, inventore delectus labore iste voluptatum nisi modi eveniet aspernatur iure. Assumenda necessitatibus, laborum neque inventore dolorum reiciendis ipsum at et aperiam esse cum dolor ab tempora odit repellendus id, dignissimos nihil, a laudantium. Similique dolorum eligendi, reiciendis facere ea qui iure quisquam earum ducimus tenetur quos voluptatibus sed quis consequuntur, perferendis deleniti illo, officiis explicabo. Facere in at numquam magni perspiciatis suscipit quas corporis eum sint obcaecati nisi rem odit, tempore asperiores incidunt sed esse veritatis repellendus eveniet praesentium.', 'dorcas'),
-(8, 'Lamarr', 'Hedy', 1914, 2000, 'Autriche, USA', 'Inventrice, actrice', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae assumenda consequatur sapiente magnam, praesentium ratione at vel dolore quidem ullam illo, inventore delectus labore iste voluptatum nisi modi eveniet aspernatur iure. Assumenda necessitatibus, laborum neque inventore dolorum reiciendis ipsum at et aperiam esse cum dolor ab tempora odit repellendus id, dignissimos nihil, a laudantium. Similique dolorum eligendi, reiciendis facere ea qui iure quisquam earum ducimus tenetur quos voluptatibus sed quis consequuntur, perferendis deleniti illo, officiis explicabo. Facere in at numquam magni perspiciatis suscipit quas corporis eum sint obcaecati nisi rem odit, tempore asperiores incidunt sed esse veritatis repellendus eveniet praesentium.', 'lamarr'),
-(9, 'Bedwei', 'Farida ', 1979, NULL, 'Niger', 'informaticienne', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae assumenda consequatur sapiente magnam, praesentium ratione at vel dolore quidem ullam illo, inventore delectus labore iste voluptatum nisi modi eveniet aspernatur iure. Assumenda necessitatibus, laborum neque inventore dolorum reiciendis ipsum at et aperiam esse cum dolor ab tempora odit repellendus id, dignissimos nihil, a laudantium. Similique dolorum eligendi, reiciendis facere ea qui iure quisquam earum ducimus tenetur quos voluptatibus sed quis consequuntur, perferendis deleniti illo, officiis explicabo. Facere in at numquam magni perspiciatis suscipit quas corporis eum sint obcaecati nisi rem odit, tempore asperiores incidunt sed esse veritatis repellendus eveniet praesentium.', 'bedwei'),
-(10, 'Rotich', 'juliana', 1977, NULL, 'Kenya', 'Spécialiste technologique, entrepreneuse', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae assumenda consequatur sapiente magnam, praesentium ratione at vel dolore quidem ullam illo, inventore delectus labore iste voluptatum nisi modi eveniet aspernatur iure. Assumenda necessitatibus, laborum neque inventore dolorum reiciendis ipsum at et aperiam esse cum dolor ab tempora odit repellendus id, dignissimos nihil, a laudantium. Similique dolorum eligendi, reiciendis facere ea qui iure quisquam earum ducimus tenetur quos voluptatibus sed quis consequuntur, perferendis deleniti illo, officiis explicabo. Facere in at numquam magni perspiciatis suscipit quas corporis eum sint obcaecati nisi rem odit, tempore asperiores incidunt sed esse veritatis repellendus eveniet praesentium.', 'rotich'),
-(11, 'Fried', 'Limor', 1982, NULL, 'USA', 'Ingénieure electrique, pionnière activiste de l\'op', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae assumenda consequatur sapiente magnam, praesentium ratione at vel dolore quidem ullam illo, inventore delectus labore iste voluptatum nisi modi eveniet aspernatur iure. Assumenda necessitatibus, laborum neque inventore dolorum reiciendis ipsum at et aperiam esse cum dolor ab tempora odit repellendus id, dignissimos nihil, a laudantium. Similique dolorum eligendi, reiciendis facere ea qui iure quisquam earum ducimus tenetur quos voluptatibus sed quis consequuntur, perferendis deleniti illo, officiis explicabo. Facere in at numquam magni perspiciatis suscipit quas corporis eum sint obcaecati nisi rem odit, tempore asperiores incidunt sed esse veritatis repellendus eveniet praesentium.', 'fried'),
-(12, 'Kenneth Keller', 'Mary', 1913, 1985, 'USA', 'Religieuse, première doctorante américaine en informatique', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae assumenda consequatur sapiente magnam, praesentium ratione at vel dolore quidem ullam illo, inventore delectus labore iste voluptatum nisi modi eveniet aspernatur iure. Assumenda necessitatibus, laborum neque inventore dolorum reiciendis ipsum at et aperiam esse cum dolor ab tempora odit repellendus id, dignissimos nihil, a laudantium. Similique dolorum eligendi, reiciendis facere ea qui iure quisquam earum ducimus tenetur quos voluptatibus sed quis consequuntur, perferendis deleniti illo, officiis explicabo. Facere in at numquam magni perspiciatis suscipit quas corporis eum sint obcaecati nisi rem odit, tempore asperiores incidunt sed esse veritatis repellendus eveniet praesentium.', 'keller'),
-(13, 'Windsor', 'Edith', 1929, 2017, 'USA', 'militante des droits LGBT, directrice de la technologie chez IBM', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae assumenda consequatur sapiente magnam, praesentium ratione at vel dolore quidem ullam illo, inventore delectus labore iste voluptatum nisi modi eveniet aspernatur iure. Assumenda necessitatibus, laborum neque inventore dolorum reiciendis ipsum at et aperiam esse cum dolor ab tempora odit repellendus id, dignissimos nihil, a laudantium. Similique dolorum eligendi, reiciendis facere ea qui iure quisquam earum ducimus tenetur quos voluptatibus sed quis consequuntur, perferendis deleniti illo, officiis explicabo. Facere in at numquam magni perspiciatis suscipit quas corporis eum sint obcaecati nisi rem odit, tempore asperiores incidunt sed esse veritatis repellendus eveniet praesentium.', 'windsor'),
-(14, 'Goldberg', 'Adele', 1945, NULL, 'USA', 'informaticienne, créatrice du language smalltalk-80', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae assumenda consequatur sapiente magnam, praesentium ratione at vel dolore quidem ullam illo, inventore delectus labore iste voluptatum nisi modi eveniet aspernatur iure. Assumenda necessitatibus, laborum neque inventore dolorum reiciendis ipsum at et aperiam esse cum dolor ab tempora odit repellendus id, dignissimos nihil, a laudantium. Similique dolorum eligendi, reiciendis facere ea qui iure quisquam earum ducimus tenetur quos voluptatibus sed quis consequuntur, perferendis deleniti illo, officiis explicabo. Facere in at numquam magni perspiciatis suscipit quas corporis eum sint obcaecati nisi rem odit, tempore asperiores incidunt sed esse veritatis repellendus eveniet praesentium.', 'goldberg'),
-(15, 'Mayer', 'Marissa', 1975, NULL, 'USA', 'Informaticienne, PDG de Yahoo!', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis consectetur sequi natus eos accusamus perferendis nisi repellendus nostrum veniam, laudantium libero harum illo incidunt tenetur, suscipit modi eveniet. Voluptatum, eos. Ipsum dolorem dolorum mollitia eos veritatis hic numquam esse aperiam quae ut rem pariatur, voluptatem incidunt cum. Veniam earum eaque voluptate inventore ut expedita hic fugiat a recusandae! Debitis consequuntur, repellendus quod rerum maiores explicabo sunt dolorem earum blanditiis nobis aspernatur nulla velit ratione minima voluptas sint perferendis quasi amet saepe ullam fuga asperiores. Et nihil voluptates vel neque, ipsum alias temporibus possimus sequi? Repellendus earum, ipsam nulla blanditiis in?', 'mayer');
+(1, 'Lovelace', 'Ada', 1815, 1852, 'GB', 'programmeuse informatique', 'Ada Lovelace, de son nom complet Augusta Ada King, comtesse de Lovelace, née Ada Byron le 10 décembre 1815 à Londres et morte le 27 novembre 1852 à Marylebone dans la même ville, est une pionnière de la science informatique.\r\nElle est principalement connue pour avoir réalisé le premier programme informatique, lors de son travail sur un ancêtre de l\'ordinateur : la machine analytique de Charles Babbage.\r\n\r\nDans ses notes, on trouve en effet le premier programme publiéWoolley, destiné à être exécuté par une machine, ce qui fait considérer Ada Lovelace comme « le premier programmeur du monde1 ».\r\nElle a également entrevu et décrit certaines possibilités offertes par les calculateurs universels, allant bien au-delà du calcul numérique et de ce qu\'imaginaient Babbage et ses contemporainsWoolley, Swade.\r\n\r\nElle est assez connue dans les pays anglo-saxons et en Allemagne, notamment dans les milieux féministes ; elle est moins connue en France, mais de nombreux développeurs connaissent le langage Ada, nommé en son honneur. ', 'ada'),
+(2, 'Hopper', 'Grace', 1906, 1992, 'USA', 'Informaticienne', 'Grace Murray Hopper (1906 – 1992) est une informaticienne américaine et Rear admiral (lower half) de la marine américaine. Elle a inventé le Cobol,mis au point les premiers supercalculteurs et a été témoin du premier bug informatique de l’histoire de l’informatique.', 'hopper'),
+(3, 'Hamilton', 'Margaret', 1936, NULL, 'USA', 'informaticienne, ingénieure stystème', 'Margaret Heafield Hamilton, née Heafield le 17 août 19361, est une informaticienne, ingénieure système et chef d\'entreprise américaine.\r\nElle était directrice du département génie logiciel (« software engineering », terme de son invention) au sein du MIT Instrumentation Laboratory qui conçut le système embarqué du programme spatial Apollo.\r\nEn 1986, elle fonde la société Hamilton Technologies, Inc. à partir de ses travaux entrepris au MIT. ', 'hamilton'),
+(4, 'Johnson', 'Katherine', 1918, NULL, 'USA', 'Mathématicienne, informaticien', 'Katherine Coleman Goble Johnson est une physicienne, mathématicienne et ingénieure spatiale américaine, née le 26 août 1918 à White Sulphur Springs en Virginie-Occidentale.\r\nElle contribue aux programmes aéronautiques et spatiaux de la National Advisory Committee for Aeronautics (NACA) puis de la National Aeronautics and Space Administration (NASA).\r\n\r\nRéputée pour sa fiabilité dans la navigation astronomique informatisée, elle conduit des travaux techniques à la NASA qui s\'étalent sur des décennies. Durant cette période, elle calcule et vérifie les trajectoires, les fenêtres de lancement et les plans d\'urgence de nombreux vols du programme Mercury, dont les premières missions de John Glenn et Alan Shepard, et des procédures de rendez-vous spatial pour Apollo 11 en 19691 jusqu\'au programme de la navette spatiale américaine2,3,4.\r\nSes calculs furent essentiels à la conduite effective de ces missions2.\r\nElle travaille enfin sur une mission pour Mars.\r\n\r\nEn 2015, elle reçoit la médaille présidentielle de la Liberté. ', 'johnson'),
+(5, 'Borg', 'Anita', 1949, 2003, 'USA', 'scientifique informatique', 'Anita Borg (née Anita Borg Naffz le 17 janvier 1949 à Chicago – morte le 6 avril 2003) est une informaticienne américaine.\r\n\r\nElle a notamment travaillé pour des compagnies telles Digital Equipment Corporation et Xerox. Elle a également fondé la Grace Hopper Celebration of Women in Computing (en) et l\'Institut Anita Borg. ', 'borg'),
+(6, 'Dorcas', 'Muthoni', 1976, NULL, 'Kenya', 'entrepreneuse, scientifique informatique', 'Dorcas Muthoni (née en 1979 à Nyeri1) est une entrepreneure et informaticienne kényane. Elle est la fondatrice de la compagnie OPENWORLD LTD2, et de AfChix, une organisation visant à former et soutenir les femmes africaines en informatique.\r\n\r\nDiplômée en informatique à l\'université de Nairobi, Muthoni est spécialisée en, notamment, réseaux sans fil, communications radio et planification techno-stratégique.\r\n\r\nEn 2013, elle est sélectionnée comme World Economic Forum Young Global Leader. En 2017, elle obtient un Honoris Causa de l\'université Pompeu Fabra. ', 'dorcas'),
+(8, 'Lamarr', 'Hedy', 1914, 2000, 'Autriche, USA', 'Inventrice, actrice', 'Hedy Lamarr est une actrice, productrice de cinéma et inventrice autrichienne naturalisée américaine, née Hedwig Eva Maria Kiesler le 9 novembre 1914 à Vienne (Autriche-Hongrie) et morte le 19 janvier 2000 à Casselberry (Floride).\r\n\r\nAu cours de sa carrière cinématographique, elle a joué sous la direction des plus grands réalisateurs de l\'époque : King Vidor, Jack Conway, Victor Fleming, Jacques Tourneur, Marc Allégret, Cecil B. DeMille ou Clarence Brown.\r\n\r\nOutre sa carrière au cinéma, elle a marqué l\'histoire scientifique des télécommunications en inventant, en collaboration avec le compositeur George Antheil, pianiste et inventeur comme elle, la « technique Lamarr », un système de codage des transmissions par étalement de spectre, ancêtre des techniques toujours utilisées actuellement pour les liaisons chiffrées militaires, la téléphonie mobile ou la technique du Wi-Fi. ', 'lamarr'),
+(9, 'Bedwei', 'Farida ', 1979, NULL, 'Niger', 'informaticienne', 'Farida Bedwei passe sa petite enfance en Dominique, en Grenade et au Royaume-Uni. Sa famille déménage au Ghana quand elle a 9 ans.\r\n\r\nNouveau-née, elle développe une paralysie cérébrale, et est scolarisée à domicile et éduquée par sa mère jusqu\'à l\'âge de 11 ans.\r\n\r\nFarida obtient son baccalauréat en sciences informatiques de l\' Université de Hertfordshire au Royaume-Uni en 2005. De retour au Ghana, elle obtient un certificat en gestion de projet en 2009 du Ghana Institute of Management and Public Administration (GIMPA).  \r\n\r\nEn 2010, Farida Bedwei écrit un roman intitulé: Definition of a Miracle.  \r\n\r\nFarida Bedwei est cofondatrice et CTO, directrice technique, de Logiciel Ghana Limited, une société de services et de technologies innovantes qui fournit des plateformes pour la banque mobile et la gestion de trésorerie en Afrique.  Elle a créé l\'application de micro-finance gKudi, un système bancaire simplifié qui octroie des prêts à petite échelle au Ghana. Cette application est utilisée par plus de 130 sociétés de micro-crédit au Ghana. \r\n\r\nElle remporte plusieurs prix pour son travail, dont le Legacy Maiden Ideas Award en 2011. Puis en 2013, la revue sud-africaine CEO Magazine la designe femme africaine la plus influente de l\'année dans le monde de la finance.  \r\n\r\nFarida Bedwei est membre du conseil d\'administration de Sharecare Ghana, une organisation à but non lucratif pour les personnes atteintes de maladies auto-immunes et neurologiques. Elle participe également à une initiative du Ministère de la communication du Ghana visant à sensibiliser davantage les femmes aux nouvelles technologies. Elle s\'engage en faveur des droits des personnes handicapées. ', 'bedwei'),
+(10, 'Rotich', 'juliana', 1977, NULL, 'Kenya', 'Spécialiste technologique, entrepreneuse', 'Juliana Rotich, née en 1977 au Kenya, est une professionnelle des technologies informatiques qui a notamment participé à la création du premier logiciel open-source « made in Africa », Ushahidi, pour cartographier les dégâts et les témoignages dans les situations de crise, et qui dirige l\'association de même nom. Elle travaille également à des solutions techniques facilitant l\'accès à Internet sur tout le territoire africain. ', 'rotich'),
+(11, 'Fried', 'Limor', 1982, NULL, 'USA', 'Ingénieure electrique, pionnière activiste de l\'op', 'Limor Fried is an American electrical engineer and owner of the electronics hobbyist company Adafruit Industries.\r\nShe is influential in the open-source hardware community, having participated in the first Open Source Hardware Summit and the drafting of the Open Source Hardware definition, and is known for her moniker ladyada, a homage to Lady Ada Lovelace. ', 'fried'),
+(12, 'Kenneth Keller', 'Mary', 1913, 1985, 'USA', 'Religieuse, première doctorante américaine en informatique', 'Mary Kenneth Keller, Sœur de la charité de la Vierge Marie, B.V.M. (1913 – 1985) est une religieuse catholique romaine Américaine, enseignante et pionnière dans les sciences informatiques. Elle est la première femme qui obtient un doctorat en informatique aux Etats-Unis\r\n.\r\nMary Kenneth Keller est née à Cleveland, Ohio le 17 décembre 1913 de John Adam Keller et Catherine Josephine (née Sullivan) Keller. Elle entre dans la congrégation des sœurs de la charité de la Vierge Marie en 1932 et prononce ses vœux en 1940.\r\n\r\nElle participe au développement du BASIC avec John George Kemeny et Thomas Eugene Kurtz. Elle obtient un doctorat en 1965 à l\'Université du Wisconsin à Madison. Elle enseigne à l\'Université Clarke. Keller décède le 10 Janvier 1985, à 71 ans, à Dubuque (Iowa).', 'keller'),
+(13, 'Windsor', 'Edith', 1929, 2017, 'USA', 'militante des droits LGBT, directrice de la technologie chez IBM', 'Edith \"Edie\" Windsor[1] (née Schlain; June 20, 1929 – September 12, 2017) was an American LGBT rights activist and a technology manager at IBM.\r\nShe was the lead plaintiff in the Supreme Court of the United States case United States v. Windsor, which successfully overturned Section 3 of the Defense of Marriage Act and was considered a landmark legal victory for the same-sex marriage movement in the United States.', 'windsor'),
+(14, 'Goldberg', 'Adele', 1945, NULL, 'USA', 'informaticienne, créatrice du language smalltalk-80', 'Adele Goldberg, née le 7 juillet 1945 à Cleveland, est une informaticienne américaine.\r\n\r\nTravaillant au Palo Alto Research Center (PARC) dans les années 1970, elle a notamment participé au développement du langage de programmation Smalltalk-80 et de concepts liés à la programmation orientée objet.', 'goldberg'),
+(15, 'Mayer', 'Marissa', 1975, NULL, 'USA', 'Informaticienne, PDG de Yahoo!', 'Marissa Ann Mayer, née le 30 mai 1975 à Wausau dans le Wisconsin, est une informaticienne et chef d\'entreprise américaine. Après 13 ans passés chez Google en tant que vice-présidente1 responsable des services de cartographie et de géolocalisation, elle occupe de 2012 à 2017 le poste de PDG de Yahoo!. ', 'mayer');
 
 --
--- Index pour les tables déchargées
+-- Indexes for dumped tables
 --
 
 --
--- Index pour la table `t_evenement`
+-- Indexes for table `t_evenement`
 --
 ALTER TABLE `t_evenement`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `t_like`
+-- Indexes for table `t_like`
 --
 ALTER TABLE `t_like`
   ADD PRIMARY KEY (`id`),
@@ -214,7 +214,7 @@ ALTER TABLE `t_like`
   ADD KEY `idEvenement` (`idEvenement`);
 
 --
--- Index pour la table `t_participation`
+-- Indexes for table `t_participation`
 --
 ALTER TABLE `t_participation`
   ADD PRIMARY KEY (`id`),
@@ -222,77 +222,77 @@ ALTER TABLE `t_participation`
   ADD KEY `FK2` (`idPersonne`);
 
 --
--- Index pour la table `t_personne`
+-- Indexes for table `t_personne`
 --
 ALTER TABLE `t_personne`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `pseudo` (`pseudo`);
 
 --
--- Index pour la table `t_ressources`
+-- Indexes for table `t_ressources`
 --
 ALTER TABLE `t_ressources`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `t_women`
+-- Indexes for table `t_women`
 --
 ALTER TABLE `t_women`
   ADD PRIMARY KEY (`idWomen`);
 
 --
--- AUTO_INCREMENT pour les tables déchargées
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT pour la table `t_evenement`
+-- AUTO_INCREMENT for table `t_evenement`
 --
 ALTER TABLE `t_evenement`
   MODIFY `id` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT pour la table `t_like`
+-- AUTO_INCREMENT for table `t_like`
 --
 ALTER TABLE `t_like`
-  MODIFY `id` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+  MODIFY `id` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
--- AUTO_INCREMENT pour la table `t_participation`
+-- AUTO_INCREMENT for table `t_participation`
 --
 ALTER TABLE `t_participation`
-  MODIFY `id` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
--- AUTO_INCREMENT pour la table `t_personne`
+-- AUTO_INCREMENT for table `t_personne`
 --
 ALTER TABLE `t_personne`
   MODIFY `id` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
--- AUTO_INCREMENT pour la table `t_ressources`
+-- AUTO_INCREMENT for table `t_ressources`
 --
 ALTER TABLE `t_ressources`
   MODIFY `id` tinyint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT pour la table `t_women`
+-- AUTO_INCREMENT for table `t_women`
 --
 ALTER TABLE `t_women`
   MODIFY `idWomen` smallint(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- Contraintes pour les tables déchargées
+-- Constraints for dumped tables
 --
 
 --
--- Contraintes pour la table `t_like`
+-- Constraints for table `t_like`
 --
 ALTER TABLE `t_like`
   ADD CONSTRAINT `t_like_ibfk_1` FOREIGN KEY (`idPersonne`) REFERENCES `t_personne` (`id`),
   ADD CONSTRAINT `t_like_ibfk_2` FOREIGN KEY (`idEvenement`) REFERENCES `t_evenement` (`id`);
 
 --
--- Contraintes pour la table `t_participation`
+-- Constraints for table `t_participation`
 --
 ALTER TABLE `t_participation`
   ADD CONSTRAINT `FK1` FOREIGN KEY (`idEvenement`) REFERENCES `t_evenement` (`id`),
