@@ -2,9 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
-    <meta charset="UTF-8">
-    <title>Ressources</title>
+    <title>We Love Lace</title>
     <link rel="stylesheet" href="./style/normalize.css">
     <!-- Ici le CSS pour les plugins -->
     <link rel="stylesheet" href="./style/jquery/magnific-popup.css">
