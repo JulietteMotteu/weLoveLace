@@ -28,7 +28,8 @@ $timeline-color: $primary-color;
 %rond {
     content: '';
     display: inline-block;
-    position: relative;
+    position: absolute;
+    
     top:100%;
     left: -13px;
     width: 20px;
@@ -129,13 +130,12 @@ h2 {
 }
 
 // NAVIGATION
-
-#burger-check {
+#logoMobile {
     display: none;
 }
 
-#logoMobile {
-    display: none;
+input#burger-check.burger-check {
+  display: none;
 }
 
 nav {
@@ -566,7 +566,7 @@ nav {
 #sign>div {
     border-left: 2px solid $orangeColor;
     position: relative;
-    height: 400px;
+    height: 430px;
 }
 
 #sign>div::before {
@@ -580,6 +580,7 @@ nav {
     div {
         display: flex;
         width: 40%;
+        height: 100%;
         flex-direction:column;
 
         h2 {
@@ -590,6 +591,7 @@ nav {
         form {
             display: flex;
             flex-direction: column;
+            justify-content: space-between;
             
             input, button {
                 margin-bottom: 40px;
@@ -735,13 +737,16 @@ nav {
 }
 
 /* Style info*/
-#mailer, #map, #faqParent {
-    border-left: 2px solid $orangeColor;
-    position: relative;
-}
+#info {
+    #mailer, #map, #faqParent {
+        border-left: 2px solid $orangeColor;
+        position: relative;
+    }
 
-#mailer::before, #map::before, #faqParent::before {
-  @extend %rond;
+    #mailer::before, #map::before, #faqParent::before {
+      @extend %rond;
+    }
+    
 }
 
 #info {
@@ -1000,7 +1005,7 @@ nav {
         form {
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: space-between;
             margin-left: auto;
             margin-right: auto;
             width: 60%;
@@ -1252,7 +1257,7 @@ $burger--thickness: 4px;
 	}
 }
 
-.burger-check {
+input#burger-check.burger-check {
   display: none;
 }
 
@@ -1391,6 +1396,3 @@ li {
     }
     
 }
-
-
-

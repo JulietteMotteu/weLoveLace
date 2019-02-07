@@ -205,5 +205,3 @@
 .c-slider__toggle:last-of-type:checked ~ .c-slider__btn:first-of-type {
   left: auto;
   transform: scale(-1, 1); }
-
-/*# sourceMappingURL=screen.css.map */

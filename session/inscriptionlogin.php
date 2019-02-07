@@ -114,12 +114,12 @@ if (isset($_POST['userIns'], $_POST['pwd1'],$_POST['pwd2']) && $_POST['userIns']
 
                 <button name="buttonLog">Connexion</button>
             </form>
-
             <p> 
                 <?php
                 echo $msg1;
                 ?> 
             </p>
+
         </div>    
 
 

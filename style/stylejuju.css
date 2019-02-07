@@ -26,10 +26,10 @@
   padding: 10px 15px 10px 15px;
   border: 1px solid #6a397c; }
 
-#sign > div::before, .eventParent::before, #mailer::before, #map::before, #faqParent::before, #compteSection #profil::before, #compteSection #formProfil::before, #compteEventSection .eventParent::before {
+#sign > div::before, .eventParent::before, #info #mailer::before, #info #map::before, #info #faqParent::before, #compteSection #profil::before, #compteSection #formProfil::before, #compteEventSection .eventParent::before {
   content: '';
   display: inline-block;
-  position: relative;
+  position: absolute;
   top: 100%;
   left: -13px;
   width: 20px;
@@ -98,10 +98,10 @@ h2 {
     color: #6a397c;
     font-size: 30px; }
 
-#burger-check {
+#logoMobile {
   display: none; }
 
-#logoMobile {
+input#burger-check.burger-check {
   display: none; }
 
 nav #navigationMenu {
@@ -448,20 +448,22 @@ nav #ligneNav::before {
 #sign > div {
   border-left: 2px solid #ea5920;
   position: relative;
-  height: 400px; }
+  height: 430px; }
 
 #sign div {
   display: flex; }
   #sign div div {
     display: flex;
     width: 40%;
+    height: 100%;
     flex-direction: column; }
     #sign div div h2 {
       align-self: flex-start;
       color: #4d4d4d; }
     #sign div div form {
       display: flex;
-      flex-direction: column; }
+      flex-direction: column;
+      justify-content: space-between; }
       #sign div div form input, #sign div div form button {
         margin-bottom: 40px; }
 
@@ -575,7 +577,7 @@ nav #ligneNav::before {
   transition: 0.5s; }
 
 /* Style info*/
-#mailer, #map, #faqParent {
+#info #mailer, #info #map, #info #faqParent {
   border-left: 2px solid #ea5920;
   position: relative; }
 
@@ -757,7 +759,7 @@ nav #ligneNav::before {
   #compteSection #formProfil form {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     margin-left: auto;
     margin-right: auto;
     width: 60%; }
@@ -942,7 +944,7 @@ nav #ligneNav::before {
       transition: transform 0.5s ease-in-out;
       -webkit-transition: -webkit-transform 0.5s ease-in-out; }
 
-  .burger-check {
+  input#burger-check.burger-check {
     display: none; }
 
   .burger-check:checked ~ .burger {
@@ -1039,5 +1041,3 @@ nav #ligneNav::before {
       margin-right: auto; }
   #sign div::before {
     display: none; } }
-
-/*# sourceMappingURL=stylejuju.css.map */
